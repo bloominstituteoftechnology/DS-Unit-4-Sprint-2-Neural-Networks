@@ -3,7 +3,15 @@ Neural network topics including: backpropagation, Keras, and hyperparameter tuni
 
 ### Module Content
 
-**Module 1**:
+**Module 1**: 
+
+* terminology 
+* NN architecture overview
+* comparison to regression
+* Perceptron implementation from scratch
+  - Perceptron classification using iris dataset
+  - Epochs and training
+  
 
 **Module 2**:
 
