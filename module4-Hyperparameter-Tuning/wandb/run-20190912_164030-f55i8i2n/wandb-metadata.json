@@ -1,0 +1,26 @@
+{
+    "root": "/Users/Eric/Lambda/Machine_Learning/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/ewuerfel66/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "9c28840f85d0b3037d45ee1f65b68bed91437425"
+    },
+    "email": null,
+    "startedAt": "2019-09-12T16:40:30.277198",
+    "host": "Erics-MacBook-Pro-5.local",
+    "username": "Eric",
+    "os": "Darwin-18.7.0-x86_64-i386-64bit",
+    "python": "3.7.3",
+    "executable": "/anaconda3/bin/python",
+    "cpu_count": 4,
+    "args": [
+        "-f",
+        "/Users/Eric/Library/Jupyter/runtime/kernel-14fa306b-2070-40ec-b929-b4c1d08c42ea.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "major-haze-28",
+    "project": "ds5-hyperparameter-tuning",
+    "heartbeatAt": "2019-09-12T16:40:38.814062"
+}
