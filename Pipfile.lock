@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "22101dd19bd50674c67511d4f90adb9aef07efa7b29a3af910a9d843d1125e05"
+            "sha256": "8a0b201bac47d958c466374c49306e6de513eae42a9b41b7846cf1466cbcb9ed"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -405,6 +405,13 @@
                 "sha256:f4a4f6aba148858a5a5d546a99280f71f5ee6ec8182a7d195af1a914195b21a2"
             ],
             "version": "==1.17.2"
+        },
+        "opencv-python": {
+            "hashes": [
+                "sha256:20139889a9cf0e94b4d90198cb5aaffa1bf1b7d2e53a3e5c0f2d20f4d90aa710"
+            ],
+            "path": "./opencv_python-4.1.1+contrib-cp37-cp37m-win_amd64.whl",
+            "version": "==4.1.1+contrib"
         },
         "pandas": {
             "hashes": [

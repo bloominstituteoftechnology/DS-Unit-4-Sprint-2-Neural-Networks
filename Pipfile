@@ -11,6 +11,7 @@ scipy = "*"
 scikit-learn = "*"
 jupyter = "*"
 seaborn = "*"
+opencv-python = {path = "./opencv_python-4.1.1+contrib-cp37-cp37m-win_amd64.whl"}
 
 [requires]
 python_version = "3.7"
