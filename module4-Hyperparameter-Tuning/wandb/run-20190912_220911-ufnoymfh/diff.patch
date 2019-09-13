@@ -1,0 +1,257 @@
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index a5a7082..dc16d43 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -19,7 +19,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 5,
++   "execution_count": 3,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -36,6 +36,43 @@
+     "numpy.random.seed(42)"
+    ]
+   },
++  {
++   "cell_type": "code",
++   "execution_count": 5,
++   "metadata": {},
++   "outputs": [
++    {
++     "data": {
++      "text/html": [
++       "\n",
++       "        Notebook configured with <a href=\"https://wandb.com\" target=\"_blank\">W&B</a>. You can <a href=\"https://app.wandb.ai/ds5/ds5-hyperparamter-tuning/runs/ufnoymfh\" target=\"_blank\">open</a> the run page, or call <code>%%wandb</code>\n",
++       "        in a cell containing your training loop to display live results.  Learn more in our <a href=\"https://docs.wandb.com/docs/integrations/jupyter.html\" target=\"_blank\">docs</a>.\n",
++       "    "
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/plain": [
++       "W&B Run: https://app.wandb.ai/ds5/ds5-hyperparamter-tuning/runs/ufnoymfh"
++      ]
++     },
++     "execution_count": 5,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
++   "source": [
++    "import wandb\n",
++    "from wandb.keras import WandbCallback\n",
++    "wandb.init(project=\"ds5-hyperparamter-tuning\", entity='ds5')"
++   ]
++  },
+   {
+    "cell_type": "markdown",
+    "metadata": {
+@@ -50,7 +87,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 7,
++   "execution_count": 6,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -211,7 +248,7 @@
+        "4     18.7  396.90   5.33  36.2  "
+       ]
+      },
+-     "execution_count": 7,
++     "execution_count": 6,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -242,7 +279,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 8,
++   "execution_count": 7,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -300,7 +337,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 9,
++   "execution_count": 8,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -316,144 +353,45 @@
+      "output_type": "stream",
+      "text": [
+       "WARNING: Logging before flag parsing goes to stderr.\n",
+-      "W0815 10:08:20.955155 4430419392 deprecation.py:506] From /Users/jonathansokoll/anaconda3/envs/U4-S2-NNF/lib/python3.7/site-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.\n",
++      "E0912 18:13:44.429322 4747253184 jupyter.py:96] Failed to query for notebook name, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable\n",
++      "W0912 18:13:45.040297 4747253184 deprecation.py:506] From /anaconda3/envs/U4-S2-NNF/lib/python3.7/site-packages/tensorflow/python/ops/init_ops.py:1251: calling VarianceScaling.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.\n",
+       "Instructions for updating:\n",
+       "Call initializer instance with the dtype argument instead of passing it to the constructor\n"
+      ]
+     },
+     {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Train on 339 samples, validate on 167 samples\n",
+-      "Epoch 1/50\n",
+-      "339/339 [==============================] - 0s 366us/sample - loss: 625.2513 - mean_squared_error: 625.2513 - val_loss: 279.9214 - val_mean_squared_error: 279.9214\n",
+-      "Epoch 2/50\n",
+-      "339/339 [==============================] - 0s 95us/sample - loss: 373.3546 - mean_squared_error: 373.3546 - val_loss: 180.1021 - val_mean_squared_error: 180.1021\n",
+-      "Epoch 3/50\n",
+-      "339/339 [==============================] - 0s 93us/sample - loss: 101.2103 - mean_squared_error: 101.2103 - val_loss: 137.3386 - val_mean_squared_error: 137.3387\n",
+-      "Epoch 4/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 33.7659 - mean_squared_error: 33.7659 - val_loss: 114.6741 - val_mean_squared_error: 114.6741\n",
+-      "Epoch 5/50\n",
+-      "339/339 [==============================] - 0s 82us/sample - loss: 18.5104 - mean_squared_error: 18.5104 - val_loss: 113.3629 - val_mean_squared_error: 113.3628\n",
+-      "Epoch 6/50\n",
+-      "339/339 [==============================] - 0s 91us/sample - loss: 14.5301 - mean_squared_error: 14.5301 - val_loss: 117.4675 - val_mean_squared_error: 117.4675\n",
+-      "Epoch 7/50\n",
+-      "339/339 [==============================] - 0s 92us/sample - loss: 13.1114 - mean_squared_error: 13.1114 - val_loss: 115.7412 - val_mean_squared_error: 115.7412\n",
+-      "Epoch 8/50\n",
+-      "339/339 [==============================] - 0s 95us/sample - loss: 12.1406 - mean_squared_error: 12.1406 - val_loss: 112.9944 - val_mean_squared_error: 112.9944\n",
+-      "Epoch 9/50\n",
+-      "339/339 [==============================] - 0s 89us/sample - loss: 11.5139 - mean_squared_error: 11.5139 - val_loss: 110.0447 - val_mean_squared_error: 110.0447\n",
+-      "Epoch 10/50\n",
+-      "339/339 [==============================] - 0s 88us/sample - loss: 10.9077 - mean_squared_error: 10.9077 - val_loss: 106.9348 - val_mean_squared_error: 106.9348\n",
+-      "Epoch 11/50\n",
+-      "339/339 [==============================] - 0s 85us/sample - loss: 10.5648 - mean_squared_error: 10.5648 - val_loss: 103.4860 - val_mean_squared_error: 103.4860\n",
+-      "Epoch 12/50\n",
+-      "339/339 [==============================] - 0s 87us/sample - loss: 9.9297 - mean_squared_error: 9.9297 - val_loss: 100.5036 - val_mean_squared_error: 100.5036\n",
+-      "Epoch 13/50\n",
+-      "339/339 [==============================] - 0s 87us/sample - loss: 9.4464 - mean_squared_error: 9.4464 - val_loss: 98.4739 - val_mean_squared_error: 98.4739\n",
+-      "Epoch 14/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 9.1621 - mean_squared_error: 9.1621 - val_loss: 95.9992 - val_mean_squared_error: 95.9992\n",
+-      "Epoch 15/50\n",
+-      "339/339 [==============================] - 0s 85us/sample - loss: 8.9122 - mean_squared_error: 8.9122 - val_loss: 91.8091 - val_mean_squared_error: 91.8091\n",
+-      "Epoch 16/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 8.5564 - mean_squared_error: 8.5564 - val_loss: 91.1116 - val_mean_squared_error: 91.1116\n",
+-      "Epoch 17/50\n",
+-      "339/339 [==============================] - 0s 87us/sample - loss: 8.0328 - mean_squared_error: 8.0328 - val_loss: 87.0650 - val_mean_squared_error: 87.0650\n",
+-      "Epoch 18/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 7.7535 - mean_squared_error: 7.7535 - val_loss: 86.3742 - val_mean_squared_error: 86.3742\n",
+-      "Epoch 19/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 7.5547 - mean_squared_error: 7.5547 - val_loss: 82.6835 - val_mean_squared_error: 82.6835\n",
+-      "Epoch 20/50\n",
+-      "339/339 [==============================] - 0s 85us/sample - loss: 7.3827 - mean_squared_error: 7.3827 - val_loss: 81.1169 - val_mean_squared_error: 81.1169\n",
+-      "Epoch 21/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 7.1717 - mean_squared_error: 7.1717 - val_loss: 78.6616 - val_mean_squared_error: 78.6616\n",
+-      "Epoch 22/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 6.9017 - mean_squared_error: 6.9017 - val_loss: 77.7369 - val_mean_squared_error: 77.7369\n",
+-      "Epoch 23/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 6.7186 - mean_squared_error: 6.7186 - val_loss: 74.8546 - val_mean_squared_error: 74.8546\n",
+-      "Epoch 24/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 6.4259 - mean_squared_error: 6.4259 - val_loss: 72.0877 - val_mean_squared_error: 72.0877\n",
+-      "Epoch 25/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 6.5469 - mean_squared_error: 6.5469 - val_loss: 70.2001 - val_mean_squared_error: 70.2001\n",
+-      "Epoch 26/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 6.1998 - mean_squared_error: 6.1998 - val_loss: 71.6276 - val_mean_squared_error: 71.6276\n",
+-      "Epoch 27/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 6.1886 - mean_squared_error: 6.1886 - val_loss: 66.5151 - val_mean_squared_error: 66.5151\n",
+-      "Epoch 28/50\n",
+-      "339/339 [==============================] - 0s 86us/sample - loss: 5.9647 - mean_squared_error: 5.9647 - val_loss: 64.1536 - val_mean_squared_error: 64.1536\n",
+-      "Epoch 29/50\n",
+-      "339/339 [==============================] - 0s 82us/sample - loss: 5.8475 - mean_squared_error: 5.8475 - val_loss: 62.9218 - val_mean_squared_error: 62.9218\n",
+-      "Epoch 30/50\n",
+-      "339/339 [==============================] - 0s 88us/sample - loss: 5.7472 - mean_squared_error: 5.7472 - val_loss: 61.4670 - val_mean_squared_error: 61.4670\n",
+-      "Epoch 31/50\n",
+-      "339/339 [==============================] - 0s 88us/sample - loss: 5.6262 - mean_squared_error: 5.6262 - val_loss: 60.4396 - val_mean_squared_error: 60.4396\n",
+-      "Epoch 32/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 5.5064 - mean_squared_error: 5.5064 - val_loss: 59.4765 - val_mean_squared_error: 59.4765\n",
+-      "Epoch 33/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 5.4368 - mean_squared_error: 5.4368 - val_loss: 57.5645 - val_mean_squared_error: 57.5645\n",
+-      "Epoch 34/50\n",
+-      "339/339 [==============================] - 0s 84us/sample - loss: 5.3329 - mean_squared_error: 5.3329 - val_loss: 54.6676 - val_mean_squared_error: 54.6676\n",
+-      "Epoch 35/50\n",
+-      "339/339 [==============================] - 0s 85us/sample - loss: 5.2066 - mean_squared_error: 5.2066 - val_loss: 56.0873 - val_mean_squared_error: 56.0873\n",
+-      "Epoch 36/50\n",
+-      "339/339 [==============================] - 0s 91us/sample - loss: 5.2098 - mean_squared_error: 5.2098 - val_loss: 53.7955 - val_mean_squared_error: 53.7955\n",
+-      "Epoch 37/50\n",
+-      "339/339 [==============================] - 0s 87us/sample - loss: 5.4417 - mean_squared_error: 5.4417 - val_loss: 52.4190 - val_mean_squared_error: 52.4189\n",
+-      "Epoch 38/50\n",
+-      "339/339 [==============================] - 0s 85us/sample - loss: 4.9801 - mean_squared_error: 4.9801 - val_loss: 51.0138 - val_mean_squared_error: 51.0138\n",
+-      "Epoch 39/50\n",
+-      "339/339 [==============================] - 0s 94us/sample - loss: 5.0640 - mean_squared_error: 5.0640 - val_loss: 50.9198 - val_mean_squared_error: 50.9198\n",
+-      "Epoch 40/50\n",
+-      "339/339 [==============================] - 0s 97us/sample - loss: 5.0598 - mean_squared_error: 5.0598 - val_loss: 51.4312 - val_mean_squared_error: 51.4312\n",
+-      "Epoch 41/50\n",
+-      "339/339 [==============================] - 0s 94us/sample - loss: 4.9155 - mean_squared_error: 4.9155 - val_loss: 49.5652 - val_mean_squared_error: 49.5652\n",
+-      "Epoch 42/50\n",
+-      "339/339 [==============================] - 0s 95us/sample - loss: 4.6731 - mean_squared_error: 4.6731 - val_loss: 47.9462 - val_mean_squared_error: 47.9462\n",
+-      "Epoch 43/50\n",
+-      "339/339 [==============================] - 0s 93us/sample - loss: 4.7018 - mean_squared_error: 4.7018 - val_loss: 48.1317 - val_mean_squared_error: 48.1317\n",
+-      "Epoch 44/50\n",
+-      "339/339 [==============================] - 0s 89us/sample - loss: 4.8628 - mean_squared_error: 4.8628 - val_loss: 47.4068 - val_mean_squared_error: 47.4068\n",
+-      "Epoch 45/50\n",
+-      "339/339 [==============================] - 0s 90us/sample - loss: 4.5611 - mean_squared_error: 4.5611 - val_loss: 47.3415 - val_mean_squared_error: 47.3415\n",
+-      "Epoch 46/50\n",
+-      "339/339 [==============================] - 0s 98us/sample - loss: 4.6660 - mean_squared_error: 4.6660 - val_loss: 45.0834 - val_mean_squared_error: 45.0834\n",
+-      "Epoch 47/50\n",
+-      "339/339 [==============================] - 0s 93us/sample - loss: 4.5393 - mean_squared_error: 4.5393 - val_loss: 44.8492 - val_mean_squared_error: 44.8492\n",
+-      "Epoch 48/50\n",
+-      "339/339 [==============================] - 0s 95us/sample - loss: 4.4971 - mean_squared_error: 4.4971 - val_loss: 44.5613 - val_mean_squared_error: 44.5613\n",
+-      "Epoch 49/50\n",
+-      "339/339 [==============================] - 0s 94us/sample - loss: 4.5186 - mean_squared_error: 4.5186 - val_loss: 42.3793 - val_mean_squared_error: 42.3793\n",
+-      "Epoch 50/50\n",
+-      "339/339 [==============================] - 0s 95us/sample - loss: 4.4599 - mean_squared_error: 4.4599 - val_loss: 44.0912 - val_mean_squared_error: 44.0912\n"
++     "ename": "NameError",
++     "evalue": "name 'config' is not defined",
++     "output_type": "error",
++     "traceback": [
++      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
++      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
++      "\u001b[0;32m<ipython-input-8-7ccf15a30dac>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     16\u001b[0m \u001b[0;31m# Fit Model\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     17\u001b[0m model.fit(X, y, validation_split=0.33,\n\u001b[0;32m---> 18\u001b[0;31m           \u001b[0mepochs\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mconfig\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mepochs\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     19\u001b[0m           \u001b[0mbatch_size\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mconfig\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mbatch_size\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     20\u001b[0m           callbacks=[WandCallback()])\n",
++      "\u001b[0;31mNameError\u001b[0m: name 'config' is not defined"
+      ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x1a2c41aa90>"
+-      ]
+-     },
+-     "execution_count": 9,
+-     "metadata": {},
+-     "output_type": "execute_result"
+     }
+    ],
+    "source": [
+     "# Important Hyperparameters\n",
+     "inputs = X.shape[1]\n",
+-    "epochs = 50\n",
+-    "batch_size = 10\n",
++    "\n",
++    "wandb.config.epochs = 50\n",
++    "wandb.config.batch_size = 10\n",
+     "\n",
+     "# Create Model\n",
+     "model = Sequential()\n",
+     "model.add(Dense(64, activation='relu', input_shape=(inputs,)))\n",
+     "model.add(Dense(64, activation='relu'))\n",
+     "model.add(Dense(1))\n",
++    "\n",
+     "# Compile Model\n",
+     "model.compile(optimizer='adam', loss='mse', metrics=['mse'])\n",
++    "\n",
+     "# Fit Model\n",
+-    "model.fit(X, y, validation_split=0.33, epochs=epochs, batch_size=batch_size)"
++    "model.fit(X, y, validation_split=0.33,\n",
++    "          epochs=config.epochs,\n",
++    "          batch_size=config.batch_size, \n",
++    "          callbacks=[WandCallback()])"
+    ]
+   },
+   {

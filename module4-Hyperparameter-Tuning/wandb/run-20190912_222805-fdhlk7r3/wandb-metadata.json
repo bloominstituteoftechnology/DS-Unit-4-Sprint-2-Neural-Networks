@@ -1,0 +1,26 @@
+{
+    "root": "/Users/marvind/Documents/LRepo/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/MAL3X-01/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "f0efc7a76d60bf3485246b25ec606d4d85944934"
+    },
+    "email": "malex140@gmail.com",
+    "startedAt": "2019-09-12T22:28:05.252092",
+    "host": "Marvins-MBP.fios-router.home",
+    "username": "marvind",
+    "os": "Darwin-18.7.0-x86_64-i386-64bit",
+    "python": "3.7.3",
+    "executable": "/anaconda3/envs/U4-S2-NNF/bin/python",
+    "cpu_count": 12,
+    "args": [
+        "-f",
+        "/Users/marvind/Library/Jupyter/runtime/kernel-95cf85a6-b11e-4d3e-88e1-05e365d869f5.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "leafy-universe-52",
+    "project": "ds5-hyperparameter-tuning",
+    "heartbeatAt": "2019-09-12T22:28:09.695295"
+}
