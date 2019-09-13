@@ -1,0 +1,456 @@
+diff --git a/module2-backpropagation/LS_DS_422_Gradient_Descent_Backprop_Lecture.ipynb b/module2-backpropagation/LS_DS_422_Gradient_Descent_Backprop_Lecture.ipynb
+index 4a1b583..5ecbaf0 100644
+--- a/module2-backpropagation/LS_DS_422_Gradient_Descent_Backprop_Lecture.ipynb
++++ b/module2-backpropagation/LS_DS_422_Gradient_Descent_Backprop_Lecture.ipynb
+@@ -128,7 +128,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 1,
++   "execution_count": 2,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -142,8 +142,9 @@
+     "\n",
+     "# hours studying, hours sleep\n",
+     "X = np.array(([2,9],\n",
+-    "          [1,5],\n",
+-    "          [3,6]), dtype=float)\n",
++    "              [1,5],\n",
++    "              [3,6]), dtype=float)\n",
++    "\n",
+     "# Exam Scores\n",
+     "y = np.array(([92],\n",
+     "              [86],\n",
+@@ -152,14 +153,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
+-   "metadata": {},
+-   "outputs": [],
+-   "source": []
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 8,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -175,9 +169,9 @@
+       " [0.33333333 0.55555556]\n",
+       " [1.         0.66666667]]\n",
+       "Test Score \n",
+-      " [[0.92]\n",
+-      " [0.86]\n",
+-      " [0.89]]\n"
++      " [[0.0092]\n",
++      " [0.0086]\n",
++      " [0.0089]]\n"
+      ]
+     }
+    ],
+@@ -185,7 +179,8 @@
+     "# Normalizing Data on feature \n",
+     "# Neural Network would probably do this on its own, but it will help us converge on a solution faster\n",
+     "\n",
+-    " = X / np.amax(axis=0)\n",
++    "X = X / np.amax(X, axis=0)\n",
++    "y = y / 100\n",
+     "\n",
+     "print(\"Studying, Sleeping \\n\", X)\n",
+     "print(\"Test Score \\n\", y)"
+@@ -203,7 +198,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 12,
++   "execution_count": 9,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -213,12 +208,13 @@
+    "source": [
+     "class NeuralNetwork:\n",
+     "    def __init__(self):\n",
++    "        \n",
+     "        # Set up Architecture of Neural Network\n",
+     "        self.inputs = 2\n",
+     "        self.hiddenNodes = 3\n",
+     "        self.outputNodes = 1\n",
+     "\n",
+-    "        # Initial Weights\n",
++    "        # Initialize Weights\n",
+     "        # 2x3 Matrix Array for the First Layer\n",
+     "        self.weights1 = np.random.rand(self.inputs, self.hiddenNodes)\n",
+     "        \n",
+@@ -247,8 +243,7 @@
+     "        # Final activation of output\n",
+     "        self.activated_output = self.sigmoid(self.output_sum)\n",
+     "        \n",
+-    "        return self.activated_output\n",
+-    "        "
++    "        return self.activated_output"
+    ]
+   },
+   {
+@@ -273,7 +268,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 13,
++   "execution_count": 10,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -284,8 +279,8 @@
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "input [2. 9.]\n",
+-      "output [0.83906433]\n"
++      "input [0.66666667 1.        ]\n",
++      "output [0.79105842]\n"
+      ]
+     }
+    ],
+@@ -300,25 +295,16 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 14,
+-   "metadata": {},
+-   "outputs": [],
+-   "source": [
+-    "##"
+-   ]
+-  },
+-  {
+-   "cell_type": "code",
+-   "execution_count": 15,
++   "execution_count": 11,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/plain": [
+-       "array([91.16093567])"
++       "array([-0.78185842])"
+       ]
+      },
+-     "execution_count": 15,
++     "execution_count": 11,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -330,7 +316,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 16,
++   "execution_count": 12,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -340,7 +326,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 17,
++   "execution_count": 13,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -348,12 +334,12 @@
+      "output_type": "stream",
+      "text": [
+       "Layer 1 wieghts: \n",
+-      " [[0.74906093 0.8517804  0.41523945]\n",
+-      " [0.39456394 0.69989532 0.90594155]]\n",
++      " [[0.73665387 0.81926386 0.88654768]\n",
++      " [0.92386319 0.28768809 0.29744598]]\n",
+       "Layer 2 wieghts: \n",
+-      " [[0.09945959]\n",
+-      " [0.75522925]\n",
+-      " [0.79758034]]\n"
++      " [[0.43328179]\n",
++      " [0.56557272]\n",
++      " [0.83042626]]\n"
+      ]
+     }
+    ],
+diff --git a/module3-Intro-to-Keras/LS_DS_423_Keras_Lecture.ipynb b/module3-Intro-to-Keras/LS_DS_423_Keras_Lecture.ipynb
+index 9233c24..1338c0a 100644
+--- a/module3-Intro-to-Keras/LS_DS_423_Keras_Lecture.ipynb
++++ b/module3-Intro-to-Keras/LS_DS_423_Keras_Lecture.ipynb
+@@ -2075,9 +2075,18 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 17,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "10000/10000 [==============================] - 1s 67us/sample - loss: 0.2544 - acc: 0.9351\n",
++      "acc: 93.51000189781189\n"
++     ]
++    }
++   ],
+    "source": [
+     "history = mnist_model.fit(X_train, y_train, batch_size=32, epochs=epochs, validation_split=.1, verbose=0)\n",
+     "scores = mnist_model.evaluate(X_test, y_test)\n",
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index 060b42b..95c78df 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -19,7 +19,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 1,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -38,14 +38,14 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 12,
++   "execution_count": 2,
+    "metadata": {},
+    "outputs": [
+     {
+      "data": {
+       "text/html": [
+        "\n",
+-       "        Notebook configured with <a href=\"https://wandb.com\" target=\"_blank\">W&B</a>. You can <a href=\"https://app.wandb.ai/ds5/ds5-hyperparameter-tuning/runs/lfmy7wf5\" target=\"_blank\">open</a> the run page, or call <code>%%wandb</code>\n",
++       "        Notebook configured with <a href=\"https://wandb.com\" target=\"_blank\">W&B</a>. You can <a href=\"https://app.wandb.ai/ds5/ds5-hyperparameter-tuning/runs/m3yffucc\" target=\"_blank\">open</a> the run page, or call <code>%%wandb</code>\n",
+        "        in a cell containing your training loop to display live results.  Learn more in our <a href=\"https://docs.wandb.com/docs/integrations/jupyter.html\" target=\"_blank\">docs</a>.\n",
+        "    "
+       ],
+@@ -59,10 +59,10 @@
+     {
+      "data": {
+       "text/plain": [
+-       "W&B Run: https://app.wandb.ai/ds5/ds5-hyperparameter-tuning/runs/lfmy7wf5"
++       "W&B Run: https://app.wandb.ai/ds5/ds5-hyperparameter-tuning/runs/m3yffucc"
+       ]
+      },
+-     "execution_count": 12,
++     "execution_count": 2,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -87,7 +87,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 13,
++   "execution_count": 3,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -248,7 +248,7 @@
+        "4     18.7  396.90   5.33  36.2  "
+       ]
+      },
+-     "execution_count": 13,
++     "execution_count": 3,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -279,7 +279,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 14,
++   "execution_count": 5,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -337,7 +337,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 16,
++   "execution_count": 13,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -349,135 +349,26 @@
+    },
+    "outputs": [
+     {
+-     "name": "stderr",
+-     "output_type": "stream",
+-     "text": [
+-      "E0912 10:13:21.582159 4512605632 jupyter.py:96] Failed to query for notebook name, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable\n"
+-     ]
+-    },
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Train on 339 samples, validate on 167 samples\n",
+-      "Epoch 1/50\n",
+-      "339/339 [==============================] - 0s 855us/sample - loss: 691.9624 - mean_squared_error: 691.9624 - val_loss: 355.0848 - val_mean_squared_error: 355.0848\n",
+-      "Epoch 2/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 660.2862 - mean_squared_error: 660.2861 - val_loss: 336.8931 - val_mean_squared_error: 336.8931\n",
+-      "Epoch 3/50\n",
+-      "339/339 [==============================] - 0s 112us/sample - loss: 626.1058 - mean_squared_error: 626.1058 - val_loss: 317.3721 - val_mean_squared_error: 317.3721\n",
+-      "Epoch 4/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 587.1283 - mean_squared_error: 587.1283 - val_loss: 295.8682 - val_mean_squared_error: 295.8682\n",
+-      "Epoch 5/50\n",
+-      "339/339 [==============================] - 0s 76us/sample - loss: 537.5568 - mean_squared_error: 537.5569 - val_loss: 271.9893 - val_mean_squared_error: 271.9893\n",
+-      "Epoch 6/50\n",
+-      "339/339 [==============================] - 0s 80us/sample - loss: 473.9000 - mean_squared_error: 473.9000 - val_loss: 246.5327 - val_mean_squared_error: 246.5327\n",
+-      "Epoch 7/50\n",
+-      "339/339 [==============================] - 0s 79us/sample - loss: 399.0164 - mean_squared_error: 399.0164 - val_loss: 220.9570 - val_mean_squared_error: 220.9570\n",
+-      "Epoch 8/50\n",
+-      "339/339 [==============================] - 0s 80us/sample - loss: 315.3497 - mean_squared_error: 315.3497 - val_loss: 197.6462 - val_mean_squared_error: 197.6462\n",
+-      "Epoch 9/50\n",
+-      "339/339 [==============================] - 0s 103us/sample - loss: 230.0370 - mean_squared_error: 230.0370 - val_loss: 179.2751 - val_mean_squared_error: 179.2751\n",
+-      "Epoch 10/50\n",
+-      "339/339 [==============================] - 0s 77us/sample - loss: 154.7817 - mean_squared_error: 154.7817 - val_loss: 167.0551 - val_mean_squared_error: 167.0551\n",
+-      "Epoch 11/50\n",
+-      "339/339 [==============================] - 0s 77us/sample - loss: 105.3493 - mean_squared_error: 105.3493 - val_loss: 159.8331 - val_mean_squared_error: 159.8331\n",
+-      "Epoch 12/50\n",
+-      "339/339 [==============================] - 0s 75us/sample - loss: 77.4344 - mean_squared_error: 77.4344 - val_loss: 151.3967 - val_mean_squared_error: 151.3967\n",
+-      "Epoch 13/50\n",
+-      "339/339 [==============================] - 0s 77us/sample - loss: 63.7156 - mean_squared_error: 63.7156 - val_loss: 140.2394 - val_mean_squared_error: 140.2394\n",
+-      "Epoch 14/50\n",
+-      "339/339 [==============================] - 0s 78us/sample - loss: 48.5835 - mean_squared_error: 48.5835 - val_loss: 127.2387 - val_mean_squared_error: 127.2387\n",
+-      "Epoch 15/50\n",
+-      "339/339 [==============================] - 0s 87us/sample - loss: 37.8733 - mean_squared_error: 37.8733 - val_loss: 116.6476 - val_mean_squared_error: 116.6476\n",
+-      "Epoch 16/50\n",
+-      "339/339 [==============================] - 0s 153us/sample - loss: 30.1285 - mean_squared_error: 30.1285 - val_loss: 109.2158 - val_mean_squared_error: 109.2158\n",
+-      "Epoch 17/50\n",
+-      "339/339 [==============================] - 0s 72us/sample - loss: 24.8799 - mean_squared_error: 24.8799 - val_loss: 104.6462 - val_mean_squared_error: 104.6462\n",
+-      "Epoch 18/50\n",
+-      "339/339 [==============================] - 0s 102us/sample - loss: 21.6781 - mean_squared_error: 21.6781 - val_loss: 101.8188 - val_mean_squared_error: 101.8188\n",
+-      "Epoch 19/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 19.5379 - mean_squared_error: 19.5379 - val_loss: 99.6642 - val_mean_squared_error: 99.6642\n",
+-      "Epoch 20/50\n",
+-      "339/339 [==============================] - 0s 79us/sample - loss: 17.8237 - mean_squared_error: 17.8237 - val_loss: 98.5439 - val_mean_squared_error: 98.5439\n",
+-      "Epoch 21/50\n",
+-      "339/339 [==============================] - 0s 75us/sample - loss: 16.7360 - mean_squared_error: 16.7360 - val_loss: 97.5971 - val_mean_squared_error: 97.5971\n",
+-      "Epoch 22/50\n",
+-      "339/339 [==============================] - 0s 73us/sample - loss: 15.6916 - mean_squared_error: 15.6916 - val_loss: 96.4185 - val_mean_squared_error: 96.4185\n",
+-      "Epoch 23/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 14.9834 - mean_squared_error: 14.9834 - val_loss: 95.1004 - val_mean_squared_error: 95.1004\n",
+-      "Epoch 24/50\n",
+-      "339/339 [==============================] - 0s 83us/sample - loss: 14.3874 - mean_squared_error: 14.3874 - val_loss: 93.8591 - val_mean_squared_error: 93.8591\n",
+-      "Epoch 25/50\n",
+-      "339/339 [==============================] - 0s 78us/sample - loss: 13.8535 - mean_squared_error: 13.8535 - val_loss: 92.3135 - val_mean_squared_error: 92.3135\n",
+-      "Epoch 26/50\n",
+-      "339/339 [==============================] - 0s 80us/sample - loss: 13.4950 - mean_squared_error: 13.4950 - val_loss: 90.9254 - val_mean_squared_error: 90.9254\n",
+-      "Epoch 27/50\n",
+-      "339/339 [==============================] - 0s 70us/sample - loss: 13.0603 - mean_squared_error: 13.0603 - val_loss: 89.2812 - val_mean_squared_error: 89.2812\n",
+-      "Epoch 28/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 12.7232 - mean_squared_error: 12.7232 - val_loss: 87.8430 - val_mean_squared_error: 87.8430\n",
+-      "Epoch 29/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 12.3633 - mean_squared_error: 12.3633 - val_loss: 86.4976 - val_mean_squared_error: 86.4976\n",
+-      "Epoch 30/50\n",
+-      "339/339 [==============================] - 0s 72us/sample - loss: 12.0572 - mean_squared_error: 12.0572 - val_loss: 84.8616 - val_mean_squared_error: 84.8616\n",
+-      "Epoch 31/50\n",
+-      "339/339 [==============================] - 0s 69us/sample - loss: 11.7646 - mean_squared_error: 11.7646 - val_loss: 83.5297 - val_mean_squared_error: 83.5297\n",
+-      "Epoch 32/50\n",
+-      "339/339 [==============================] - 0s 68us/sample - loss: 11.5216 - mean_squared_error: 11.5216 - val_loss: 82.6964 - val_mean_squared_error: 82.6964\n",
+-      "Epoch 33/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 11.2523 - mean_squared_error: 11.2523 - val_loss: 81.5098 - val_mean_squared_error: 81.5098\n",
+-      "Epoch 34/50\n",
+-      "339/339 [==============================] - 0s 73us/sample - loss: 11.0146 - mean_squared_error: 11.0146 - val_loss: 80.1996 - val_mean_squared_error: 80.1996\n",
+-      "Epoch 35/50\n",
+-      "339/339 [==============================] - 0s 70us/sample - loss: 10.7820 - mean_squared_error: 10.7820 - val_loss: 78.9657 - val_mean_squared_error: 78.9657\n",
+-      "Epoch 36/50\n",
+-      "339/339 [==============================] - 0s 69us/sample - loss: 10.6086 - mean_squared_error: 10.6086 - val_loss: 77.8950 - val_mean_squared_error: 77.8950\n",
+-      "Epoch 37/50\n",
+-      "339/339 [==============================] - 0s 72us/sample - loss: 10.3683 - mean_squared_error: 10.3683 - val_loss: 77.2041 - val_mean_squared_error: 77.2041\n",
+-      "Epoch 38/50\n",
+-      "339/339 [==============================] - 0s 69us/sample - loss: 10.1993 - mean_squared_error: 10.1993 - val_loss: 76.1137 - val_mean_squared_error: 76.1137\n",
+-      "Epoch 39/50\n",
+-      "339/339 [==============================] - 0s 71us/sample - loss: 9.9866 - mean_squared_error: 9.9866 - val_loss: 75.1318 - val_mean_squared_error: 75.1318\n",
+-      "Epoch 40/50\n",
+-      "339/339 [==============================] - 0s 69us/sample - loss: 9.8172 - mean_squared_error: 9.8172 - val_loss: 74.2301 - val_mean_squared_error: 74.2301\n",
+-      "Epoch 41/50\n",
+-      "339/339 [==============================] - 0s 68us/sample - loss: 9.6379 - mean_squared_error: 9.6379 - val_loss: 73.3440 - val_mean_squared_error: 73.3439\n",
+-      "Epoch 42/50\n",
+-      "339/339 [==============================] - 0s 70us/sample - loss: 9.4828 - mean_squared_error: 9.4828 - val_loss: 72.4156 - val_mean_squared_error: 72.4156\n",
+-      "Epoch 43/50\n",
+-      "339/339 [==============================] - 0s 72us/sample - loss: 9.3129 - mean_squared_error: 9.3129 - val_loss: 71.6323 - val_mean_squared_error: 71.6323\n",
+-      "Epoch 44/50\n",
+-      "339/339 [==============================] - 0s 79us/sample - loss: 9.1870 - mean_squared_error: 9.1870 - val_loss: 70.7300 - val_mean_squared_error: 70.7300\n",
+-      "Epoch 45/50\n",
+-      "339/339 [==============================] - 0s 77us/sample - loss: 9.0110 - mean_squared_error: 9.0110 - val_loss: 69.7804 - val_mean_squared_error: 69.7804\n",
+-      "Epoch 46/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 8.8892 - mean_squared_error: 8.8892 - val_loss: 69.0510 - val_mean_squared_error: 69.0510\n",
+-      "Epoch 47/50\n",
+-      "339/339 [==============================] - 0s 76us/sample - loss: 8.7423 - mean_squared_error: 8.7423 - val_loss: 67.9057 - val_mean_squared_error: 67.9057\n",
+-      "Epoch 48/50\n",
+-      "339/339 [==============================] - 0s 71us/sample - loss: 8.6113 - mean_squared_error: 8.6113 - val_loss: 67.0401 - val_mean_squared_error: 67.0401\n",
+-      "Epoch 49/50\n",
+-      "339/339 [==============================] - 0s 75us/sample - loss: 8.4658 - mean_squared_error: 8.4658 - val_loss: 66.3409 - val_mean_squared_error: 66.3409\n",
+-      "Epoch 50/50\n",
+-      "339/339 [==============================] - 0s 74us/sample - loss: 8.3440 - mean_squared_error: 8.3440 - val_loss: 65.5890 - val_mean_squared_error: 65.5890\n"
++     "ename": "ConfigError",
++     "evalue": "Attempted to change value of key \"epochs\" from 50 to 500\nIf you really want to do this, pass allow_val_change=True to config.update()",
++     "output_type": "error",
++     "traceback": [
++      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
++      "\u001b[0;31mConfigError\u001b[0m                               Traceback (most recent call last)",
++      "\u001b[0;32m<ipython-input-13-edf8d970061d>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0minputs\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mX\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mshape\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;31m# wandb.config.update(allow_val_change=True)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m \u001b[0mwandb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconfig\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mepochs\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m500\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m \u001b[0mwandb\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconfig\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mbatch_size\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;36m20\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
++      "\u001b[0;32m//anaconda3/envs/U4-S1-NLP/lib/python3.7/site-packages/wandb/wandb_config.py\u001b[0m in \u001b[0;36m__setitem__\u001b[0;34m(self, key, val)\u001b[0m\n\u001b[1;32m    178\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    179\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m__setitem__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mval\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 180\u001b[0;31m         \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mval\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_sanitize\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mval\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    181\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_items\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mval\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    182\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpersist\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
++      "\u001b[0;32m//anaconda3/envs/U4-S1-NLP/lib/python3.7/site-packages/wandb/wandb_config.py\u001b[0m in \u001b[0;36m_sanitize\u001b[0;34m(self, key, val, allow_val_change)\u001b[0m\n\u001b[1;32m    194\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0mkey\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_items\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0mval\u001b[0m \u001b[0;34m!=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_items\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mkey\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    195\u001b[0m                 raise ConfigError('Attempted to change value of key \"{}\" from {} to {}\\nIf you really want to do this, pass allow_val_change=True to config.update()'.format(\n\u001b[0;32m--> 196\u001b[0;31m                     key, self._items[key], val))\n\u001b[0m\u001b[1;32m    197\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0mkey\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mval\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    198\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
++      "\u001b[0;31mConfigError\u001b[0m: Attempted to change value of key \"epochs\" from 50 to 500\nIf you really want to do this, pass allow_val_change=True to config.update()"
+      ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x1a35c50d68>"
+-      ]
+-     },
+-     "execution_count": 16,
+-     "metadata": {},
+-     "output_type": "execute_result"
+     }
+    ],
+    "source": [
+     "# Important Hyperparameters\n",
+     "inputs = X.shape[1]\n",
+-    "wandb.config.epochs = 50\n",
+-    "wandb.config.batch_size = 10\n",
++    "# wandb.config.update(allow_val_change=True)\n",
++    "wandb.config.epochs = 500\n",
++    "wandb.config.batch_size = 20\n",
++    "\n",
+     "\n",
+     "\n",
+     "# Create Model\n",
+@@ -1202,9 +1093,9 @@
+    "version": "0.3.2"
+   },
+   "kernelspec": {
+-   "display_name": "U4-S2-NNF (Python 3.7)",
++   "display_name": "U4-S1-NLP (Python3)",
+    "language": "python",
+-   "name": "u4-s2-nnf"
++   "name": "u4-s1-nlp"
+   },
+   "language_info": {
+    "codemirror_mode": {
+@@ -1220,5 +1111,5 @@
+   }
+  },
+  "nbformat": 4,
+- "nbformat_minor": 2
++ "nbformat_minor": 4
+ }

@@ -1,0 +1,26 @@
+{
+    "root": "/Users/Elizabeth/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/elizabethts/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "509df936dd0d206b139c6f6a9589ca2b96d86f41"
+    },
+    "email": "liztersahakyan@gmail.com",
+    "startedAt": "2019-09-12T16:35:59.703431",
+    "host": "Elizabeths-MacBook-Pro.local",
+    "username": "Elizabeth",
+    "os": "Darwin-18.7.0-x86_64-i386-64bit",
+    "python": "3.7.3",
+    "executable": "//anaconda3/envs/U4-S1-NLP/bin/Python",
+    "cpu_count": 4,
+    "args": [
+        "-f",
+        "/Users/Elizabeth/Library/Jupyter/runtime/kernel-b0b362b2-2e68-4aee-bdb2-e3f21e507d69.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "young-dawn-9",
+    "project": "ds5-hyperparameter-tuning",
+    "heartbeatAt": "2019-09-12T16:36:37.360401"
+}

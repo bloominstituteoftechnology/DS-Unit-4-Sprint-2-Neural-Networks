@@ -1,0 +1,16 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.8.9
+    is_jupyter_run: true
+batch_size:
+  desc: null
+  value: 10
+epochs:
+  desc: null
+  value: 50
+hidden_1_size:
+  desc: null
+  value: 120
