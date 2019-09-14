@@ -1,0 +1,26 @@
+{
+    "root": "/Users/RichT/Documents/repos/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Rtrey29/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "eb2b57885787e67996a4af618fc9b90c12181d8f"
+    },
+    "email": "rcloud29@icloud.com",
+    "startedAt": "2019-09-12T17:43:10.260735",
+    "host": "Richs-5K.local",
+    "username": "RichT",
+    "os": "Darwin-18.7.0-x86_64-i386-64bit",
+    "python": "3.7.3",
+    "executable": "/anaconda3/envs/U4-S2-NN/bin/python",
+    "cpu_count": 4,
+    "args": [
+        "-f",
+        "/Users/RichT/Library/Jupyter/runtime/kernel-025af927-319f-436c-8c88-a3f801c48ddb.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "confused-serenity-12",
+    "project": "ds5-hyperparameter-tuning",
+    "heartbeatAt": "2019-09-12T17:43:17.394697"
+}
