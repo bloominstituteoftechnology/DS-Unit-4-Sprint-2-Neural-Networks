@@ -55,7 +55,8 @@ class Perceptron():
         return dW, db
 
     def fit(self, X, y):
-        """Fit training data
+        """
+        Fit training data
         X : Training vectors, X.shape : [#samples, #features]
         y : Target values, y.shape : [#samples]
         """
@@ -97,6 +98,9 @@ class Perceptron():
         plt.xlabel('Epochs')
         plt.ylabel('MAE Error')
         plt.show()
+
+    def accuracy_score(self, y_true, y_pred):
+        return (y_true == y_pred).sum()
 
 
 if __name__ == "__main__":
