@@ -21,6 +21,7 @@ momentum = 0.9
 np.random.seed(0)
 
 
+
 def main():
     diabetes = pd.read_csv(
         'https://raw.githubusercontent.com/ryanleeallred/datasets/master/diabetes.csv')
