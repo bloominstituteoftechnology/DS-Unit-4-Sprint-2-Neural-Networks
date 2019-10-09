@@ -75,7 +75,7 @@ class Perceptron():
             self.loss.append(np.sum(E.T))
 
             # Calculate adjustments/gradient
-            dO = E * self.__sigmoid_derivative(y_hat)
+            dO = E * self.__sigmoid_derivative(Z)
             dW, db = self.__backprop(dO, X)
 
             # Update the Weights with new gradient
