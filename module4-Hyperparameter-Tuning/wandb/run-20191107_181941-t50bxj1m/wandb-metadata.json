@@ -1,0 +1,27 @@
+{
+    "root": "/storage/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/AHartNtkn/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "73a70c779141c63714e64b49d6b506c990cf7252"
+    },
+    "email": null,
+    "startedAt": "2019-11-07T18:19:39.826377",
+    "host": "b7153401aa49",
+    "username": "root",
+    "executable": "/usr/bin/python3",
+    "os": "Linux-4.4.0-130-generic-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.6.8",
+    "cpu_count": 2,
+    "cuda": "10.0.130",
+    "args": [
+        "-f",
+        "/root/.local/share/jupyter/runtime/kernel-e6e016a7-731e-481e-8e2e-7e1024ae4b8b.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "swift-oath-10",
+    "project": "boston",
+    "heartbeatAt": "2019-11-07T18:20:01.363597"
+}

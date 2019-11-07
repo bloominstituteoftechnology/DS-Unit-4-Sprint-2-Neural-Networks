@@ -1,0 +1,17 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.8.15
+    is_jupyter_run: true
+    python_version: 3.6.8
+batch_size:
+  desc: null
+  value: 371.3712486803767
+epochs:
+  desc: null
+  value: 938.7278776704525
+learning_rate:
+  desc: null
+  value: 0.6293385724113169

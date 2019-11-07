@@ -1,0 +1,89 @@
+{
+    "graph": {
+        "_type": "graph",
+        "edges": [
+            [
+                "dense_71_input",
+                "dense_71"
+            ],
+            [
+                "dense_71",
+                "dense_72"
+            ],
+            [
+                "dense_72",
+                "dense_73"
+            ],
+            [
+                "dense_73",
+                "dense_74"
+            ]
+        ],
+        "nodes": [
+            {
+                "id": "dense_71_input",
+                "name": "dense_71_input",
+                "class_name": "InputLayer",
+                "output_shape": [
+                    [
+                        null,
+                        13
+                    ]
+                ],
+                "num_parameters": 0
+            },
+            {
+                "id": "dense_71",
+                "name": "dense_71",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    64
+                ],
+                "num_parameters": 896
+            },
+            {
+                "id": "dense_72",
+                "name": "dense_72",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    64
+                ],
+                "num_parameters": 4160
+            },
+            {
+                "id": "dense_73",
+                "name": "dense_73",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    64
+                ],
+                "num_parameters": 4160
+            },
+            {
+                "id": "dense_74",
+                "name": "dense_74",
+                "class_name": "Dense",
+                "output_shape": [
+                    null,
+                    1
+                ],
+                "num_parameters": 65
+            }
+        ],
+        "format": "keras"
+    },
+    "epoch": 49,
+    "mse": 4.338450908660889,
+    "_runtime": 9.691691398620604,
+    "mae": 1.5541589260101318,
+    "_step": 49,
+    "val_loss": 15.564386908687762,
+    "val_mae": 2.620642900466919,
+    "loss": 4.338450690110524,
+    "val_mse": 15.564385414123535,
+    "_timestamp": 1573150951.0649033,
+    "accuracy": 0.002475247485563159
+}
