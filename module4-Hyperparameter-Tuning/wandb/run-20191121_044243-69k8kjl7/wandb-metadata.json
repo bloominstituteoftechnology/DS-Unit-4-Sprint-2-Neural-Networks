@@ -1,0 +1,26 @@
+{
+    "root": "/home/martin/Documents/MyGitHub/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/martinclehman/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "c5b4d1b2d2fdbdd950fbb55c0af4ba8b0bdebcd7"
+    },
+    "email": "martinclehman@users.noreply.github.com",
+    "startedAt": "2019-11-21T04:42:42.354728",
+    "host": "martin-XPS-13-9380",
+    "username": "martin",
+    "executable": "/home/martin/anaconda3/bin/python",
+    "os": "Linux-4.15.0-1064-oem-x86_64-with-debian-buster-sid",
+    "python": "3.7.3",
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "/run/user/1001/jupyter/kernel-c5a1907d-5aec-424a-8254-1da8c8948a6e.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "eager-violet-102",
+    "project": "boston",
+    "heartbeatAt": "2019-11-21T04:43:14.678889"
+}
