@@ -1,0 +1,1628 @@
+nbdiff /tmp/roRgMt_LS_DS_423_Keras_Assignment.ipynb module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb
+--- /tmp/roRgMt_LS_DS_423_Keras_Assignment.ipynb  2019-12-12 18:53:54.287042
++++ module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb  2019-12-12 17:58:03.688324
+[34m## inserted before /cells/6/outputs/0:[0m
+[32m+  output:
+[32m+    output_type: execute_result
+[32m+    execution_count: 6
+[32m+    data:
+[32m+      text/html:
+[32m+        <div>
+[32m+        <style scoped>
+[32m+            .dataframe tbody tr th:only-of-type {
+[32m+                vertical-align: middle;
+[32m+            }
+[32m+        
+[32m+            .dataframe tbody tr th {
+[32m+                vertical-align: top;
+[32m+            }
+[32m+        
+[32m+            .dataframe thead th {
+[32m+                text-align: right;
+[32m+            }
+[32m+        </style>
+[32m+        <table border="1" class="dataframe">
+[32m+          <thead>
+[32m+            <tr style="text-align: right;">
+[32m+              <th></th>
+[32m+              <th>MSSubClass</th>
+[32m+              <th>MSZoning</th>
+[32m+              <th>LotFrontage</th>
+[32m+              <th>LotArea</th>
+[32m+              <th>Street</th>
+[32m+              <th>LotShape</th>
+[32m+              <th>LandContour</th>
+[32m+              <th>Utilities</th>
+[32m+              <th>LotConfig</th>
+[32m+              <th>LandSlope</th>
+[32m+              <th>...</th>
+[32m+              <th>PoolArea</th>
+[32m+              <th>PoolQC</th>
+[32m+              <th>Fence</th>
+[32m+              <th>MiscFeature</th>
+[32m+              <th>MiscVal</th>
+[32m+              <th>MoSold</th>
+[32m+              <th>YrSold</th>
+[32m+              <th>SaleType</th>
+[32m+              <th>SaleCondition</th>
+[32m+              <th>SalePrice</th>
+[32m+            </tr>
+[32m+          </thead>
+[32m+          <tbody>
+[32m+            <tr>
+[32m+              <th>412</th>
+[32m+              <td>20</td>
+[32m+              <td>FV</td>
+[32m+              <td>0.0</td>
+[32m+              <td>4403</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR2</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2010</td>
+[32m+              <td>New</td>
+[32m+              <td>Partial</td>
+[32m+              <td>222000</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>871</th>
+[32m+              <td>60</td>
+[32m+              <td>RL</td>
+[32m+              <td>70.0</td>
+[32m+              <td>8750</td>
+[32m+              <td>Pave</td>
+[32m+              <td>Reg</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2010</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+              <td>200500</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>791</th>
+[32m+              <td>80</td>
+[32m+              <td>RL</td>
+[32m+              <td>0.0</td>
+[32m+              <td>11333</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR1</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Corner</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>5</td>
+[32m+              <td>2007</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+              <td>146800</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>1026</th>
+[32m+              <td>20</td>
+[32m+              <td>RL</td>
+[32m+              <td>73.0</td>
+[32m+              <td>9300</td>
+[32m+              <td>Pave</td>
+[32m+              <td>Reg</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>4</td>
+[32m+              <td>2010</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+              <td>167500</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>908</th>
+[32m+              <td>20</td>
+[32m+              <td>RL</td>
+[32m+              <td>0.0</td>
+[32m+              <td>8885</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR1</td>
+[32m+              <td>Low</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Mod</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>MnPrv</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2006</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+              <td>131000</td>
+[32m+            </tr>
+[32m+          </tbody>
+[32m+        </table>
+[32m+        <p>5 rows × 79 columns</p>
+[32m+        </div>
+[32m+      text/plain:
+[32m+              MSSubClass MSZoning  LotFrontage  LotArea Street LotShape LandContour  \
+[32m+        412           20       FV          0.0     4403   Pave      IR2         Lvl   
+[32m+        871           60       RL         70.0     8750   Pave      Reg         Lvl   
+[32m+        791           80       RL          0.0    11333   Pave      IR1         Lvl   
+[32m+        1026          20       RL         73.0     9300   Pave      Reg         Lvl   
+[32m+        908           20       RL          0.0     8885   Pave      IR1         Low   
+[32m+        
+[32m+             Utilities LotConfig LandSlope  ... PoolArea   PoolQC    Fence  \
+[32m+        412     AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[32m+        871     AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[32m+        791     AllPub    Corner       Gtl  ...        0  Unknown  Unknown   
+[32m+        1026    AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[32m+        908     AllPub    Inside       Mod  ...        0  Unknown    MnPrv   
+[32m+        
+[32m+             MiscFeature MiscVal  MoSold  YrSold  SaleType  SaleCondition SalePrice  
+[32m+        412      Unknown       0       6    2010       New        Partial    222000  
+[32m+        871      Unknown       0       6    2010        WD         Normal    200500  
+[32m+        791      Unknown       0       5    2007        WD         Normal    146800  
+[32m+        1026     Unknown       0       4    2010        WD         Normal    167500  
+[32m+        908      Unknown       0       6    2006        WD         Normal    131000  
+[32m+        
+[32m+        [5 rows x 79 columns]
+
+[0m[34m## deleted /cells/6/outputs/0:[0m
+[31m-  output:
+[31m-    output_type: execute_result
+[31m-    execution_count: 6
+[31m-    data:
+[31m-      text/html:
+[31m-        <div>
+[31m-        <style scoped>
+[31m-            .dataframe tbody tr th:only-of-type {
+[31m-                vertical-align: middle;
+[31m-            }
+[31m-        
+[31m-            .dataframe tbody tr th {
+[31m-                vertical-align: top;
+[31m-            }
+[31m-        
+[31m-            .dataframe thead th {
+[31m-                text-align: right;
+[31m-            }
+[31m-        </style>
+[31m-        <table border="1" class="dataframe">
+[31m-          <thead>
+[31m-            <tr style="text-align: right;">
+[31m-              <th></th>
+[31m-              <th>MSSubClass</th>
+[31m-              <th>MSZoning</th>
+[31m-              <th>LotFrontage</th>
+[31m-              <th>LotArea</th>
+[31m-              <th>Street</th>
+[31m-              <th>LotShape</th>
+[31m-              <th>LandContour</th>
+[31m-              <th>Utilities</th>
+[31m-              <th>LotConfig</th>
+[31m-              <th>LandSlope</th>
+[31m-              <th>...</th>
+[31m-              <th>PoolArea</th>
+[31m-              <th>PoolQC</th>
+[31m-              <th>Fence</th>
+[31m-              <th>MiscFeature</th>
+[31m-              <th>MiscVal</th>
+[31m-              <th>MoSold</th>
+[31m-              <th>YrSold</th>
+[31m-              <th>SaleType</th>
+[31m-              <th>SaleCondition</th>
+[31m-              <th>SalePrice</th>
+[31m-            </tr>
+[31m-          </thead>
+[31m-          <tbody>
+[31m-            <tr>
+[31m-              <th>380</th>
+[31m-              <td>50</td>
+[31m-              <td>RL</td>
+[31m-              <td>50.0</td>
+[31m-              <td>5000</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>5</td>
+[31m-              <td>2010</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-              <td>127000</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>813</th>
+[31m-              <td>20</td>
+[31m-              <td>RL</td>
+[31m-              <td>75.0</td>
+[31m-              <td>9750</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Shed</td>
+[31m-              <td>500</td>
+[31m-              <td>4</td>
+[31m-              <td>2007</td>
+[31m-              <td>COD</td>
+[31m-              <td>Normal</td>
+[31m-              <td>157900</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>1344</th>
+[31m-              <td>60</td>
+[31m-              <td>RL</td>
+[31m-              <td>85.0</td>
+[31m-              <td>11103</td>
+[31m-              <td>Pave</td>
+[31m-              <td>IR1</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Corner</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>7</td>
+[31m-              <td>2007</td>
+[31m-              <td>New</td>
+[31m-              <td>Partial</td>
+[31m-              <td>155835</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>513</th>
+[31m-              <td>20</td>
+[31m-              <td>RL</td>
+[31m-              <td>71.0</td>
+[31m-              <td>9187</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Bnk</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Corner</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>6</td>
+[31m-              <td>2007</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-              <td>134000</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>258</th>
+[31m-              <td>60</td>
+[31m-              <td>RL</td>
+[31m-              <td>80.0</td>
+[31m-              <td>12435</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>5</td>
+[31m-              <td>2008</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-              <td>231500</td>
+[31m-            </tr>
+[31m-          </tbody>
+[31m-        </table>
+[31m-        <p>5 rows × 79 columns</p>
+[31m-        </div>
+[31m-      text/plain:
+[31m-              MSSubClass MSZoning  LotFrontage  LotArea Street LotShape LandContour  \
+[31m-        380           50       RL         50.0     5000   Pave      Reg         Lvl   
+[31m-        813           20       RL         75.0     9750   Pave      Reg         Lvl   
+[31m-        1344          60       RL         85.0    11103   Pave      IR1         Lvl   
+[31m-        513           20       RL         71.0     9187   Pave      Reg         Bnk   
+[31m-        258           60       RL         80.0    12435   Pave      Reg         Lvl   
+[31m-        
+[31m-             Utilities LotConfig LandSlope  ... PoolArea   PoolQC    Fence  \
+[31m-        380     AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[31m-        813     AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[31m-        1344    AllPub    Corner       Gtl  ...        0  Unknown  Unknown   
+[31m-        513     AllPub    Corner       Gtl  ...        0  Unknown  Unknown   
+[31m-        258     AllPub    Inside       Gtl  ...        0  Unknown  Unknown   
+[31m-        
+[31m-             MiscFeature MiscVal  MoSold  YrSold  SaleType  SaleCondition SalePrice  
+[31m-        380      Unknown       0       5    2010        WD         Normal    127000  
+[31m-        813         Shed     500       4    2007       COD         Normal    157900  
+[31m-        1344     Unknown       0       7    2007       New        Partial    155835  
+[31m-        513      Unknown       0       6    2007        WD         Normal    134000  
+[31m-        258      Unknown       0       5    2008        WD         Normal    231500  
+[31m-        
+[31m-        [5 rows x 79 columns]
+
+[0m[34m## inserted before /cells/7/outputs/0:[0m
+[32m+  output:
+[32m+    output_type: execute_result
+[32m+    execution_count: 7
+[32m+    data:
+[32m+      text/html:
+[32m+        <div>
+[32m+        <style scoped>
+[32m+            .dataframe tbody tr th:only-of-type {
+[32m+                vertical-align: middle;
+[32m+            }
+[32m+        
+[32m+            .dataframe tbody tr th {
+[32m+                vertical-align: top;
+[32m+            }
+[32m+        
+[32m+            .dataframe thead th {
+[32m+                text-align: right;
+[32m+            }
+[32m+        </style>
+[32m+        <table border="1" class="dataframe">
+[32m+          <thead>
+[32m+            <tr style="text-align: right;">
+[32m+              <th></th>
+[32m+              <th>MSSubClass</th>
+[32m+              <th>MSZoning</th>
+[32m+              <th>LotFrontage</th>
+[32m+              <th>LotArea</th>
+[32m+              <th>Street</th>
+[32m+              <th>LotShape</th>
+[32m+              <th>LandContour</th>
+[32m+              <th>Utilities</th>
+[32m+              <th>LotConfig</th>
+[32m+              <th>LandSlope</th>
+[32m+              <th>...</th>
+[32m+              <th>ScreenPorch</th>
+[32m+              <th>PoolArea</th>
+[32m+              <th>PoolQC</th>
+[32m+              <th>Fence</th>
+[32m+              <th>MiscFeature</th>
+[32m+              <th>MiscVal</th>
+[32m+              <th>MoSold</th>
+[32m+              <th>YrSold</th>
+[32m+              <th>SaleType</th>
+[32m+              <th>SaleCondition</th>
+[32m+            </tr>
+[32m+          </thead>
+[32m+          <tbody>
+[32m+            <tr>
+[32m+              <th>412</th>
+[32m+              <td>20</td>
+[32m+              <td>FV</td>
+[32m+              <td>0.0</td>
+[32m+              <td>4403</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR2</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2010</td>
+[32m+              <td>New</td>
+[32m+              <td>Partial</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>871</th>
+[32m+              <td>60</td>
+[32m+              <td>RL</td>
+[32m+              <td>70.0</td>
+[32m+              <td>8750</td>
+[32m+              <td>Pave</td>
+[32m+              <td>Reg</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2010</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>791</th>
+[32m+              <td>80</td>
+[32m+              <td>RL</td>
+[32m+              <td>0.0</td>
+[32m+              <td>11333</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR1</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Corner</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>5</td>
+[32m+              <td>2007</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>1026</th>
+[32m+              <td>20</td>
+[32m+              <td>RL</td>
+[32m+              <td>73.0</td>
+[32m+              <td>9300</td>
+[32m+              <td>Pave</td>
+[32m+              <td>Reg</td>
+[32m+              <td>Lvl</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Gtl</td>
+[32m+              <td>...</td>
+[32m+              <td>143</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>4</td>
+[32m+              <td>2010</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+            </tr>
+[32m+            <tr>
+[32m+              <th>908</th>
+[32m+              <td>20</td>
+[32m+              <td>RL</td>
+[32m+              <td>0.0</td>
+[32m+              <td>8885</td>
+[32m+              <td>Pave</td>
+[32m+              <td>IR1</td>
+[32m+              <td>Low</td>
+[32m+              <td>AllPub</td>
+[32m+              <td>Inside</td>
+[32m+              <td>Mod</td>
+[32m+              <td>...</td>
+[32m+              <td>0</td>
+[32m+              <td>0</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>MnPrv</td>
+[32m+              <td>Unknown</td>
+[32m+              <td>0</td>
+[32m+              <td>6</td>
+[32m+              <td>2006</td>
+[32m+              <td>WD</td>
+[32m+              <td>Normal</td>
+[32m+            </tr>
+[32m+          </tbody>
+[32m+        </table>
+[32m+        <p>5 rows × 78 columns</p>
+[32m+        </div>
+[32m+      text/plain:
+[32m+              MSSubClass MSZoning  LotFrontage  LotArea Street LotShape LandContour  \
+[32m+        412           20       FV          0.0     4403   Pave      IR2         Lvl   
+[32m+        871           60       RL         70.0     8750   Pave      Reg         Lvl   
+[32m+        791           80       RL          0.0    11333   Pave      IR1         Lvl   
+[32m+        1026          20       RL         73.0     9300   Pave      Reg         Lvl   
+[32m+        908           20       RL          0.0     8885   Pave      IR1         Low   
+[32m+        
+[32m+             Utilities LotConfig LandSlope  ... ScreenPorch PoolArea   PoolQC  \
+[32m+        412     AllPub    Inside       Gtl  ...           0        0  Unknown   
+[32m+        871     AllPub    Inside       Gtl  ...           0        0  Unknown   
+[32m+        791     AllPub    Corner       Gtl  ...           0        0  Unknown   
+[32m+        1026    AllPub    Inside       Gtl  ...         143        0  Unknown   
+[32m+        908     AllPub    Inside       Mod  ...           0        0  Unknown   
+[32m+        
+[32m+                Fence MiscFeature  MiscVal  MoSold  YrSold  SaleType SaleCondition  
+[32m+        412   Unknown     Unknown        0       6    2010       New       Partial  
+[32m+        871   Unknown     Unknown        0       6    2010        WD        Normal  
+[32m+        791   Unknown     Unknown        0       5    2007        WD        Normal  
+[32m+        1026  Unknown     Unknown        0       4    2010        WD        Normal  
+[32m+        908     MnPrv     Unknown        0       6    2006        WD        Normal  
+[32m+        
+[32m+        [5 rows x 78 columns]
+
+[0m[34m## deleted /cells/7/outputs/0:[0m
+[31m-  output:
+[31m-    output_type: execute_result
+[31m-    execution_count: 7
+[31m-    data:
+[31m-      text/html:
+[31m-        <div>
+[31m-        <style scoped>
+[31m-            .dataframe tbody tr th:only-of-type {
+[31m-                vertical-align: middle;
+[31m-            }
+[31m-        
+[31m-            .dataframe tbody tr th {
+[31m-                vertical-align: top;
+[31m-            }
+[31m-        
+[31m-            .dataframe thead th {
+[31m-                text-align: right;
+[31m-            }
+[31m-        </style>
+[31m-        <table border="1" class="dataframe">
+[31m-          <thead>
+[31m-            <tr style="text-align: right;">
+[31m-              <th></th>
+[31m-              <th>MSSubClass</th>
+[31m-              <th>MSZoning</th>
+[31m-              <th>LotFrontage</th>
+[31m-              <th>LotArea</th>
+[31m-              <th>Street</th>
+[31m-              <th>LotShape</th>
+[31m-              <th>LandContour</th>
+[31m-              <th>Utilities</th>
+[31m-              <th>LotConfig</th>
+[31m-              <th>LandSlope</th>
+[31m-              <th>...</th>
+[31m-              <th>ScreenPorch</th>
+[31m-              <th>PoolArea</th>
+[31m-              <th>PoolQC</th>
+[31m-              <th>Fence</th>
+[31m-              <th>MiscFeature</th>
+[31m-              <th>MiscVal</th>
+[31m-              <th>MoSold</th>
+[31m-              <th>YrSold</th>
+[31m-              <th>SaleType</th>
+[31m-              <th>SaleCondition</th>
+[31m-            </tr>
+[31m-          </thead>
+[31m-          <tbody>
+[31m-            <tr>
+[31m-              <th>380</th>
+[31m-              <td>50</td>
+[31m-              <td>RL</td>
+[31m-              <td>50.0</td>
+[31m-              <td>5000</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>5</td>
+[31m-              <td>2010</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>813</th>
+[31m-              <td>20</td>
+[31m-              <td>RL</td>
+[31m-              <td>75.0</td>
+[31m-              <td>9750</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Shed</td>
+[31m-              <td>500</td>
+[31m-              <td>4</td>
+[31m-              <td>2007</td>
+[31m-              <td>COD</td>
+[31m-              <td>Normal</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>1344</th>
+[31m-              <td>60</td>
+[31m-              <td>RL</td>
+[31m-              <td>85.0</td>
+[31m-              <td>11103</td>
+[31m-              <td>Pave</td>
+[31m-              <td>IR1</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Corner</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>7</td>
+[31m-              <td>2007</td>
+[31m-              <td>New</td>
+[31m-              <td>Partial</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>513</th>
+[31m-              <td>20</td>
+[31m-              <td>RL</td>
+[31m-              <td>71.0</td>
+[31m-              <td>9187</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Bnk</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Corner</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>6</td>
+[31m-              <td>2007</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-            </tr>
+[31m-            <tr>
+[31m-              <th>258</th>
+[31m-              <td>60</td>
+[31m-              <td>RL</td>
+[31m-              <td>80.0</td>
+[31m-              <td>12435</td>
+[31m-              <td>Pave</td>
+[31m-              <td>Reg</td>
+[31m-              <td>Lvl</td>
+[31m-              <td>AllPub</td>
+[31m-              <td>Inside</td>
+[31m-              <td>Gtl</td>
+[31m-              <td>...</td>
+[31m-              <td>0</td>
+[31m-              <td>0</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>Unknown</td>
+[31m-              <td>0</td>
+[31m-              <td>5</td>
+[31m-              <td>2008</td>
+[31m-              <td>WD</td>
+[31m-              <td>Normal</td>
+[31m-            </tr>
+[31m-          </tbody>
+[31m-        </table>
+[31m-        <p>5 rows × 78 columns</p>
+[31m-        </div>
+[31m-      text/plain:
+[31m-              MSSubClass MSZoning  LotFrontage  LotArea Street LotShape LandContour  \
+[31m-        380           50       RL         50.0     5000   Pave      Reg         Lvl   
+[31m-        813           20       RL         75.0     9750   Pave      Reg         Lvl   
+[31m-        1344          60       RL         85.0    11103   Pave      IR1         Lvl   
+[31m-        513           20       RL         71.0     9187   Pave      Reg         Bnk   
+[31m-        258           60       RL         80.0    12435   Pave      Reg         Lvl   
+[31m-        
+[31m-             Utilities LotConfig LandSlope  ... ScreenPorch PoolArea   PoolQC  \
+[31m-        380     AllPub    Inside       Gtl  ...           0        0  Unknown   
+[31m-        813     AllPub    Inside       Gtl  ...           0        0  Unknown   
+[31m-        1344    AllPub    Corner       Gtl  ...           0        0  Unknown   
+[31m-        513     AllPub    Corner       Gtl  ...           0        0  Unknown   
+[31m-        258     AllPub    Inside       Gtl  ...           0        0  Unknown   
+[31m-        
+[31m-                Fence MiscFeature  MiscVal  MoSold  YrSold  SaleType SaleCondition  
+[31m-        380   Unknown     Unknown        0       5    2010        WD        Normal  
+[31m-        813   Unknown        Shed      500       4    2007       COD        Normal  
+[31m-        1344  Unknown     Unknown        0       7    2007       New       Partial  
+[31m-        513   Unknown     Unknown        0       6    2007        WD        Normal  
+[31m-        258   Unknown     Unknown        0       5    2008        WD        Normal  
+[31m-        
+[31m-        [5 rows x 78 columns]
+
+[0m[34m## modified /cells/9/outputs/0/text:[0m
+[36m@@ -5,21 +5,15 @@[m [mModel: "sequential"[m
+ _________________________________________________________________[m
+ Layer (type)                 Output Shape              Param #   [m
+ =================================================================[m
+[31m-dense (Dense)                (None, 60)                4740      [m
+[32m+[m[32mdense (Dense)                (None, 10)                790[m[41m       [m
+ _________________________________________________________________[m
+[31m-dense_1 (Dense)              (None, 60)                3660      [m
+[32m+[m[32mdense_1 (Dense)              (None, 10)                110[m[41m       [m
+ _________________________________________________________________[m
+[31m-dense_2 (Dense)              (None, 30)                1830      [m
+[32m+[m[32mdense_2 (Dense)              (None, 10)                110[m[41m       [m
+ _________________________________________________________________[m
+[31m-dense_3 (Dense)              (None, 30)                930       [m
+[31m-_________________________________________________________________[m
+[31m-dense_4 (Dense)              (None, 15)                465       [m
+[31m-_________________________________________________________________[m
+[31m-dense_5 (Dense)              (None, 15)                240       [m
+[31m-_________________________________________________________________[m
+[31m-dense_6 (Dense)              (None, 1)                 16        [m
+[32m+[m[32mdense_3 (Dense)              (None, 1)                 11[m[41m        [m
+ =================================================================[m
+[31m-Total params: 11,881[m
+[31m-Trainable params: 11,881[m
+[32m+[m[32mTotal params: 1,021[m
+[32m+[m[32mTrainable params: 1,021[m
+ Non-trainable params: 0[m
+ _________________________________________________________________[m
+
+[0m[34m## modified /cells/9/source:[0m
+[36m@@ -1,10 +1,8 @@[m
+[32m+[m[32m# for this model, tried including all dense layers as without the .add method[m
+ model = Sequential([[m
+[31m-    Dense(60, input_dim=78, activation='relu'),[m
+[31m-    Dense(60, activation='relu'),[m
+[31m-    Dense(30, activation='relu'),[m
+[31m-    Dense(30, activation='relu'),[m
+[31m-    Dense(15, activation='relu'),[m
+[31m-    Dense(15, activation='relu'),[m
+[32m+[m[32m    Dense(10, input_dim=78, activation='relu'),[m
+[32m+[m[32m    Dense(10, activation='relu'),[m
+[32m+[m[32m    Dense(10, activation='relu'),[m
+     Dense(1, activation='relu')[m
+ ])[m
+ model.compile(loss='mean_squared_error', optimizer='adam',[m
+
+[0m[34m## inserted before /cells/10/outputs/0:[0m
+[32m+  output:
+[32m+    output_type: stream
+[32m+    name: stdout
+[32m+    text:
+[32m+      Epoch 1/100
+[32m+      1095/1095 [==============================] - 0s 385us/sample - loss: 39796761062.2831 - mean_squared_error: 39796760576.0000
+[32m+      Epoch 2/100
+[32m+      1095/1095 [==============================] - 0s 97us/sample - loss: 39796589748.4858 - mean_squared_error: 39796588544.0000
+[32m+      Epoch 3/100
+[32m+      1095/1095 [==============================] - 0s 91us/sample - loss: 39795932503.2037 - mean_squared_error: 39795937280.0000
+[32m+      Epoch 4/100
+[32m+      1095/1095 [==============================] - 0s 95us/sample - loss: 39794015044.0329 - mean_squared_error: 39794020352.0000
+[32m+      Epoch 5/100
+[32m+      1095/1095 [==============================] - 0s 91us/sample - loss: 39790075748.7635 - mean_squared_error: 39790075904.0000
+[32m+      Epoch 6/100
+[32m+      1095/1095 [==============================] - 0s 91us/sample - loss: 39781899696.9790 - mean_squared_error: 39781900288.0000
+[32m+      Epoch 7/100
+[32m+      1095/1095 [==============================] - 0s 104us/sample - loss: 39766850873.2785 - mean_squared_error: 39766855680.0000
+[32m+      Epoch 8/100
+[32m+      1095/1095 [==============================] - 0s 101us/sample - loss: 39742026543.4594 - mean_squared_error: 39742025728.0000
+[32m+      Epoch 9/100
+[32m+      1095/1095 [==============================] - 0s 91us/sample - loss: 39704175312.0731 - mean_squared_error: 39704170496.0000
+[32m+      Epoch 10/100
+[32m+      1095/1095 [==============================] - 0s 84us/sample - loss: 39649202931.6091 - mean_squared_error: 39649202176.0000
+[32m+      Epoch 11/100
+[32m+      1095/1095 [==============================] - 0s 102us/sample - loss: 39571146553.7461 - mean_squared_error: 39571152896.0000
+[32m+      Epoch 12/100
+[32m+      1095/1095 [==============================] - 0s 95us/sample - loss: 39464839181.0922 - mean_squared_error: 39464833024.0000
+[32m+      Epoch 13/100
+[32m+      1095/1095 [==============================] - 0s 106us/sample - loss: 39325262568.3872 - mean_squared_error: 39325257728.0000
+[32m+      Epoch 14/100
+[32m+      1095/1095 [==============================] - 0s 102us/sample - loss: 39147176184.7525 - mean_squared_error: 39147180032.0000
+[32m+      Epoch 15/100
+[32m+      1095/1095 [==============================] - 0s 106us/sample - loss: 38924951379.9306 - mean_squared_error: 38924959744.0000
+[32m+      Epoch 16/100
+[32m+      1095/1095 [==============================] - 0s 88us/sample - loss: 38651191509.2164 - mean_squared_error: 38651191296.0000
+[32m+      Epoch 17/100
+[32m+      1095/1095 [==============================] - 0s 91us/sample - loss: 38323641193.4393 - mean_squared_error: 38323634176.0000
+[32m+      Epoch 18/100
+[32m+      1095/1095 [==============================] - 0s 102us/sample - loss: 37933913118.8603 - mean_squared_error: 37933907968.0000
+[32m+      Epoch 19/100
+[32m+      1095/1095 [==============================] - 0s 88us/sample - loss: 37477186933.1288 - mean_squared_error: 37477195776.0000
+[32m+      Epoch 20/100
+[32m+      1095/1095 [==============================] - 0s 97us/sample - loss: 36950329618.9370 - mean_squared_error: 36950331392.0000
+[32m+      Epoch 21/100
+[32m+      1095/1095 [==============================] - 0s 93us/sample - loss: 36345153414.4292 - mean_squared_error: 36345155584.0000
+[32m+      Epoch 22/100
+[32m+      1095/1095 [==============================] - 0s 96us/sample - loss: 35666596165.4356 - mean_squared_error: 35666604032.0000
+[32m+      Epoch 23/100
+[32m+      1095/1095 [==============================] - 0s 90us/sample - loss: 34907617236.9826 - mean_squared_error: 34907619328.0000
+[32m+      Epoch 24/100
+[32m+      1095/1095 [==============================] - 0s 96us/sample - loss: 34061059512.4603 - mean_squared_error: 34061058048.0000
+[32m+      Epoch 25/100
+[32m+      1095/1095 [==============================] - 0s 90us/sample - loss: 33139754467.4776 - mean_squared_error: 33139755008.0000
+[32m+      Epoch 26/100
+[32m+      1095/1095 [==============================] - 0s 107us/sample - loss: 32127356099.4484 - mean_squared_error: 32127361024.0000
+[32m+      Epoch 27/100
+[32m+      1095/1095 [==============================] - 0s 103us/sample - loss: 31040068337.7388 - mean_squared_error: 31040071680.0000
+[32m+      Epoch 28/100
+[32m+      1095/1095 [==============================] - 0s 111us/sample - loss: 29879284617.2347 - mean_squared_error: 29879285760.0000
+[32m+      Epoch 29/100
+[32m+      1095/1095 [==============================] - 0s 111us/sample - loss: 28653377345.2274 - mean_squared_error: 28653381632.0000
+[32m+      Epoch 30/100
+[32m+      1095/1095 [==============================] - 0s 96us/sample - loss: 27363509475.2438 - mean_squared_error: 27363508224.0000
+[32m+      Epoch 31/100
+[32m+      1095/1095 [==============================] - 0s 103us/sample - loss: 26022904655.2548 - mean_squared_error: 26022907904.0000
+[32m+      Epoch 32/100
+[32m+      1095/1095 [==============================] - 0s 92us/sample - loss: 24635083815.7443 - mean_squared_error: 24635082752.0000
+[32m+      Epoch 33/100
+[32m+      1095/1095 [==============================] - 0s 93us/sample - loss: 23235385095.2475 - mean_squared_error: 23235385344.0000
+[32m+      Epoch 34/100
+[32m+      1095/1095 [==============================] - 0s 108us/sample - loss: 21814773697.3443 - mean_squared_error: 21814771712.0000
+[32m+      Epoch 35/100
+[32m+      1095/1095 [==============================] - 0s 102us/sample - loss: 20380765413.1142 - mean_squared_error: 20380766208.0000
+[32m+      Epoch 36/100
+[32m+      1095/1095 [==============================] - 0s 105us/sample - loss: 18971706711.2037 - mean_squared_error: 18971707392.0000
+[32m+      Epoch 37/100
+[32m+      1095/1095 [==============================] - 0s 104us/sample - loss: 17601011934.5680 - mean_squared_error: 17601011712.0000
+[32m+      Epoch 38/100
+[32m+      1095/1095 [==============================] - 0s 105us/sample - loss: 16233624114.9662 - mean_squared_error: 16233624576.0000
+[32m+      Epoch 39/100
+[32m+      1095/1095 [==============================] - 0s 92us/sample - loss: 14953340563.2877 - mean_squared_error: 14953340928.0000
+[32m+      Epoch 40/100
+[32m+      1095/1095 [==============================] - 0s 103us/sample - loss: 13731378190.0274 - mean_squared_error: 13731376128.0000
+[32m+      Epoch 41/100
+[32m+      1095/1095 [==============================] - 0s 112us/sample - loss: 12594435735.9635 - mean_squared_error: 12594435072.0000
+[32m+      Epoch 42/100
+[32m+      1095/1095 [==============================] - 0s 103us/sample - loss: 11542680588.6247 - mean_squared_error: 11542680576.0000
+[32m+      Epoch 43/100
+[32m+      1095/1095 [==============================] - 0s 151us/sample - loss: 10609777361.0082 - mean_squared_error: 10609775616.0000
+[32m+      Epoch 44/100
+[32m+      1095/1095 [==============================] - 0s 153us/sample - loss: 9769912095.7954 - mean_squared_error: 9769910272.0000
+[32m+      Epoch 45/100
+[32m+      1095/1095 [==============================] - 0s 158us/sample - loss: 9051049787.0320 - mean_squared_error: 9051049984.0000
+[32m+      Epoch 46/100
+[32m+      1095/1095 [==============================] - ETA: 0s - loss: 8289840672.0000 - mean_squared_error: 8289840640.00 - 0s 165us/sample - loss: 8421836877.6183 - mean_squared_error: 8421836800.0000
+[32m+      Epoch 47/100
+[32m+      1095/1095 [==============================] - 0s 163us/sample - loss: 7886311616.6429 - mean_squared_error: 7886312960.0000
+[32m+      Epoch 48/100
+[32m+      1095/1095 [==============================] - 0s 162us/sample - loss: 7444102275.5068 - mean_squared_error: 7444102656.0000
+[32m+      Epoch 49/100
+[32m+      1095/1095 [==============================] - 0s 163us/sample - loss: 7081292714.9005 - mean_squared_error: 7081293312.0000
+[32m+      Epoch 50/100
+[32m+      1095/1095 [==============================] - 0s 158us/sample - loss: 6796902783.6493 - mean_squared_error: 6796902912.0000
+[32m+      Epoch 51/100
+[32m+      1095/1095 [==============================] - 0s 172us/sample - loss: 6577411736.4311 - mean_squared_error: 6577410560.0000
+[32m+      Epoch 52/100
+[32m+      1095/1095 [==============================] - 0s 156us/sample - loss: 6396770197.3918 - mean_squared_error: 6396770304.0000
+[32m+      Epoch 53/100
+[32m+      1095/1095 [==============================] - 0s 182us/sample - loss: 6258209380.0621 - mean_squared_error: 6258209280.0000
+[32m+      Epoch 54/100
+[32m+      1095/1095 [==============================] - 0s 152us/sample - loss: 6154142878.0420 - mean_squared_error: 6154142208.0000
+[32m+      Epoch 55/100
+[32m+      1095/1095 [==============================] - 0s 183us/sample - loss: 6081699205.0265 - mean_squared_error: 6081700352.0000
+[32m+      Epoch 56/100
+[32m+      1095/1095 [==============================] - 0s 171us/sample - loss: 6024655967.3863 - mean_squared_error: 6024656384.0000
+[32m+      Epoch 57/100
+[32m+      1095/1095 [==============================] - 0s 172us/sample - loss: 5980249682.2941 - mean_squared_error: 5980250112.0000
+[32m+      Epoch 58/100
+[32m+      1095/1095 [==============================] - 0s 155us/sample - loss: 5948945379.0100 - mean_squared_error: 5948945920.0000
+[32m+      Epoch 59/100
+[32m+      1095/1095 [==============================] - 0s 166us/sample - loss: 5920138885.2603 - mean_squared_error: 5920138752.0000
+[32m+      Epoch 60/100
+[32m+  output:
+[32m+    output_type: stream
+[32m+    name: stdout
+[32m+    text:
+[32m+      1095/1095 [==============================] - 0s 151us/sample - loss: 5897686961.4466 - mean_squared_error: 5897687040.0000
+[32m+      Epoch 61/100
+[32m+      1095/1095 [==============================] - 0s 154us/sample - loss: 5876375778.5425 - mean_squared_error: 5876375552.0000
+[32m+      Epoch 62/100
+[32m+      1095/1095 [==============================] - 0s 169us/sample - loss: 5861267951.8685 - mean_squared_error: 5861267968.0000
+[32m+      Epoch 63/100
+[32m+      1095/1095 [==============================] - 0s 171us/sample - loss: 5847218322.9370 - mean_squared_error: 5847217664.0000
+[32m+      Epoch 64/100
+[32m+      1095/1095 [==============================] - 0s 175us/sample - loss: 5833792364.2447 - mean_squared_error: 5833792512.0000
+[32m+      Epoch 65/100
+[32m+      1095/1095 [==============================] - 0s 166us/sample - loss: 5822547539.1123 - mean_squared_error: 5822546944.0000
+[32m+      Epoch 66/100
+[32m+      1095/1095 [==============================] - 0s 168us/sample - loss: 5809005342.6265 - mean_squared_error: 5809005056.0000
+[32m+      Epoch 67/100
+[32m+      1095/1095 [==============================] - 0s 161us/sample - loss: 5797026396.9315 - mean_squared_error: 5797026304.0000
+[32m+      Epoch 68/100
+[32m+      1095/1095 [==============================] - 0s 163us/sample - loss: 5783099697.7973 - mean_squared_error: 5783099904.0000
+[32m+      Epoch 69/100
+[32m+      1095/1095 [==============================] - 0s 187us/sample - loss: 5771819662.2612 - mean_squared_error: 5771819008.0000
+[32m+      Epoch 70/100
+[32m+      1095/1095 [==============================] - 0s 454us/sample - loss: 5759828218.1553 - mean_squared_error: 5759828480.0000
+[32m+      Epoch 71/100
+[32m+      1095/1095 [==============================] - 0s 433us/sample - loss: 5748531957.9470 - mean_squared_error: 5748532224.0000
+[32m+      Epoch 72/100
+[32m+      1095/1095 [==============================] - 1s 517us/sample - loss: 5735097329.0374 - mean_squared_error: 5735097344.0000
+[32m+      Epoch 73/100
+[32m+      1095/1095 [==============================] - 0s 434us/sample - loss: 5722865975.4082 - mean_squared_error: 5722865664.0000
+[32m+      Epoch 74/100
+[32m+      1095/1095 [==============================] - 0s 451us/sample - loss: 5710066677.7132 - mean_squared_error: 5710066688.0000
+[32m+      Epoch 75/100
+[32m+      1095/1095 [==============================] - 0s 451us/sample - loss: 5697707101.9836 - mean_squared_error: 5697706496.0000
+[32m+      Epoch 76/100
+[32m+      1095/1095 [==============================] - 1s 466us/sample - loss: 5685264641.6365 - mean_squared_error: 5685264384.0000
+[32m+      Epoch 77/100
+[32m+      1095/1095 [==============================] - 1s 462us/sample - loss: 5673109326.3196 - mean_squared_error: 5673108992.0000
+[32m+      Epoch 78/100
+[32m+      1095/1095 [==============================] - 0s 439us/sample - loss: 5660610730.9005 - mean_squared_error: 5660610048.0000
+[32m+      Epoch 79/100
+[32m+      1095/1095 [==============================] - 0s 443us/sample - loss: 5651151716.9973 - mean_squared_error: 5651151872.0000
+[32m+      Epoch 80/100
+[32m+      1095/1095 [==============================] - 1s 496us/sample - loss: 5636520402.8785 - mean_squared_error: 5636519936.0000
+[32m+      Epoch 81/100
+[32m+      1095/1095 [==============================] - 0s 389us/sample - loss: 5623510544.5991 - mean_squared_error: 5623510016.0000
+[32m+      Epoch 82/100
+[32m+      1095/1095 [==============================] - 0s 450us/sample - loss: 5611486199.8174 - mean_squared_error: 5611485696.0000
+[32m+      Epoch 83/100
+[32m+      1095/1095 [==============================] - 1s 470us/sample - loss: 5599056225.7242 - mean_squared_error: 5599055360.0000
+[32m+      Epoch 84/100
+[32m+      1095/1095 [==============================] - 0s 442us/sample - loss: 5588078619.5872 - mean_squared_error: 5588079104.0000
+[32m+      Epoch 85/100
+[32m+      1095/1095 [==============================] - 1s 463us/sample - loss: 5575381402.1845 - mean_squared_error: 5575380992.0000
+[32m+      Epoch 86/100
+[32m+      1095/1095 [==============================] - 1s 494us/sample - loss: 5564264078.8457 - mean_squared_error: 5564264448.0000
+[32m+      Epoch 87/100
+[32m+      1095/1095 [==============================] - 0s 408us/sample - loss: 5551773673.2055 - mean_squared_error: 5551774208.0000
+[32m+      Epoch 88/100
+[32m+      1095/1095 [==============================] - 0s 436us/sample - loss: 5539121028.0913 - mean_squared_error: 5539121152.0000
+[32m+      Epoch 89/100
+[32m+      1095/1095 [==============================] - 1s 531us/sample - loss: 5527539844.0913 - mean_squared_error: 5527540736.0000
+[32m+      Epoch 90/100
+[32m+      1095/1095 [==============================] - 1s 652us/sample - loss: 5515081460.0767 - mean_squared_error: 5515081216.0000
+[32m+      Epoch 91/100
+[32m+      1095/1095 [==============================] - 1s 695us/sample - loss: 5505694974.1297 - mean_squared_error: 5505695232.0000
+[32m+      Epoch 92/100
+[32m+      1095/1095 [==============================] - 1s 596us/sample - loss: 5491036914.4402 - mean_squared_error: 5491036672.0000
+[32m+      Epoch 93/100
+[32m+      1095/1095 [==============================] - 1s 551us/sample - loss: 5479906123.5142 - mean_squared_error: 5479905280.0000
+[32m+      Epoch 94/100
+[32m+      1095/1095 [==============================] - 1s 670us/sample - loss: 5466703546.5644 - mean_squared_error: 5466703872.0000
+[32m+      Epoch 95/100
+[32m+      1095/1095 [==============================] - 1s 694us/sample - loss: 5454600021.3333 - mean_squared_error: 5454600192.0000
+[32m+      Epoch 96/100
+[32m+      1095/1095 [==============================] - 1s 679us/sample - loss: 5442112431.5763 - mean_squared_error: 5442113024.0000
+[32m+      Epoch 97/100
+[32m+      1095/1095 [==============================] - 1s 620us/sample - loss: 5429858506.9297 - mean_squared_error: 5429857280.0000
+[32m+      Epoch 98/100
+[32m+      1095/1095 [==============================] - 1s 664us/sample - loss: 5416797670.2831 - mean_squared_error: 5416798720.0000
+[32m+      Epoch 99/100
+[32m+      1095/1095 [==============================] - 1s 670us/sample - loss: 5405562386.8201 - mean_squared_error: 5405560832.0000
+[32m+      Epoch 100/100
+[32m+      1095/1095 [==============================] - 1s 671us/sample - loss: 5392268753.7096 - mean_squared_error: 5392268800.0000
+
+[0m[34m## deleted /cells/10/outputs/0:[0m
+[31m-  output:
+[31m-    output_type: stream
+[31m-    name: stdout
+[31m-    text:
+[31m-      Train on 985 samples, validate on 110 samples
+[31m-      Epoch 1/100
+[31m-      985/985 [==============================] - 1s 657us/sample - loss: 39502535911.8294 - mean_squared_error: 39502536704.0000 - val_loss: 36791225176.4364 - val_mean_squared_error: 36791226368.0000
+[31m-      Epoch 2/100
+[31m-      985/985 [==============================] - 0s 116us/sample - loss: 39497679559.0822 - mean_squared_error: 39497678848.0000 - val_loss: 36775463954.6182 - val_mean_squared_error: 36775464960.0000
+[31m-      Epoch 3/100
+[31m-      985/985 [==============================] - 0s 126us/sample - loss: 39421446848.8447 - mean_squared_error: 39421448192.0000 - val_loss: 36564537939.7818 - val_mean_squared_error: 36564537344.0000
+[31m-      Epoch 4/100
+[31m-      985/985 [==============================] - 0s 105us/sample - loss: 38695831728.7310 - mean_squared_error: 38695833600.0000 - val_loss: 34893123993.6000 - val_mean_squared_error: 34893123584.0000
+[31m-      Epoch 5/100
+[31m-      985/985 [==============================] - 0s 106us/sample - loss: 34388380991.1553 - mean_squared_error: 34388381696.0000 - val_loss: 26570420708.0727 - val_mean_squared_error: 26570420224.0000
+[31m-      Epoch 6/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 19924350940.6538 - mean_squared_error: 19924346880.0000 - val_loss: 7968763373.3818 - val_mean_squared_error: 7968762880.0000
+[31m-      Epoch 7/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 6727858283.0782 - mean_squared_error: 6727859200.0000 - val_loss: 5531340716.2182 - val_mean_squared_error: 5531340800.0000
+[31m-      Epoch 8/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 5992485366.6437 - mean_squared_error: 5992484864.0000 - val_loss: 5176172753.4545 - val_mean_squared_error: 5176172544.0000
+[31m-      Epoch 9/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 5859438649.6975 - mean_squared_error: 5859438592.0000 - val_loss: 5114760531.7818 - val_mean_squared_error: 5114760704.0000
+[31m-      Epoch 10/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 5758939688.5442 - mean_squared_error: 5758939648.0000 - val_loss: 4977051759.7091 - val_mean_squared_error: 4977051136.0000
+[31m-      Epoch 11/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 5625317127.0173 - mean_squared_error: 5625317376.0000 - val_loss: 4885722935.8545 - val_mean_squared_error: 4885723136.0000
+[31m-      Epoch 12/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 5518110430.9929 - mean_squared_error: 5518110208.0000 - val_loss: 4828171948.2182 - val_mean_squared_error: 4828172288.0000
+[31m-      Epoch 13/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 5433563781.5878 - mean_squared_error: 5433563648.0000 - val_loss: 4654351918.5455 - val_mean_squared_error: 4654351872.0000
+[31m-      Epoch 14/100
+[31m-      985/985 [==============================] - 0s 110us/sample - loss: 5309546507.1756 - mean_squared_error: 5309546496.0000 - val_loss: 4654677231.7091 - val_mean_squared_error: 4654677504.0000
+[31m-      Epoch 15/100
+[31m-      985/985 [==============================] - 0s 116us/sample - loss: 5212523243.9878 - mean_squared_error: 5212523520.0000 - val_loss: 4549097588.3636 - val_mean_squared_error: 4549097984.0000
+[31m-      Epoch 16/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 5123846221.9695 - mean_squared_error: 5123846144.0000 - val_loss: 4513421433.0182 - val_mean_squared_error: 4513421312.0000
+[31m-      Epoch 17/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 5035705899.1431 - mean_squared_error: 5035706368.0000 - val_loss: 4337648258.3273 - val_mean_squared_error: 4337648640.0000
+[31m-      Epoch 18/100
+[31m-      985/985 [==============================] - 0s 116us/sample - loss: 4939924771.0863 - mean_squared_error: 4939924480.0000 - val_loss: 4238908453.2364 - val_mean_squared_error: 4238908416.0000
+[31m-      Epoch 19/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 4826629659.0294 - mean_squared_error: 4826629632.0000 - val_loss: 4226924734.8364 - val_mean_squared_error: 4226924800.0000
+[31m-      Epoch 20/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 4767602285.6772 - mean_squared_error: 4767602688.0000 - val_loss: 4153745026.3273 - val_mean_squared_error: 4153745152.0000
+[31m-      Epoch 21/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 4658740038.6924 - mean_squared_error: 4658739712.0000 - val_loss: 4011354624.0000 - val_mean_squared_error: 4011354624.0000
+[31m-      Epoch 22/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 4576196075.7279 - mean_squared_error: 4576196096.0000 - val_loss: 3932009053.0909 - val_mean_squared_error: 3932008960.0000
+[31m-      Epoch 23/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 4478872865.0071 - mean_squared_error: 4478873088.0000 - val_loss: 3931793172.9455 - val_mean_squared_error: 3931793408.0000
+[31m-      Epoch 24/100
+[31m-      985/985 [==============================] - 0s 115us/sample - loss: 4409084230.9523 - mean_squared_error: 4409083904.0000 - val_loss: 3819024418.9091 - val_mean_squared_error: 3819024384.0000
+[31m-      Epoch 25/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 4319109395.4924 - mean_squared_error: 4319109120.0000 - val_loss: 3752164296.1455 - val_mean_squared_error: 3752164608.0000
+[31m-      Epoch 26/100
+[31m-      985/985 [==============================] - 0s 125us/sample - loss: 4279306229.7340 - mean_squared_error: 4279306240.0000 - val_loss: 3647995624.7273 - val_mean_squared_error: 3647995648.0000
+[31m-      Epoch 27/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 4191365324.2802 - mean_squared_error: 4191365120.0000 - val_loss: 3697254402.3273 - val_mean_squared_error: 3697254144.0000
+[31m-      Epoch 28/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 4095534589.6609 - mean_squared_error: 4095534592.0000 - val_loss: 3524907755.0545 - val_mean_squared_error: 3524907776.0000
+[31m-      Epoch 29/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 4030356638.0183 - mean_squared_error: 4030356224.0000 - val_loss: 3515200074.4727 - val_mean_squared_error: 3515200256.0000
+[31m-      Epoch 30/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3954716579.7360 - mean_squared_error: 3954716928.0000 - val_loss: 3426151375.1273 - val_mean_squared_error: 3426151424.0000
+[31m-      Epoch 31/100
+[31m-      985/985 [==============================] - 0s 115us/sample - loss: 3895638313.0640 - mean_squared_error: 3895638528.0000 - val_loss: 3375290053.8182 - val_mean_squared_error: 3375290112.0000
+[31m-      Epoch 32/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3831044706.5015 - mean_squared_error: 3831044864.0000 - val_loss: 3360246825.8909 - val_mean_squared_error: 3360246784.0000
+[31m-      Epoch 33/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3767543275.9878 - mean_squared_error: 3767542528.0000 - val_loss: 3253969719.8545 - val_mean_squared_error: 3253969664.0000
+[31m-      Epoch 34/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3728300679.1472 - mean_squared_error: 3728300800.0000 - val_loss: 3250583309.9636 - val_mean_squared_error: 3250583296.0000
+[31m-      Epoch 35/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3667513955.2812 - mean_squared_error: 3667514368.0000 - val_loss: 3161746064.2909 - val_mean_squared_error: 3161745920.0000
+[31m-      Epoch 36/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 3623546132.5320 - mean_squared_error: 3623546624.0000 - val_loss: 3134699999.4182 - val_mean_squared_error: 3134700032.0000
+[31m-      Epoch 37/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 3570912689.6406 - mean_squared_error: 3570912256.0000 - val_loss: 3165789849.6000 - val_mean_squared_error: 3165789696.0000
+[31m-      Epoch 38/100
+[31m-      985/985 [==============================] - 0s 110us/sample - loss: 3532893505.2345 - mean_squared_error: 3532893440.0000 - val_loss: 3103920267.6364 - val_mean_squared_error: 3103920128.0000
+[31m-      Epoch 39/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3489370477.5472 - mean_squared_error: 3489370112.0000 - val_loss: 3045197861.2364 - val_mean_squared_error: 3045197824.0000
+[31m-      Epoch 40/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3437382250.5584 - mean_squared_error: 3437382400.0000 - val_loss: 3113314415.7091 - val_mean_squared_error: 3113314560.0000
+[31m-      Epoch 41/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3430962136.7553 - mean_squared_error: 3430961920.0000 - val_loss: 3058738390.1091 - val_mean_squared_error: 3058738432.0000
+[31m-      Epoch 42/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3373844241.4132 - mean_squared_error: 3373844736.0000 - val_loss: 2960308838.4000 - val_mean_squared_error: 2960308736.0000
+[31m-      Epoch 43/100
+[31m-      985/985 [==============================] - 0s 115us/sample - loss: 3351110842.3472 - mean_squared_error: 3351110400.0000 - val_loss: 2947628018.0364 - val_mean_squared_error: 2947628288.0000
+[31m-      Epoch 44/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3324547629.6122 - mean_squared_error: 3324547328.0000 - val_loss: 2963374657.1636 - val_mean_squared_error: 2963374592.0000
+[31m-      Epoch 45/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3318698797.2223 - mean_squared_error: 3318698496.0000 - val_loss: 3001997125.8182 - val_mean_squared_error: 3001997056.0000
+[31m-      Epoch 46/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3314271275.9228 - mean_squared_error: 3314271488.0000 - val_loss: 2903329880.4364 - val_mean_squared_error: 2903330048.0000
+[31m-      Epoch 47/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 3236895529.8437 - mean_squared_error: 3236895744.0000 - val_loss: 2899742444.2182 - val_mean_squared_error: 2899742464.0000
+[31m-      Epoch 48/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 3226789578.4609 - mean_squared_error: 3226789888.0000 - val_loss: 2896983482.1818 - val_mean_squared_error: 2896983552.0000
+[31m-      Epoch 49/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 3200403264.1949 - mean_squared_error: 3200403712.0000 - val_loss: 2865194458.7636 - val_mean_squared_error: 2865194496.0000
+[31m-      Epoch 50/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3149669402.2497 - mean_squared_error: 3149669376.0000 - val_loss: 2762298477.3818 - val_mean_squared_error: 2762298624.0000
+[31m-      Epoch 51/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 3155176007.6020 - mean_squared_error: 3155176448.0000 - val_loss: 2767125881.0182 - val_mean_squared_error: 2767126016.0000
+[31m-      Epoch 52/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3109084051.7523 - mean_squared_error: 3109084160.0000 - val_loss: 2847558298.7636 - val_mean_squared_error: 2847558656.0000
+[31m-      Epoch 53/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3109326551.4558 - mean_squared_error: 3109326336.0000 - val_loss: 2719246636.2182 - val_mean_squared_error: 2719246848.0000
+[31m-      Epoch 54/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3061510345.9411 - mean_squared_error: 3061510144.0000 - val_loss: 2791207223.8545 - val_mean_squared_error: 2791207168.0000
+[31m-      Epoch 55/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 3056556960.8772 - mean_squared_error: 3056556800.0000 - val_loss: 2658473821.0909 - val_mean_squared_error: 2658473728.0000
+[31m-      Epoch 56/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 3057135066.9645 - mean_squared_error: 3057134592.0000 - val_loss: 2655715962.1818 - val_mean_squared_error: 2655715840.0000
+[31m-      Epoch 57/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 3020136609.6569 - mean_squared_error: 3020136704.0000 - val_loss: 2725523230.2545 - val_mean_squared_error: 2725523200.0000
+[31m-      Epoch 58/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 3028935591.6345 - mean_squared_error: 3028935424.0000 - val_loss: 2627429415.5636 - val_mean_squared_error: 2627429632.0000
+[31m-      Epoch 59/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2950051246.3919 - mean_squared_error: 2950051584.0000 - val_loss: 2659242270.2545 - val_mean_squared_error: 2659242240.0000
+[31m-      Epoch 60/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2911478857.2914 - mean_squared_error: 2911479040.0000 - val_loss: 2540666037.5273 - val_mean_squared_error: 2540666112.0000
+[31m-      Epoch 61/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2929392572.6863 - mean_squared_error: 2929392384.0000 - val_loss: 2630757988.0727 - val_mean_squared_error: 2630758144.0000
+[31m-      Epoch 62/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2863214743.2609 - mean_squared_error: 2863214592.0000 - val_loss: 2527135602.0364 - val_mean_squared_error: 2527135488.0000
+[31m-      Epoch 63/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 2846016311.8782 - mean_squared_error: 2846016256.0000 - val_loss: 2541897812.9455 - val_mean_squared_error: 2541897728.0000
+[31m-      Epoch 64/100
+[31m-      985/985 [==============================] - 0s 115us/sample - loss: 2819162169.1777 - mean_squared_error: 2819162112.0000 - val_loss: 2469572787.2000 - val_mean_squared_error: 2469572864.0000
+[31m-      Epoch 65/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2782849779.2650 - mean_squared_error: 2782849792.0000 - val_loss: 2423215709.0909 - val_mean_squared_error: 2423215616.0000
+[31m-      Epoch 66/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 2757473931.3056 - mean_squared_error: 2757474304.0000 - val_loss: 2393322071.2727 - val_mean_squared_error: 2393321984.0000
+[31m-      Epoch 67/100
+[31m-      985/985 [==============================] - 0s 109us/sample - loss: 2736765044.7594 - mean_squared_error: 2736765184.0000 - val_loss: 2411181714.6182 - val_mean_squared_error: 2411181824.0000
+[31m-      Epoch 68/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2699293395.8173 - mean_squared_error: 2699292928.0000 - val_loss: 2373486760.7273 - val_mean_squared_error: 2373486848.0000
+[31m-      Epoch 69/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2672686414.7492 - mean_squared_error: 2672686848.0000 - val_loss: 2406387828.3636 - val_mean_squared_error: 2406387968.0000
+[31m-      Epoch 70/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 2640228806.4325 - mean_squared_error: 2640228608.0000 - val_loss: 2300270760.7273 - val_mean_squared_error: 2300270848.0000
+[31m-      Epoch 71/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2631686373.8802 - mean_squared_error: 2631685632.0000 - val_loss: 2295268221.6727 - val_mean_squared_error: 2295268096.0000
+[31m-      Epoch 72/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2585759607.2934 - mean_squared_error: 2585759744.0000 - val_loss: 2347475344.2909 - val_mean_squared_error: 2347475456.0000
+[31m-      Epoch 73/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2570684429.5147 - mean_squared_error: 2570684672.0000 - val_loss: 2232848132.6545 - val_mean_squared_error: 2232848128.0000
+[31m-      Epoch 74/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2542526043.4843 - mean_squared_error: 2542526208.0000 - val_loss: 2199922373.8182 - val_mean_squared_error: 2199922176.0000
+[31m-      Epoch 75/100
+[31m-      985/985 [==============================] - 0s 106us/sample - loss: 2521852122.3147 - mean_squared_error: 2521852160.0000 - val_loss: 2178593219.4909 - val_mean_squared_error: 2178593024.0000
+[31m-      Epoch 76/100
+[31m-      985/985 [==============================] - 0s 116us/sample - loss: 2478154969.7949 - mean_squared_error: 2478154752.0000 - val_loss: 2196887135.4182 - val_mean_squared_error: 2196887040.0000
+[31m-      Epoch 77/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2446501531.8091 - mean_squared_error: 2446501632.0000 - val_loss: 2188357586.6182 - val_mean_squared_error: 2188357632.0000
+[31m-      Epoch 78/100
+[31m-      985/985 [==============================] - 0s 116us/sample - loss: 2418320098.1766 - mean_squared_error: 2418320128.0000 - val_loss: 2110838642.0364 - val_mean_squared_error: 2110838656.0000
+[31m-      Epoch 79/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2387934894.1320 - mean_squared_error: 2387934976.0000 - val_loss: 2151614550.1091 - val_mean_squared_error: 2151614464.0000
+[31m-      Epoch 80/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 2372114914.6315 - mean_squared_error: 2372114944.0000 - val_loss: 2130832800.5818 - val_mean_squared_error: 2130832896.0000
+[31m-      Epoch 81/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2357579993.3076 - mean_squared_error: 2357580032.0000 - val_loss: 2112006722.9091 - val_mean_squared_error: 2112006656.0000
+[31m-      Epoch 82/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2318116040.3817 - mean_squared_error: 2318116352.0000 - val_loss: 2041017126.4000 - val_mean_squared_error: 2041017088.0000
+[31m-      Epoch 83/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 2315288774.6924 - mean_squared_error: 2315288576.0000 - val_loss: 2009521771.0545 - val_mean_squared_error: 2009521792.0000
+[31m-      Epoch 84/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2289738854.5299 - mean_squared_error: 2289739264.0000 - val_loss: 1996006057.8909 - val_mean_squared_error: 1996006144.0000
+[31m-      Epoch 85/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 2245310151.0822 - mean_squared_error: 2245310208.0000 - val_loss: 1986121620.9455 - val_mean_squared_error: 1986121600.0000
+[31m-      Epoch 86/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2214824771.0538 - mean_squared_error: 2214824960.0000 - val_loss: 1945507672.4364 - val_mean_squared_error: 1945507712.0000
+[31m-      Epoch 87/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2223945274.9970 - mean_squared_error: 2223945472.0000 - val_loss: 1933525140.9455 - val_mean_squared_error: 1933525120.0000
+[31m-      Epoch 88/100
+[31m-      985/985 [==============================] - 0s 111us/sample - loss: 2179879373.3198 - mean_squared_error: 2179879168.0000 - val_loss: 1912299336.1455 - val_mean_squared_error: 1912299392.0000
+[31m-      Epoch 89/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2157329022.0508 - mean_squared_error: 2157329152.0000 - val_loss: 1948406346.4727 - val_mean_squared_error: 1948406272.0000
+[31m-      Epoch 90/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2124612808.1218 - mean_squared_error: 2124612992.0000 - val_loss: 1864092178.6182 - val_mean_squared_error: 1864092288.0000
+[31m-      Epoch 91/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2118120213.1817 - mean_squared_error: 2118120192.0000 - val_loss: 1842496614.4000 - val_mean_squared_error: 1842496640.0000
+[31m-      Epoch 92/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 2096074300.1665 - mean_squared_error: 2096074240.0000 - val_loss: 1831049753.6000 - val_mean_squared_error: 1831049728.0000
+[31m-      Epoch 93/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 2070563687.5046 - mean_squared_error: 2070563712.0000 - val_loss: 1828236905.8909 - val_mean_squared_error: 1828236928.0000
+[31m-      Epoch 94/100
+[31m-      985/985 [==============================] - 0s 110us/sample - loss: 2043952394.3310 - mean_squared_error: 2043952384.0000 - val_loss: 1791343948.8000 - val_mean_squared_error: 1791344000.0000
+[31m-      Epoch 95/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2029927932.9462 - mean_squared_error: 2029928192.0000 - val_loss: 1772629413.2364 - val_mean_squared_error: 1772629504.0000
+[31m-      Epoch 96/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 2012098649.7949 - mean_squared_error: 2012098560.0000 - val_loss: 1750211872.5818 - val_mean_squared_error: 1750211840.0000
+[31m-      Epoch 97/100
+[31m-      985/985 [==============================] - 0s 114us/sample - loss: 1978270771.9797 - mean_squared_error: 1978270848.0000 - val_loss: 1767442116.6545 - val_mean_squared_error: 1767442176.0000
+[31m-      Epoch 98/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 1968002588.2640 - mean_squared_error: 1968002816.0000 - val_loss: 1737924640.5818 - val_mean_squared_error: 1737924608.0000
+[31m-      Epoch 99/100
+[31m-      985/985 [==============================] - 0s 113us/sample - loss: 1994852868.9381 - mean_squared_error: 1994852992.0000 - val_loss: 1840649625.6000 - val_mean_squared_error: 1840649600.0000
+[31m-      Epoch 100/100
+[31m-      985/985 [==============================] - 0s 112us/sample - loss: 1943907978.2660 - mean_squared_error: 1943907968.0000 - val_loss: 1707470046.2545 - val_mean_squared_error: 1707470080.0000
+
+[0m[34m## modified /cells/10/source:[0m
+[31m-  fitted = model.fit(X_train_normalized, y_train, epochs=100, validation_split=.10)
+[32m+  fitted = model.fit(X_train_normalized, y_train, epochs=100)
+
+[0m[34m## modified /cells/11/outputs/0/text:[0m
+[36m@@ -1 +1 @@[m
+[31m-365/365 [==============================] - 0s 62us/sample - loss: 2353230856.0658 - mean_squared_error: 2353230848.0000[m
+[32m+[m[32m365/365 [==============================] - 1s 2ms/sample - loss: 4890288847.6055 - mean_squared_error: 4890288640.0000[m
+
+[0m[34m## replaced /cells/12/execution_count:[0m
+[31m-  28
+[32m+  12
+
+[0m[34m## inserted before /cells/12/outputs/0:[0m
+[32m+  output:
+[32m+    output_type: display_data
+[32m+    data:
+[32m+      text/plain: <Figure size 640x480 with 1 Axes>
+
+[0m[34m## deleted /cells/12/outputs/0:[0m
+[31m-  output:
+[31m-    output_type: display_data
+[31m-    data:
+[31m-      image/png: iVBORw0K...<snip base64, md5=f9335be540d1493a...>
+[31m-      text/plain: <Figure size 432x288 with 1 Axes>
+
+[0m[34m## inserted before /cells/20:[0m
+[32m+  code cell:
+[32m+    execution_count: 20
+[32m+    source:
+[32m+      mnist_nn = Sequential()
+[32m+      
+[32m+      mnist_nn.add(Dense(100, activation='relu', input_dim=784))
+[32m+      mnist_nn.add(Dense(100, activation='relu'))
+[32m+      # softmax was helpful for strictly multi-class classification
+[32m+      mnist_nn.add(Dense(10, activation='softmax'))
+[32m+      
+[32m+      mnist_nn.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+[32m+      mnist_nn.summary()
+[32m+    outputs:
+[32m+      output 0:
+[32m+        output_type: stream
+[32m+        name: stdout
+[32m+        text:
+[32m+          Model: "sequential_2"
+[32m+          _________________________________________________________________
+[32m+          Layer (type)                 Output Shape              Param #   
+[32m+          =================================================================
+[32m+          dense_11 (Dense)             (None, 100)               78500     
+[32m+          _________________________________________________________________
+[32m+          dense_12 (Dense)             (None, 100)               10100     
+[32m+          _________________________________________________________________
+[32m+          dense_13 (Dense)             (None, 10)                1010      
+[32m+          =================================================================
+[32m+          Total params: 89,610
+[32m+          Trainable params: 89,610
+[32m+          Non-trainable params: 0
+[32m+          _________________________________________________________________
+[32m+  code cell:
+[32m+    execution_count: 22
+[32m+    source:
+[32m+      # took forever to run without batching
+[32m+      mnist_run = mnist_nn.fit(x_train, y_train, epochs=100, validation_split=.10,batch_size=300)
+[32m+    outputs:
+[32m+      output 0:
+[32m+        output_type: stream
+[32m+        name: stdout
+[32m+        text:
+[32m+          Train on 54000 samples, validate on 6000 samples
+[32m+          Epoch 1/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.4593 - acc: 0.8444 - val_loss: 0.5822 - val_acc: 0.8302
+[32m+          Epoch 2/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.4257 - acc: 0.8513 - val_loss: 0.5745 - val_acc: 0.8325
+[32m+          Epoch 3/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.4151 - acc: 0.8554 - val_loss: 0.5562 - val_acc: 0.8368
+[32m+          Epoch 4/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.4036 - acc: 0.8575 - val_loss: 0.5229 - val_acc: 0.8402
+[32m+          Epoch 5/100
+[32m+          54000/54000 [==============================] - 7s 122us/sample - loss: 0.3824 - acc: 0.8628 - val_loss: 0.5097 - val_acc: 0.8428
+[32m+          Epoch 6/100
+[32m+          54000/54000 [==============================] - 7s 129us/sample - loss: 0.3667 - acc: 0.8665 - val_loss: 0.4933 - val_acc: 0.8507
+[32m+          Epoch 7/100
+[32m+          54000/54000 [==============================] - 6s 117us/sample - loss: 0.3580 - acc: 0.8710 - val_loss: 0.5465 - val_acc: 0.8415
+[32m+          Epoch 8/100
+[32m+          54000/54000 [==============================] - 6s 118us/sample - loss: 0.3528 - acc: 0.8710 - val_loss: 0.5030 - val_acc: 0.8478
+[32m+          Epoch 9/100
+[32m+          54000/54000 [==============================] - 6s 108us/sample - loss: 0.3427 - acc: 0.8739 - val_loss: 0.5122 - val_acc: 0.8483
+[32m+          Epoch 10/100
+[32m+          54000/54000 [==============================] - 5s 93us/sample - loss: 0.3451 - acc: 0.8750 - val_loss: 0.4904 - val_acc: 0.8500
+[32m+          Epoch 11/100
+[32m+          54000/54000 [==============================] - 5s 93us/sample - loss: 0.3395 - acc: 0.8767 - val_loss: 0.5172 - val_acc: 0.8470
+[32m+          Epoch 12/100
+[32m+          54000/54000 [==============================] - 5s 96us/sample - loss: 0.3568 - acc: 0.8711 - val_loss: 0.5033 - val_acc: 0.8517
+[32m+          Epoch 13/100
+[32m+          54000/54000 [==============================] - 2s 36us/sample - loss: 0.3319 - acc: 0.8790 - val_loss: 0.5511 - val_acc: 0.8368
+[32m+          Epoch 14/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3221 - acc: 0.8823 - val_loss: 0.5072 - val_acc: 0.8540
+[32m+          Epoch 15/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3265 - acc: 0.8819 - val_loss: 0.5523 - val_acc: 0.8463
+[32m+          Epoch 16/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3226 - acc: 0.8817 - val_loss: 0.4756 - val_acc: 0.8653
+[32m+          Epoch 17/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3357 - acc: 0.8793 - val_loss: 0.4808 - val_acc: 0.8570
+[32m+          Epoch 18/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.3110 - acc: 0.8849 - val_loss: 0.4952 - val_acc: 0.8525
+[32m+          Epoch 19/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3080 - acc: 0.8855 - val_loss: 0.4891 - val_acc: 0.8593
+[32m+          Epoch 20/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3171 - acc: 0.8835 - val_loss: 0.5033 - val_acc: 0.8513
+[32m+          Epoch 21/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3027 - acc: 0.8897 - val_loss: 0.4874 - val_acc: 0.8627
+[32m+          Epoch 22/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3061 - acc: 0.8882 - val_loss: 0.5169 - val_acc: 0.8555
+[32m+          Epoch 23/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2862 - acc: 0.8937 - val_loss: 0.4927 - val_acc: 0.8568
+[32m+          Epoch 24/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3001 - acc: 0.8896 - val_loss: 0.4632 - val_acc: 0.8610
+[32m+          Epoch 25/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.3120 - acc: 0.8864 - val_loss: 0.4810 - val_acc: 0.8547
+[32m+          Epoch 26/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2908 - acc: 0.8931 - val_loss: 0.4780 - val_acc: 0.8645
+[32m+          Epoch 27/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2894 - acc: 0.8942 - val_loss: 0.4981 - val_acc: 0.8460
+[32m+          Epoch 28/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2825 - acc: 0.8943 - val_loss: 0.5501 - val_acc: 0.8547
+[32m+          Epoch 29/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2832 - acc: 0.8958 - val_loss: 0.4827 - val_acc: 0.8592
+[32m+          Epoch 30/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2769 - acc: 0.8975 - val_loss: 0.5066 - val_acc: 0.8537
+[32m+          Epoch 31/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2779 - acc: 0.8983 - val_loss: 0.4633 - val_acc: 0.8673
+[32m+          Epoch 32/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2751 - acc: 0.8971 - val_loss: 0.4827 - val_acc: 0.8678
+[32m+          Epoch 33/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2718 - acc: 0.8974 - val_loss: 0.4885 - val_acc: 0.8533
+[32m+          Epoch 34/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2809 - acc: 0.8960 - val_loss: 0.5215 - val_acc: 0.8535
+[32m+          Epoch 35/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2915 - acc: 0.8961 - val_loss: 0.5069 - val_acc: 0.8457
+[32m+          Epoch 36/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2742 - acc: 0.8974 - val_loss: 0.4810 - val_acc: 0.8605
+[32m+          Epoch 37/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2693 - acc: 0.9006 - val_loss: 0.4848 - val_acc: 0.8682
+[32m+          Epoch 38/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2599 - acc: 0.9028 - val_loss: 0.4646 - val_acc: 0.8700
+[32m+          Epoch 39/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2716 - acc: 0.9008 - val_loss: 0.4765 - val_acc: 0.8655
+[32m+          Epoch 40/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2784 - acc: 0.9008 - val_loss: 0.4780 - val_acc: 0.8677
+[32m+          Epoch 41/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2582 - acc: 0.9057 - val_loss: 0.5129 - val_acc: 0.8588
+[32m+          Epoch 42/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2539 - acc: 0.9052 - val_loss: 0.4921 - val_acc: 0.8655
+[32m+          Epoch 43/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2589 - acc: 0.9037 - val_loss: 0.4921 - val_acc: 0.8693
+[32m+          Epoch 44/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2435 - acc: 0.9109 - val_loss: 0.4696 - val_acc: 0.8702
+[32m+          Epoch 45/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2493 - acc: 0.9077 - val_loss: 0.4938 - val_acc: 0.8702
+[32m+          Epoch 46/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2445 - acc: 0.9094 - val_loss: 0.4759 - val_acc: 0.8662
+[32m+          Epoch 47/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2535 - acc: 0.9059 - val_loss: 0.5232 - val_acc: 0.8607
+[32m+          Epoch 48/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2497 - acc: 0.9081 - val_loss: 0.4843 - val_acc: 0.8697
+[32m+          Epoch 49/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2373 - acc: 0.9123 - val_loss: 0.5013 - val_acc: 0.8678
+[32m+          Epoch 50/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2364 - acc: 0.9118 - val_loss: 0.4788 - val_acc: 0.8647
+[32m+          Epoch 51/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2486 - acc: 0.9086 - val_loss: 0.4611 - val_acc: 0.8692
+[32m+          Epoch 52/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2332 - acc: 0.9133 - val_loss: 0.4821 - val_acc: 0.8665
+[32m+          Epoch 53/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2390 - acc: 0.9114 - val_loss: 0.4962 - val_acc: 0.8710
+[32m+          Epoch 54/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2506 - acc: 0.9082 - val_loss: 0.5224 - val_acc: 0.8645
+[32m+          Epoch 55/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2462 - acc: 0.9087 - val_loss: 0.5151 - val_acc: 0.8645
+[32m+          Epoch 56/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2308 - acc: 0.9134 - val_loss: 0.4926 - val_acc: 0.8660
+[32m+          Epoch 57/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2335 - acc: 0.9127 - val_loss: 0.4841 - val_acc: 0.8672
+[32m+          Epoch 58/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2167 - acc: 0.9184 - val_loss: 0.5248 - val_acc: 0.8607
+[32m+      output 1:
+[32m+        output_type: stream
+[32m+        name: stdout
+[32m+        text:
+[32m+          Epoch 59/100
+[32m+          54000/54000 [==============================] - 1s 16us/sample - loss: 0.2213 - acc: 0.9174 - val_loss: 0.4979 - val_acc: 0.8660
+[32m+          Epoch 60/100
+[32m+          54000/54000 [==============================] - 1s 15us/sample - loss: 0.2212 - acc: 0.9169 - val_loss: 0.4943 - val_acc: 0.8710
+[32m+          Epoch 61/100
+[32m+          54000/54000 [==============================] - 1s 18us/sample - loss: 0.2343 - acc: 0.9125 - val_loss: 0.5353 - val_acc: 0.8647
+[32m+          Epoch 62/100
+[32m+          54000/54000 [==============================] - 1s 20us/sample - loss: 0.2242 - acc: 0.9160 - val_loss: 0.5198 - val_acc: 0.8700
+[32m+          Epoch 63/100
+[32m+          54000/54000 [==============================] - 1s 19us/sample - loss: 0.2246 - acc: 0.9175 - val_loss: 0.4831 - val_acc: 0.8698
+[32m+          Epoch 64/100
+[32m+          54000/54000 [==============================] - 1s 20us/sample - loss: 0.2246 - acc: 0.9155 - val_loss: 0.5120 - val_acc: 0.8670
+[32m+          Epoch 65/100
+[32m+          54000/54000 [==============================] - 1s 20us/sample - loss: 0.2255 - acc: 0.9157 - val_loss: 0.4955 - val_acc: 0.8743
+[32m+          Epoch 66/100
+[32m+          54000/54000 [==============================] - 2s 35us/sample - loss: 0.2191 - acc: 0.9185 - val_loss: 0.4797 - val_acc: 0.8807
+[32m+          Epoch 67/100
+[32m+          54000/54000 [==============================] - 2s 34us/sample - loss: 0.2124 - acc: 0.9207 - val_loss: 0.5000 - val_acc: 0.8708
+[32m+          Epoch 68/100
+[32m+          54000/54000 [==============================] - 3s 57us/sample - loss: 0.2163 - acc: 0.9197 - val_loss: 0.5125 - val_acc: 0.8672
+[32m+          Epoch 69/100
+[32m+          54000/54000 [==============================] - 5s 99us/sample - loss: 0.2038 - acc: 0.9232 - val_loss: 0.5040 - val_acc: 0.8693
+[32m+          Epoch 70/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.2058 - acc: 0.9228 - val_loss: 0.5228 - val_acc: 0.8715
+[32m+          Epoch 71/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.2161 - acc: 0.9194 - val_loss: 0.5005 - val_acc: 0.8738
+[32m+          Epoch 72/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.2154 - acc: 0.9209 - val_loss: 0.5155 - val_acc: 0.8740
+[32m+          Epoch 73/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.2104 - acc: 0.9208 - val_loss: 0.5135 - val_acc: 0.8725
+[32m+          Epoch 74/100
+[32m+          54000/54000 [==============================] - 5s 96us/sample - loss: 0.2139 - acc: 0.9198 - val_loss: 0.5465 - val_acc: 0.8667
+[32m+          Epoch 75/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.2029 - acc: 0.9245 - val_loss: 0.5284 - val_acc: 0.8737
+[32m+          Epoch 76/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.2013 - acc: 0.9240 - val_loss: 0.5381 - val_acc: 0.8740
+[32m+          Epoch 77/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.2024 - acc: 0.9233 - val_loss: 0.5459 - val_acc: 0.8655
+[32m+          Epoch 78/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1915 - acc: 0.9277 - val_loss: 0.5462 - val_acc: 0.8673
+[32m+          Epoch 79/100
+[32m+          54000/54000 [==============================] - 5s 98us/sample - loss: 0.1991 - acc: 0.9254 - val_loss: 0.5077 - val_acc: 0.8748
+[32m+          Epoch 80/100
+[32m+          54000/54000 [==============================] - 5s 91us/sample - loss: 0.2014 - acc: 0.9244 - val_loss: 0.5526 - val_acc: 0.8655
+[32m+          Epoch 81/100
+[32m+          54000/54000 [==============================] - 5s 95us/sample - loss: 0.1981 - acc: 0.9250 - val_loss: 0.5392 - val_acc: 0.8673
+[32m+          Epoch 82/100
+[32m+          54000/54000 [==============================] - 5s 95us/sample - loss: 0.1928 - acc: 0.9274 - val_loss: 0.5854 - val_acc: 0.8473
+[32m+          Epoch 83/100
+[32m+          54000/54000 [==============================] - 5s 91us/sample - loss: 0.1966 - acc: 0.9262 - val_loss: 0.5171 - val_acc: 0.8707
+[32m+          Epoch 84/100
+[32m+          54000/54000 [==============================] - 7s 125us/sample - loss: 0.1901 - acc: 0.9287 - val_loss: 0.5388 - val_acc: 0.8752
+[32m+          Epoch 85/100
+[32m+          54000/54000 [==============================] - 7s 124us/sample - loss: 0.1924 - acc: 0.9276 - val_loss: 0.5431 - val_acc: 0.8690
+[32m+          Epoch 86/100
+[32m+          54000/54000 [==============================] - 7s 123us/sample - loss: 0.1954 - acc: 0.9269 - val_loss: 0.5535 - val_acc: 0.8705
+[32m+          Epoch 87/100
+[32m+          54000/54000 [==============================] - 7s 130us/sample - loss: 0.1943 - acc: 0.9269 - val_loss: 0.5937 - val_acc: 0.8667
+[32m+          Epoch 88/100
+[32m+          54000/54000 [==============================] - 6s 110us/sample - loss: 0.1928 - acc: 0.9256 - val_loss: 0.5413 - val_acc: 0.8673
+[32m+          Epoch 89/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.1922 - acc: 0.9274 - val_loss: 0.5782 - val_acc: 0.8692
+[32m+          Epoch 90/100
+[32m+          54000/54000 [==============================] - 5s 99us/sample - loss: 0.1835 - acc: 0.9307 - val_loss: 0.5510 - val_acc: 0.8783
+[32m+          Epoch 91/100
+[32m+          54000/54000 [==============================] - 5s 100us/sample - loss: 0.1844 - acc: 0.9303 - val_loss: 0.5819 - val_acc: 0.8670
+[32m+          Epoch 92/100
+[32m+          54000/54000 [==============================] - 5s 98us/sample - loss: 0.1912 - acc: 0.9278 - val_loss: 0.5980 - val_acc: 0.8692
+[32m+          Epoch 93/100
+[32m+          54000/54000 [==============================] - 5s 97us/sample - loss: 0.1888 - acc: 0.9298 - val_loss: 0.5649 - val_acc: 0.8702
+[32m+          Epoch 94/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1796 - acc: 0.9324 - val_loss: 0.5947 - val_acc: 0.8668
+[32m+          Epoch 95/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1948 - acc: 0.9275 - val_loss: 0.5812 - val_acc: 0.8653
+[32m+          Epoch 96/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1846 - acc: 0.9301 - val_loss: 0.5602 - val_acc: 0.8727
+[32m+          Epoch 97/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1804 - acc: 0.9316 - val_loss: 0.5943 - val_acc: 0.8715
+[32m+          Epoch 98/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1828 - acc: 0.9319 - val_loss: 0.5612 - val_acc: 0.8733
+[32m+          Epoch 99/100
+[32m+          54000/54000 [==============================] - 5s 94us/sample - loss: 0.1951 - acc: 0.9273 - val_loss: 0.5344 - val_acc: 0.8768
+[32m+          Epoch 100/100
+[32m+          54000/54000 [==============================] - 5s 98us/sample - loss: 0.1794 - acc: 0.9325 - val_loss: 0.5365 - val_acc: 0.8790
+
+[0m[34m## deleted /cells/20-21:[0m
+[31m-  code cell:
+[31m-    execution_count: 23
+[31m-    source:
+[31m-      mnist_nn = Sequential(name="mnistmodel")
+[31m-      
+[31m-      mnist_nn.add(Dense(98, activation='relu', input_dim=784))
+[31m-      mnist_nn.add(Dense(64, activation='relu'))
+[31m-      mnist_nn.add(Dense(64, activation='relu'))
+[31m-      mnist_nn.add(Dense(32, activation='relu'))
+[31m-      mnist_nn.add(Dense(32, activation='relu'))
+[31m-      mnist_nn.add(Dense(32, activation='relu'))
+[31m-      mnist_nn.add(Dense(10, activation='sigmoid',name="Output"))
+[31m-      
+[31m-      mnist_nn.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+[31m-      mnist_nn.summary()
+[31m-    outputs:
+[31m-      output 0:
+[31m-        output_type: stream
+[31m-        name: stdout
+[31m-        text:
+[31m-          Model: "mnistmodel"
+[31m-          _________________________________________________________________
+[31m-          Layer (type)                 Output Shape              Param #   
+[31m-          =================================================================
+[31m-          dense_11 (Dense)             (None, 98)                76930     
+[31m-          _________________________________________________________________
+[31m-          dense_12 (Dense)             (None, 64)                6336      
+[31m-          _________________________________________________________________
+[31m-          dense_13 (Dense)             (None, 64)                4160      
+[31m-          _________________________________________________________________
+[31m-          dense_14 (Dense)             (None, 32)                2080      
+[31m-          _________________________________________________________________
+[31m-          dense_15 (Dense)             (None, 32)                1056      
+[31m-          _________________________________________________________________
+[31m-          dense_16 (Dense)             (None, 32)                1056      
+[31m-          _________________________________________________________________
+[31m-          Output (Dense)               (None, 10)                330       
+[31m-          =================================================================
+[31m-          Total params: 91,948
+[31m-          Trainable params: 91,948
+[31m-          Non-trainable params: 0
+[31m-          _________________________________________________________________
+[31m-  code cell:
+[31m-    execution_count: 24
+[31m-    source:
+[31m-      mnist_run = mnist_nn.fit(x_train, y_train, epochs=1000, batch_size=500, validation_split=.1,  verbose=False)
+
+[0m[34m## replaced /cells/22/execution_count:[0m
+[31m-  25
+[32m+  23
+
+[0m[34m## inserted before /cells/22/outputs/0:[0m
+[32m+  output:
+[32m+    output_type: display_data
+[32m+    data:
+[32m+      image/png: iVBORw0K...<snip base64, md5=0fe028be7096bd9c...>
+[32m+      text/plain: <Figure size 432x288 with 1 Axes>
+
+[0m[34m## deleted /cells/22/outputs/0:[0m
+[31m-  output:
+[31m-    output_type: display_data
+[31m-    data:
+[31m-      image/png: iVBORw0K...<snip base64, md5=b70ee41fd9279828...>
+[31m-      text/plain: <Figure size 432x288 with 1 Axes>
+
+[0m[34m## replaced /cells/23/execution_count:[0m
+[31m-  26
+[32m+  24
+
+[0m[34m## modified /cells/23/outputs/0/text:[0m
+[36m@@ -1 +1 @@[m
+[31m-10000/10000 [==============================] - 0s 49us/sample - loss: nan - acc: 0.1000[m
+[32m+[m[32m10000/10000 [==============================] - 4s 445us/sample - loss: 0.5564 - acc: 0.8707[m
+
+[0m[34m## inserted before /cells/24:[0m
+[32m+  code cell:
+[32m+    execution_count: 25
+[32m+    source:
+[32m+      # accuracy of only 10%?
+[32m+      # edit: tweaked the model and got accuracy of 87%!
+[32m+      print("Accuacy:",scores[1]*100)
+[32m+    outputs:
+[32m+      output 0:
+[32m+        output_type: stream
+[32m+        name: stdout
+[32m+        text:
+[32m+          Accuacy: 87.07000017166138
+
+[0m[34m## deleted /cells/24:[0m
+[31m-  code cell:
+[31m-    execution_count: 27
+[31m-    source:
+[31m-      # accuracy of only 10%?
+[31m-      print("Accuacy:",scores[1]*100)
+[31m-    outputs:
+[31m-      output 0:
+[31m-        output_type: stream
+[31m-        name: stdout
+[31m-        text:
+[31m-          Accuacy: 10.000000149011612
+
+[0m

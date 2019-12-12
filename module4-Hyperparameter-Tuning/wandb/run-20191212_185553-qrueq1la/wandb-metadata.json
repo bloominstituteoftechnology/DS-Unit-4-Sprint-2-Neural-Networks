@@ -1,0 +1,26 @@
+{
+    "root": "/home/ec2-user/SageMaker/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/xander-bennett/DS-Unit-4-Sprint-2-Neural-Networks",
+        "commit": "4bf917fb80b3b8d67422123ef04667e3a89230d1"
+    },
+    "email": "zanderwhiteleybennett@gmail.com",
+    "startedAt": "2019-12-12T18:55:53.369717",
+    "host": "ip-172-16-91-124",
+    "username": "ec2-user",
+    "executable": "/home/ec2-user/anaconda3/envs/tensorflow_p36/bin/python",
+    "os": "Linux-4.14.152-98.182.amzn1.x86_64-x86_64-with-glibc2.9",
+    "python": "3.6.5",
+    "cpu_count": 2,
+    "cuda": "10.0.130",
+    "args": [
+        "-f",
+        "/home/ec2-user/.local/share/jupyter/runtime/kernel-7eb47558-3278-4d90-8a5d-693cac627123.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "project": "boston",
+    "heartbeatAt": "2019-12-12T18:55:54.962351"
+}
