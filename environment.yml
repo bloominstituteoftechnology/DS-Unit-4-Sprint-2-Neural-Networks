@@ -83,5 +83,5 @@ dependencies:
     - termcolor==1.1.0
     - werkzeug==0.15.4
     - wrapt==1.11.2
-prefix: /Users/jonathansokoll/anaconda3/envs/U4-S2-NNF
+prefix: /Users/RevL/.conda/envs/U4-S2-NNF
 
