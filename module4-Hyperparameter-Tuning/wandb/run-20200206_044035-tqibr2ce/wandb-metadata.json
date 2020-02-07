@@ -1,0 +1,27 @@
+{
+    "root": "C:/Users/Rob/repos/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/lechemrc/DS-Unit-4-Sprint-2-Neural-Networks",
+        "commit": "defc47c4069eb8911b1297b6f95eb47db2286380"
+    },
+    "email": "roblecheminant@gmail.com",
+    "startedAt": "2020-02-06T04:37:06.699414",
+    "host": "Speedy",
+    "username": "Rob",
+    "executable": "C:\\Users\\Rob\\.virtualenvs\\DS-Unit-4-Sprint-2-Neural-Networks-AITeJwQM\\Scripts\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.4",
+    "gpu": "GeForce RTX 2070 SUPER",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "args": [
+        "-f",
+        "C:\\Users\\Rob\\AppData\\Roaming\\jupyter\\runtime\\kernel-bb577037-4eab-457d-9761-50247e8495d2.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "dryrun",
+    "project": "boston",
+    "heartbeatAt": "2020-02-06T04:40:49.914373"
+}
