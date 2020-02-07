@@ -12,6 +12,7 @@ sklearn = "*"
 keras = "*"
 tensorflow = "*"
 wandb = "*"
+category-encoders = "*"
 
 [dev-packages]
 
