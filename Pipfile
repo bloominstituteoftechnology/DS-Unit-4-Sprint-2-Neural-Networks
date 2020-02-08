@@ -12,9 +12,10 @@ numpy = "*"
 scipy = "*"
 sklearn = "*"
 ipykernel = "*"
-keras = "*"
 wandb = "*"
+keras = "*"
 tensorflow = "==2.0.0"
+altair = "*"
 
 [requires]
 python_version = "3.7"
