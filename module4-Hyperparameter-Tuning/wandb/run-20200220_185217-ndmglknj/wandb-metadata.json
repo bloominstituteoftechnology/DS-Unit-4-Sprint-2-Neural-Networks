@@ -1,0 +1,28 @@
+{
+    "root": "C:/Users/benjamin/Desktop/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Mike-Xie/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "fcfbbf96d7fc2cce937cf85acd6af4cd88954f21"
+    },
+    "email": "Mike-Xie@users.noreply.github.com",
+    "startedAt": "2020-02-20T18:52:17.014796",
+    "host": "DESKTOP-QMDBBHH",
+    "username": "benjamin",
+    "executable": "C:\\Users\\benjamin\\Anaconda3\\envs\\U4-S2-NN\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.0",
+    "gpu": "GeForce GTX 1080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "args": [
+        "-f",
+        "C:\\Users\\benjamin\\AppData\\Roaming\\jupyter\\runtime\\kernel-09d2c79f-7663-468e-9894-a0583f604dbe.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "dauntless-sponge-9",
+    "project": "ds10_inclass",
+    "heartbeatAt": "2020-02-20T18:52:53.569522"
+}
