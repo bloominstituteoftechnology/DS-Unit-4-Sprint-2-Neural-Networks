@@ -1,0 +1,734 @@
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Assignment.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Assignment.ipynb
+index ca65dc6..cf51878 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Assignment.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Assignment.ipynb
+@@ -91,9 +91,9 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.7.3"
++   "version": "3.7.4"
+   }
+  },
+  "nbformat": 4,
+- "nbformat_minor": 2
++ "nbformat_minor": 4
+ }
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index 4bb18e9..312e32a 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -81,7 +81,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 1,
++   "execution_count": 3,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -106,7 +106,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 2,
++   "execution_count": 4,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -170,14 +170,18 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 5,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+      "height": 1750
+     },
+     "colab_type": "code",
++    "collapsed": true,
+     "id": "GMXVfmzXp1Oo",
++    "jupyter": {
++     "outputs_hidden": true
++    },
+     "outputId": "b05e251e-508f-46e6-865b-f869ae2a5dc4"
+    },
+    "outputs": [
+@@ -187,164 +191,164 @@
+      "text": [
+       "Train on 404 samples, validate on 102 samples\n",
+       "Epoch 1/75\n",
+-      "404/404 [==============================] - 2s 4ms/sample - loss: 498.2045 - mse: 498.2046 - mae: 20.2543 - val_loss: 421.5039 - val_mse: 421.5038 - val_mae: 18.3349\n",
++      "404/404 [==============================] - 0s 1ms/sample - loss: 537.5099 - mse: 537.5099 - mae: 21.3286 - val_loss: 475.7309 - val_mse: 475.7309 - val_mae: 19.9681\n",
+       "Epoch 2/75\n",
+-      "404/404 [==============================] - 0s 347us/sample - loss: 249.6985 - mse: 249.6985 - mae: 13.2672 - val_loss: 111.3743 - val_mse: 111.3743 - val_mae: 8.6210\n",
++      "404/404 [==============================] - 0s 194us/sample - loss: 320.2322 - mse: 320.2322 - mae: 15.5962 - val_loss: 166.2034 - val_mse: 166.2034 - val_mae: 11.0206\n",
+       "Epoch 3/75\n",
+-      "404/404 [==============================] - 0s 344us/sample - loss: 56.6755 - mse: 56.6755 - mae: 5.4817 - val_loss: 39.1997 - val_mse: 39.1997 - val_mae: 4.9872\n",
++      "404/404 [==============================] - 0s 210us/sample - loss: 77.7950 - mse: 77.7950 - mae: 6.5817 - val_loss: 46.0170 - val_mse: 46.0170 - val_mae: 5.3487\n",
+       "Epoch 4/75\n",
+-      "404/404 [==============================] - 0s 364us/sample - loss: 28.3243 - mse: 28.3243 - mae: 3.7054 - val_loss: 26.9866 - val_mse: 26.9866 - val_mae: 4.0796\n",
++      "404/404 [==============================] - 0s 216us/sample - loss: 36.1425 - mse: 36.1425 - mae: 4.1527 - val_loss: 29.3243 - val_mse: 29.3243 - val_mae: 4.2109\n",
+       "Epoch 5/75\n",
+-      "404/404 [==============================] - 0s 382us/sample - loss: 20.5281 - mse: 20.5281 - mae: 3.1209 - val_loss: 24.6172 - val_mse: 24.6172 - val_mae: 3.8052\n",
++      "404/404 [==============================] - 0s 222us/sample - loss: 26.8252 - mse: 26.8252 - mae: 3.5771 - val_loss: 24.7720 - val_mse: 24.7720 - val_mae: 3.9469\n",
+       "Epoch 6/75\n",
+-      "404/404 [==============================] - 0s 393us/sample - loss: 17.9283 - mse: 17.9283 - mae: 2.8665 - val_loss: 23.6524 - val_mse: 23.6524 - val_mae: 3.6746\n",
++      "404/404 [==============================] - 0s 200us/sample - loss: 23.1154 - mse: 23.1154 - mae: 3.2905 - val_loss: 22.5796 - val_mse: 22.5796 - val_mae: 3.7700\n",
+       "Epoch 7/75\n",
+-      "404/404 [==============================] - 0s 440us/sample - loss: 16.9179 - mse: 16.9179 - mae: 2.8781 - val_loss: 23.4620 - val_mse: 23.4620 - val_mae: 3.5778\n",
++      "404/404 [==============================] - 0s 212us/sample - loss: 20.2762 - mse: 20.2762 - mae: 3.1382 - val_loss: 22.3601 - val_mse: 22.3601 - val_mae: 3.7306\n",
+       "Epoch 8/75\n",
+-      "404/404 [==============================] - 0s 366us/sample - loss: 15.1579 - mse: 15.1579 - mae: 2.6440 - val_loss: 24.1374 - val_mse: 24.1374 - val_mae: 3.5929\n",
++      "404/404 [==============================] - 0s 197us/sample - loss: 18.5727 - mse: 18.5727 - mae: 3.0149 - val_loss: 21.5166 - val_mse: 21.5166 - val_mae: 3.6155\n",
+       "Epoch 9/75\n",
+-      "404/404 [==============================] - 0s 367us/sample - loss: 14.1717 - mse: 14.1717 - mae: 2.5937 - val_loss: 24.4829 - val_mse: 24.4829 - val_mae: 3.5639\n",
++      "404/404 [==============================] - 0s 223us/sample - loss: 16.9155 - mse: 16.9155 - mae: 2.9083 - val_loss: 21.1326 - val_mse: 21.1326 - val_mae: 3.5200\n",
+       "Epoch 10/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 13.5002 - mse: 13.5002 - mae: 2.5633 - val_loss: 25.0170 - val_mse: 25.0170 - val_mae: 3.5601\n",
++      "404/404 [==============================] - 0s 227us/sample - loss: 16.0352 - mse: 16.0352 - mae: 2.7717 - val_loss: 20.5577 - val_mse: 20.5577 - val_mae: 3.4490\n",
+       "Epoch 11/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 12.8641 - mse: 12.8641 - mae: 2.4963 - val_loss: 25.1162 - val_mse: 25.1162 - val_mae: 3.5449\n",
++      "404/404 [==============================] - 0s 172us/sample - loss: 14.8638 - mse: 14.8638 - mae: 2.6992 - val_loss: 20.6549 - val_mse: 20.6549 - val_mae: 3.4104\n",
+       "Epoch 12/75\n",
+-      "404/404 [==============================] - 0s 351us/sample - loss: 12.4033 - mse: 12.4033 - mae: 2.5224 - val_loss: 25.0382 - val_mse: 25.0382 - val_mae: 3.4858\n",
++      "404/404 [==============================] - 0s 219us/sample - loss: 14.0627 - mse: 14.0627 - mae: 2.6374 - val_loss: 20.8239 - val_mse: 20.8239 - val_mae: 3.4066\n",
+       "Epoch 13/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 12.2653 - mse: 12.2653 - mae: 2.4637 - val_loss: 26.7274 - val_mse: 26.7274 - val_mae: 3.6054\n",
++      "404/404 [==============================] - 0s 218us/sample - loss: 13.3850 - mse: 13.3850 - mae: 2.5602 - val_loss: 20.7684 - val_mse: 20.7684 - val_mae: 3.3369\n",
+       "Epoch 14/75\n",
+-      "404/404 [==============================] - 0s 368us/sample - loss: 11.8249 - mse: 11.8249 - mae: 2.4648 - val_loss: 25.2347 - val_mse: 25.2347 - val_mae: 3.4602\n",
++      "404/404 [==============================] - 0s 212us/sample - loss: 12.7793 - mse: 12.7793 - mae: 2.5056 - val_loss: 21.1441 - val_mse: 21.1441 - val_mae: 3.3648\n",
+       "Epoch 15/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 11.3965 - mse: 11.3965 - mae: 2.4134 - val_loss: 25.3070 - val_mse: 25.3070 - val_mae: 3.4305\n",
++      "404/404 [==============================] - ETA: 0s - loss: 12.3700 - mse: 12.3700 - mae: 2.488 - 0s 202us/sample - loss: 12.2249 - mse: 12.2249 - mae: 2.4934 - val_loss: 20.9761 - val_mse: 20.9761 - val_mae: 3.2941\n",
+       "Epoch 16/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 11.0982 - mse: 11.0982 - mae: 2.3616 - val_loss: 25.0599 - val_mse: 25.0599 - val_mae: 3.3784\n",
++      "404/404 [==============================] - 0s 199us/sample - loss: 12.2385 - mse: 12.2385 - mae: 2.4273 - val_loss: 21.1328 - val_mse: 21.1328 - val_mae: 3.2380\n",
+       "Epoch 17/75\n",
+-      "404/404 [==============================] - 0s 365us/sample - loss: 11.1969 - mse: 11.1969 - mae: 2.3806 - val_loss: 25.1976 - val_mse: 25.1976 - val_mae: 3.3732\n",
++      "404/404 [==============================] - 0s 238us/sample - loss: 11.6680 - mse: 11.6680 - mae: 2.4065 - val_loss: 20.5174 - val_mse: 20.5174 - val_mae: 3.1408\n",
+       "Epoch 18/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 10.9278 - mse: 10.9278 - mae: 2.3653 - val_loss: 24.2875 - val_mse: 24.2875 - val_mae: 3.3114\n",
++      "404/404 [==============================] - 0s 219us/sample - loss: 10.9892 - mse: 10.9892 - mae: 2.3234 - val_loss: 20.5345 - val_mse: 20.5345 - val_mae: 3.1682\n",
+       "Epoch 19/75\n",
+-      "404/404 [==============================] - 0s 365us/sample - loss: 10.5854 - mse: 10.5854 - mae: 2.3170 - val_loss: 26.1450 - val_mse: 26.1450 - val_mae: 3.3971\n",
++      "404/404 [==============================] - 0s 184us/sample - loss: 11.0251 - mse: 11.0251 - mae: 2.3787 - val_loss: 21.5533 - val_mse: 21.5533 - val_mae: 3.2109\n",
+       "Epoch 20/75\n",
+-      "404/404 [==============================] - 0s 401us/sample - loss: 10.2546 - mse: 10.2546 - mae: 2.2813 - val_loss: 26.5278 - val_mse: 26.5278 - val_mae: 3.4465\n",
++      "404/404 [==============================] - 0s 185us/sample - loss: 10.4906 - mse: 10.4906 - mae: 2.2614 - val_loss: 20.1633 - val_mse: 20.1633 - val_mae: 3.0768\n",
+       "Epoch 21/75\n",
+-      "404/404 [==============================] - 0s 380us/sample - loss: 10.1321 - mse: 10.1321 - mae: 2.2866 - val_loss: 24.0363 - val_mse: 24.0363 - val_mae: 3.2792\n",
++      "404/404 [==============================] - 0s 210us/sample - loss: 10.1836 - mse: 10.1836 - mae: 2.2498 - val_loss: 21.5241 - val_mse: 21.5241 - val_mae: 3.1438\n",
+       "Epoch 22/75\n",
+-      "404/404 [==============================] - 0s 421us/sample - loss: 9.9169 - mse: 9.9169 - mae: 2.2907 - val_loss: 23.7310 - val_mse: 23.7310 - val_mae: 3.2334\n",
++      "404/404 [==============================] - 0s 201us/sample - loss: 9.9394 - mse: 9.9394 - mae: 2.2400 - val_loss: 19.8942 - val_mse: 19.8942 - val_mae: 3.0007\n",
+       "Epoch 23/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 9.6588 - mse: 9.6588 - mae: 2.2284 - val_loss: 23.6472 - val_mse: 23.6472 - val_mae: 3.2013\n",
++      "404/404 [==============================] - 0s 171us/sample - loss: 9.9585 - mse: 9.9585 - mae: 2.2203 - val_loss: 20.6032 - val_mse: 20.6032 - val_mae: 3.0856\n",
+       "Epoch 24/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 9.6887 - mse: 9.6887 - mae: 2.2468 - val_loss: 23.5379 - val_mse: 23.5379 - val_mae: 3.1921\n",
++      "404/404 [==============================] - 0s 210us/sample - loss: 9.8526 - mse: 9.8526 - mae: 2.2185 - val_loss: 21.1118 - val_mse: 21.1118 - val_mae: 3.0461\n",
+       "Epoch 25/75\n",
+-      "404/404 [==============================] - 0s 373us/sample - loss: 9.4049 - mse: 9.4049 - mae: 2.1999 - val_loss: 23.7713 - val_mse: 23.7713 - val_mae: 3.2273\n",
++      "404/404 [==============================] - 0s 238us/sample - loss: 9.6780 - mse: 9.6780 - mae: 2.1726 - val_loss: 22.5155 - val_mse: 22.5155 - val_mae: 3.1475\n",
+       "Epoch 26/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 9.2304 - mse: 9.2304 - mae: 2.1946 - val_loss: 23.5093 - val_mse: 23.5093 - val_mae: 3.2072\n",
++      "404/404 [==============================] - 0s 271us/sample - loss: 9.4653 - mse: 9.4653 - mae: 2.1924 - val_loss: 21.9604 - val_mse: 21.9604 - val_mae: 3.0874\n",
+       "Epoch 27/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 9.0493 - mse: 9.0493 - mae: 2.1528 - val_loss: 23.7969 - val_mse: 23.7969 - val_mae: 3.2005\n",
++      "404/404 [==============================] - 0s 249us/sample - loss: 9.1652 - mse: 9.1652 - mae: 2.1141 - val_loss: 21.8432 - val_mse: 21.8432 - val_mae: 3.0651\n",
+       "Epoch 28/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 8.9363 - mse: 8.9363 - mae: 2.1475 - val_loss: 22.1030 - val_mse: 22.1030 - val_mae: 3.0707\n",
++      "404/404 [==============================] - 0s 195us/sample - loss: 8.9927 - mse: 8.9927 - mae: 2.1245 - val_loss: 20.7747 - val_mse: 20.7747 - val_mae: 2.9753\n",
+       "Epoch 29/75\n",
+-      "404/404 [==============================] - 0s 373us/sample - loss: 8.7834 - mse: 8.7834 - mae: 2.1231 - val_loss: 22.5153 - val_mse: 22.5153 - val_mae: 3.1532\n",
++      "404/404 [==============================] - 0s 734us/sample - loss: 8.8693 - mse: 8.8693 - mae: 2.1026 - val_loss: 22.5614 - val_mse: 22.5614 - val_mae: 3.0830\n",
+       "Epoch 30/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 8.7925 - mse: 8.7925 - mae: 2.1531 - val_loss: 22.0449 - val_mse: 22.0449 - val_mae: 3.1245\n",
++      "404/404 [==============================] - 0s 552us/sample - loss: 8.5695 - mse: 8.5695 - mae: 2.1164 - val_loss: 20.6166 - val_mse: 20.6166 - val_mae: 2.9095\n",
+       "Epoch 31/75\n",
+-      "404/404 [==============================] - 0s 374us/sample - loss: 9.1879 - mse: 9.1879 - mae: 2.2029 - val_loss: 22.1780 - val_mse: 22.1780 - val_mae: 3.0623\n",
++      "404/404 [==============================] - 0s 469us/sample - loss: 8.5966 - mse: 8.5966 - mae: 2.1126 - val_loss: 20.5693 - val_mse: 20.5693 - val_mae: 2.9880\n",
+       "Epoch 32/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 8.7136 - mse: 8.7136 - mae: 2.1164 - val_loss: 21.9815 - val_mse: 21.9815 - val_mae: 3.0969\n",
++      "404/404 [==============================] - 0s 490us/sample - loss: 8.4880 - mse: 8.4880 - mae: 2.0321 - val_loss: 21.4399 - val_mse: 21.4399 - val_mae: 2.9640\n",
+       "Epoch 33/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 8.3018 - mse: 8.3018 - mae: 2.0639 - val_loss: 21.0477 - val_mse: 21.0477 - val_mae: 2.9645\n",
++      "404/404 [==============================] - 0s 687us/sample - loss: 8.3681 - mse: 8.3681 - mae: 2.0543 - val_loss: 20.7923 - val_mse: 20.7923 - val_mae: 2.9204\n",
+       "Epoch 34/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 8.4156 - mse: 8.4156 - mae: 2.0970 - val_loss: 22.6659 - val_mse: 22.6659 - val_mae: 3.1235\n",
++      "404/404 [==============================] - 0s 482us/sample - loss: 8.5180 - mse: 8.5180 - mae: 2.1377 - val_loss: 20.3874 - val_mse: 20.3874 - val_mae: 2.8490\n",
+       "Epoch 35/75\n",
+-      "404/404 [==============================] - 0s 350us/sample - loss: 8.2938 - mse: 8.2938 - mae: 2.0567 - val_loss: 20.9574 - val_mse: 20.9574 - val_mae: 2.9746\n",
++      "404/404 [==============================] - 0s 362us/sample - loss: 8.0646 - mse: 8.0646 - mae: 2.0038 - val_loss: 19.9827 - val_mse: 19.9827 - val_mae: 2.8524\n",
+       "Epoch 36/75\n",
+-      "404/404 [==============================] - 0s 357us/sample - loss: 8.0515 - mse: 8.0515 - mae: 2.0591 - val_loss: 23.2063 - val_mse: 23.2063 - val_mae: 3.1980\n",
++      "404/404 [==============================] - 0s 325us/sample - loss: 7.9867 - mse: 7.9867 - mae: 1.9939 - val_loss: 20.5283 - val_mse: 20.5283 - val_mae: 2.9202\n",
+       "Epoch 37/75\n",
+-      "404/404 [==============================] - 0s 381us/sample - loss: 8.1403 - mse: 8.1403 - mae: 2.0584 - val_loss: 24.5238 - val_mse: 24.5237 - val_mae: 3.3531\n",
++      "404/404 [==============================] - 0s 406us/sample - loss: 7.8431 - mse: 7.8431 - mae: 1.9901 - val_loss: 20.5214 - val_mse: 20.5214 - val_mae: 2.9233\n",
+       "Epoch 38/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 8.0043 - mse: 8.0043 - mae: 2.0776 - val_loss: 22.5424 - val_mse: 22.5424 - val_mae: 3.1494\n",
++      "404/404 [==============================] - 0s 444us/sample - loss: 7.8237 - mse: 7.8237 - mae: 1.9852 - val_loss: 21.1684 - val_mse: 21.1684 - val_mae: 2.9655\n",
+       "Epoch 39/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 8.1182 - mse: 8.1182 - mae: 2.0683 - val_loss: 19.7576 - val_mse: 19.7576 - val_mae: 2.8799\n",
++      "404/404 [==============================] - 0s 336us/sample - loss: 7.7659 - mse: 7.7659 - mae: 1.9869 - val_loss: 19.8742 - val_mse: 19.8742 - val_mae: 2.7933\n",
+       "Epoch 40/75\n",
+-      "404/404 [==============================] - 0s 374us/sample - loss: 7.8578 - mse: 7.8578 - mae: 2.0131 - val_loss: 20.7728 - val_mse: 20.7728 - val_mae: 2.9499\n",
++      "404/404 [==============================] - 0s 203us/sample - loss: 7.6701 - mse: 7.6701 - mae: 1.9338 - val_loss: 22.4184 - val_mse: 22.4184 - val_mae: 3.1036\n",
+       "Epoch 41/75\n",
+-      "404/404 [==============================] - 0s 382us/sample - loss: 7.5711 - mse: 7.5711 - mae: 1.9896 - val_loss: 20.6170 - val_mse: 20.6170 - val_mae: 2.9936\n",
++      "404/404 [==============================] - 0s 200us/sample - loss: 7.3966 - mse: 7.3966 - mae: 1.9455 - val_loss: 19.4117 - val_mse: 19.4117 - val_mae: 2.7759\n",
+       "Epoch 42/75\n",
+-      "404/404 [==============================] - 0s 385us/sample - loss: 7.5822 - mse: 7.5822 - mae: 1.9683 - val_loss: 20.8541 - val_mse: 20.8541 - val_mae: 3.0054\n",
++      "404/404 [==============================] - 0s 194us/sample - loss: 7.4485 - mse: 7.4485 - mae: 1.9343 - val_loss: 20.1752 - val_mse: 20.1752 - val_mae: 2.8675\n",
+       "Epoch 43/75\n",
+-      "404/404 [==============================] - 0s 408us/sample - loss: 7.4533 - mse: 7.4533 - mae: 1.9645 - val_loss: 20.4473 - val_mse: 20.4473 - val_mae: 2.8861\n",
++      "404/404 [==============================] - 0s 209us/sample - loss: 7.3465 - mse: 7.3465 - mae: 1.9256 - val_loss: 20.1250 - val_mse: 20.1250 - val_mae: 2.8043\n",
+       "Epoch 44/75\n",
+-      "404/404 [==============================] - 0s 396us/sample - loss: 7.5226 - mse: 7.5226 - mae: 1.9509 - val_loss: 20.5193 - val_mse: 20.5193 - val_mae: 2.9619\n",
++      "404/404 [==============================] - 0s 243us/sample - loss: 7.1319 - mse: 7.1319 - mae: 1.9500 - val_loss: 18.9803 - val_mse: 18.9803 - val_mae: 2.8002\n",
+       "Epoch 45/75\n",
+-      "404/404 [==============================] - 0s 355us/sample - loss: 7.2819 - mse: 7.2819 - mae: 1.9350 - val_loss: 21.4862 - val_mse: 21.4862 - val_mae: 2.9908\n",
++      "404/404 [==============================] - 0s 244us/sample - loss: 7.3691 - mse: 7.3691 - mae: 1.9356 - val_loss: 19.6943 - val_mse: 19.6943 - val_mae: 2.8054\n",
+       "Epoch 46/75\n",
+-      "404/404 [==============================] - 0s 354us/sample - loss: 7.0130 - mse: 7.0130 - mae: 1.9152 - val_loss: 20.1577 - val_mse: 20.1577 - val_mae: 2.9370\n",
++      "404/404 [==============================] - 0s 217us/sample - loss: 7.0752 - mse: 7.0752 - mae: 1.9225 - val_loss: 18.5801 - val_mse: 18.5801 - val_mae: 2.7082\n",
+       "Epoch 47/75\n",
+-      "404/404 [==============================] - 0s 375us/sample - loss: 6.9431 - mse: 6.9431 - mae: 1.8819 - val_loss: 21.1210 - val_mse: 21.1210 - val_mae: 2.9746\n",
++      "404/404 [==============================] - 0s 198us/sample - loss: 6.9362 - mse: 6.9362 - mae: 1.8648 - val_loss: 20.1413 - val_mse: 20.1413 - val_mae: 2.9379\n",
+       "Epoch 48/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 6.8982 - mse: 6.8982 - mae: 1.9037 - val_loss: 19.2999 - val_mse: 19.2999 - val_mae: 2.8638\n",
++      "404/404 [==============================] - 0s 241us/sample - loss: 6.8975 - mse: 6.8975 - mae: 1.8919 - val_loss: 19.2300 - val_mse: 19.2300 - val_mae: 2.8085\n",
+       "Epoch 49/75\n",
+-      "404/404 [==============================] - 0s 368us/sample - loss: 6.9521 - mse: 6.9521 - mae: 1.8862 - val_loss: 20.7825 - val_mse: 20.7825 - val_mae: 2.9369\n",
++      "404/404 [==============================] - 0s 277us/sample - loss: 6.7862 - mse: 6.7862 - mae: 1.8739 - val_loss: 18.5297 - val_mse: 18.5297 - val_mae: 2.7164\n",
+       "Epoch 50/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 6.8718 - mse: 6.8718 - mae: 1.8889 - val_loss: 20.0288 - val_mse: 20.0288 - val_mae: 2.8915\n",
++      "404/404 [==============================] - 0s 211us/sample - loss: 6.6992 - mse: 6.6992 - mae: 1.8548 - val_loss: 17.6922 - val_mse: 17.6922 - val_mae: 2.7096\n",
+       "Epoch 51/75\n",
+-      "404/404 [==============================] - 0s 354us/sample - loss: 6.7111 - mse: 6.7111 - mae: 1.8702 - val_loss: 20.4913 - val_mse: 20.4913 - val_mae: 3.0116\n",
++      "404/404 [==============================] - 0s 205us/sample - loss: 6.8867 - mse: 6.8867 - mae: 1.8719 - val_loss: 18.8549 - val_mse: 18.8549 - val_mae: 2.7970\n",
+       "Epoch 52/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 6.7492 - mse: 6.7492 - mae: 1.8482 - val_loss: 18.3008 - val_mse: 18.3008 - val_mae: 2.7362\n",
++      "404/404 [==============================] - 0s 229us/sample - loss: 6.5341 - mse: 6.5341 - mae: 1.8383 - val_loss: 18.0699 - val_mse: 18.0699 - val_mae: 2.7491\n",
+       "Epoch 53/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 6.6262 - mse: 6.6262 - mae: 1.8395 - val_loss: 18.1885 - val_mse: 18.1885 - val_mae: 2.6920\n",
++      "404/404 [==============================] - 0s 220us/sample - loss: 6.4591 - mse: 6.4591 - mae: 1.8082 - val_loss: 17.8624 - val_mse: 17.8624 - val_mae: 2.6080\n",
+       "Epoch 54/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 6.7148 - mse: 6.7148 - mae: 1.8611 - val_loss: 18.5764 - val_mse: 18.5764 - val_mae: 2.6977\n",
++      "404/404 [==============================] - 0s 224us/sample - loss: 6.7650 - mse: 6.7650 - mae: 1.8522 - val_loss: 17.3592 - val_mse: 17.3592 - val_mae: 2.6192\n",
+       "Epoch 55/75\n",
+-      "404/404 [==============================] - 0s 358us/sample - loss: 6.5425 - mse: 6.5425 - mae: 1.8522 - val_loss: 19.5772 - val_mse: 19.5772 - val_mae: 2.8326\n",
++      "404/404 [==============================] - 0s 230us/sample - loss: 6.5803 - mse: 6.5803 - mae: 1.8434 - val_loss: 17.5681 - val_mse: 17.5681 - val_mae: 2.6738\n",
+       "Epoch 56/75\n",
+-      "404/404 [==============================] - 0s 423us/sample - loss: 6.3349 - mse: 6.3349 - mae: 1.8175 - val_loss: 19.0932 - val_mse: 19.0932 - val_mae: 2.8260\n",
++      "404/404 [==============================] - 0s 209us/sample - loss: 6.3201 - mse: 6.3201 - mae: 1.7887 - val_loss: 17.9965 - val_mse: 17.9965 - val_mae: 2.6527\n",
+       "Epoch 57/75\n",
+-      "404/404 [==============================] - 0s 375us/sample - loss: 6.4253 - mse: 6.4253 - mae: 1.7972 - val_loss: 20.4036 - val_mse: 20.4036 - val_mae: 2.9258\n",
++      "404/404 [==============================] - 0s 229us/sample - loss: 6.1579 - mse: 6.1579 - mae: 1.7857 - val_loss: 19.2997 - val_mse: 19.2997 - val_mae: 2.8051\n",
+       "Epoch 58/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 6.2897 - mse: 6.2897 - mae: 1.7785 - val_loss: 21.2845 - val_mse: 21.2845 - val_mae: 3.0715\n",
++      "404/404 [==============================] - 0s 225us/sample - loss: 6.1232 - mse: 6.1232 - mae: 1.7864 - val_loss: 18.2005 - val_mse: 18.2005 - val_mae: 2.6426\n",
+       "Epoch 59/75\n",
+-      "404/404 [==============================] - 0s 378us/sample - loss: 6.7839 - mse: 6.7839 - mae: 1.9027 - val_loss: 18.6853 - val_mse: 18.6853 - val_mae: 2.7709\n",
++      "404/404 [==============================] - 0s 211us/sample - loss: 6.1175 - mse: 6.1175 - mae: 1.7669 - val_loss: 17.5156 - val_mse: 17.5156 - val_mae: 2.5895\n",
+       "Epoch 60/75\n",
+-      "404/404 [==============================] - 0s 395us/sample - loss: 6.7178 - mse: 6.7178 - mae: 1.8871 - val_loss: 19.5394 - val_mse: 19.5394 - val_mae: 2.8101\n",
++      "404/404 [==============================] - 0s 184us/sample - loss: 5.9102 - mse: 5.9102 - mae: 1.7930 - val_loss: 16.8916 - val_mse: 16.8916 - val_mae: 2.5755\n",
+       "Epoch 61/75\n",
+-      "404/404 [==============================] - 0s 366us/sample - loss: 6.4152 - mse: 6.4152 - mae: 1.8175 - val_loss: 18.2377 - val_mse: 18.2377 - val_mae: 2.7450\n",
++      "404/404 [==============================] - 0s 203us/sample - loss: 6.0336 - mse: 6.0336 - mae: 1.7621 - val_loss: 17.6530 - val_mse: 17.6530 - val_mae: 2.6573\n",
+       "Epoch 62/75\n",
+-      "404/404 [==============================] - 0s 384us/sample - loss: 5.9727 - mse: 5.9727 - mae: 1.7630 - val_loss: 19.0252 - val_mse: 19.0252 - val_mae: 2.7960\n",
++      "404/404 [==============================] - 0s 233us/sample - loss: 5.7328 - mse: 5.7328 - mae: 1.7367 - val_loss: 16.8331 - val_mse: 16.8331 - val_mae: 2.5728\n",
+       "Epoch 63/75\n",
+-      "404/404 [==============================] - 0s 380us/sample - loss: 6.0973 - mse: 6.0973 - mae: 1.8071 - val_loss: 18.8069 - val_mse: 18.8069 - val_mae: 2.8894\n",
++      "404/404 [==============================] - 0s 236us/sample - loss: 5.7354 - mse: 5.7354 - mae: 1.7114 - val_loss: 16.7695 - val_mse: 16.7695 - val_mae: 2.5224\n",
+       "Epoch 64/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 6.1074 - mse: 6.1074 - mae: 1.7978 - val_loss: 18.4702 - val_mse: 18.4702 - val_mae: 2.7851\n",
++      "404/404 [==============================] - 0s 218us/sample - loss: 5.5810 - mse: 5.5810 - mae: 1.7168 - val_loss: 16.7205 - val_mse: 16.7205 - val_mae: 2.5704\n",
+       "Epoch 65/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 5.9329 - mse: 5.9329 - mae: 1.7545 - val_loss: 18.5321 - val_mse: 18.5321 - val_mae: 2.7933\n",
++      "404/404 [==============================] - 0s 233us/sample - loss: 5.5630 - mse: 5.5630 - mae: 1.7089 - val_loss: 16.2427 - val_mse: 16.2427 - val_mae: 2.5288\n",
+       "Epoch 66/75\n",
+-      "404/404 [==============================] - 0s 341us/sample - loss: 5.7473 - mse: 5.7473 - mae: 1.7211 - val_loss: 18.5536 - val_mse: 18.5536 - val_mae: 2.8010\n",
++      "404/404 [==============================] - 0s 205us/sample - loss: 5.3973 - mse: 5.3973 - mae: 1.6497 - val_loss: 16.7536 - val_mse: 16.7536 - val_mae: 2.5316\n",
+       "Epoch 67/75\n",
+-      "404/404 [==============================] - 0s 339us/sample - loss: 5.8866 - mse: 5.8866 - mae: 1.7224 - val_loss: 18.0067 - val_mse: 18.0067 - val_mae: 2.7054\n",
++      "404/404 [==============================] - 0s 212us/sample - loss: 5.4965 - mse: 5.4965 - mae: 1.7223 - val_loss: 17.1449 - val_mse: 17.1449 - val_mae: 2.6280\n",
+       "Epoch 68/75\n",
+-      "404/404 [==============================] - 0s 337us/sample - loss: 5.7885 - mse: 5.7885 - mae: 1.7391 - val_loss: 17.5502 - val_mse: 17.5502 - val_mae: 2.6767\n",
++      "404/404 [==============================] - 0s 220us/sample - loss: 5.4154 - mse: 5.4154 - mae: 1.7128 - val_loss: 16.3585 - val_mse: 16.3584 - val_mae: 2.5762\n",
+       "Epoch 69/75\n",
+-      "404/404 [==============================] - 0s 331us/sample - loss: 5.8809 - mse: 5.8809 - mae: 1.7542 - val_loss: 17.0280 - val_mse: 17.0280 - val_mae: 2.6404\n",
++      "404/404 [==============================] - 0s 199us/sample - loss: 5.4045 - mse: 5.4045 - mae: 1.6823 - val_loss: 16.2567 - val_mse: 16.2567 - val_mae: 2.5405\n",
+       "Epoch 70/75\n",
+-      "404/404 [==============================] - 0s 343us/sample - loss: 5.6028 - mse: 5.6028 - mae: 1.6972 - val_loss: 17.7188 - val_mse: 17.7188 - val_mae: 2.6979\n",
++      "404/404 [==============================] - 0s 212us/sample - loss: 5.5419 - mse: 5.5419 - mae: 1.7303 - val_loss: 14.9679 - val_mse: 14.9679 - val_mae: 2.4593\n",
+       "Epoch 71/75\n",
+-      "404/404 [==============================] - 0s 337us/sample - loss: 5.4361 - mse: 5.4361 - mae: 1.6741 - val_loss: 16.8852 - val_mse: 16.8852 - val_mae: 2.6126\n",
++      "404/404 [==============================] - 0s 353us/sample - loss: 5.1682 - mse: 5.1682 - mae: 1.6507 - val_loss: 16.0708 - val_mse: 16.0708 - val_mae: 2.5390\n",
+       "Epoch 72/75\n",
+-      "404/404 [==============================] - 0s 345us/sample - loss: 5.5608 - mse: 5.5608 - mae: 1.7252 - val_loss: 16.7483 - val_mse: 16.7483 - val_mae: 2.6063\n",
++      "404/404 [==============================] - 0s 653us/sample - loss: 5.0159 - mse: 5.0159 - mae: 1.6153 - val_loss: 15.4341 - val_mse: 15.4341 - val_mae: 2.4589\n",
+       "Epoch 73/75\n",
+-      "404/404 [==============================] - 0s 341us/sample - loss: 5.5022 - mse: 5.5022 - mae: 1.6912 - val_loss: 17.6786 - val_mse: 17.6786 - val_mae: 2.7316\n",
++      "404/404 [==============================] - 0s 770us/sample - loss: 5.1199 - mse: 5.1199 - mae: 1.6376 - val_loss: 15.1083 - val_mse: 15.1083 - val_mae: 2.4533\n",
+       "Epoch 74/75\n",
+-      "404/404 [==============================] - 0s 396us/sample - loss: 5.2794 - mse: 5.2794 - mae: 1.6478 - val_loss: 17.6115 - val_mse: 17.6115 - val_mae: 2.6773\n",
++      "404/404 [==============================] - 0s 578us/sample - loss: 5.0215 - mse: 5.0215 - mae: 1.6121 - val_loss: 15.5793 - val_mse: 15.5793 - val_mae: 2.4603\n",
+       "Epoch 75/75\n",
+-      "404/404 [==============================] - 0s 338us/sample - loss: 5.4796 - mse: 5.4796 - mae: 1.6876 - val_loss: 17.2835 - val_mse: 17.2835 - val_mae: 2.7126\n"
++      "404/404 [==============================] - 0s 487us/sample - loss: 4.9445 - mse: 4.9445 - mae: 1.6046 - val_loss: 15.3073 - val_mse: 15.3073 - val_mae: 2.5006\n"
+      ]
+     },
+     {
+      "data": {
+       "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x7f36340c6b38>"
++       "<tensorflow.python.keras.callbacks.History at 0x12f921518>"
+       ]
+      },
+-     "execution_count": 3,
++     "execution_count": 5,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -371,7 +375,7 @@
+     "\n",
+     "# Fit Model\n",
+     "model.fit(x_train, y_train, \n",
+-    "          validation_data=(x_test,y_test), \n",
++    "          validation_data=(x_test,y_test), # focus in \n",
+     "          epochs=epochs, \n",
+     "          batch_size=batch_size\n",
+     "         )"
+@@ -449,7 +453,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 4,
++   "execution_count": 6,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -460,25 +464,17 @@
+     "outputId": "ae996575-78e2-43fb-9dbe-5d44aaf0b430"
+    },
+    "outputs": [
+-    {
+-     "name": "stderr",
+-     "output_type": "stream",
+-     "text": [
+-      "/usr/local/lib/python3.6/dist-packages/sklearn/model_selection/_split.py:1978: FutureWarning: The default value of cv will change from 3 to 5 in version 0.22. Specify it explicitly to silence this warning.\n",
+-      "  warnings.warn(CV_WARNING, FutureWarning)\n"
+-     ]
+-    },
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "Best: 0.65234375 using {'batch_size': 10, 'epochs': 20}\n",
+-      "Means: 0.65234375, Stdev: 0.033298728782667764 with: {'batch_size': 10, 'epochs': 20}\n",
+-      "Means: 0.6263020833333334, Stdev: 0.01813592223591682 with: {'batch_size': 20, 'epochs': 20}\n",
+-      "Means: 0.6041666666666666, Stdev: 0.037782859709757574 with: {'batch_size': 40, 'epochs': 20}\n",
+-      "Means: 0.5533854166666666, Stdev: 0.03210632293213009 with: {'batch_size': 60, 'epochs': 20}\n",
+-      "Means: 0.61328125, Stdev: 0.024079742199097563 with: {'batch_size': 80, 'epochs': 20}\n",
+-      "Means: 0.5611979166666666, Stdev: 0.038450060052691144 with: {'batch_size': 100, 'epochs': 20}\n"
++      "Best: 0.670622193813324 using {'batch_size': 10, 'epochs': 20}\n",
++      "Means: 0.670622193813324, Stdev: 0.044551428348865024 with: {'batch_size': 10, 'epochs': 20}\n",
++      "Means: 0.6407011270523071, Stdev: 0.034546313649283754 with: {'batch_size': 20, 'epochs': 20}\n",
++      "Means: 0.657499372959137, Stdev: 0.03782151934942708 with: {'batch_size': 40, 'epochs': 20}\n",
++      "Means: 0.5456073343753814, Stdev: 0.07511943691942503 with: {'batch_size': 60, 'epochs': 20}\n",
++      "Means: 0.5873610258102417, Stdev: 0.03988426727797883 with: {'batch_size': 80, 'epochs': 20}\n",
++      "Means: 0.5013581216335297, Stdev: 0.09138471175129648 with: {'batch_size': 100, 'epochs': 20}\n"
+      ]
+     }
+    ],
+@@ -514,19 +510,22 @@
+     "    return model\n",
+     "\n",
+     "# create model\n",
+-    "model = KerasClassifier(build_fn=create_model, verbose=0)\n",
++    "model = KerasClassifier(build_fn=create_model, verbose=0) # we pass function created above to our KerasClass\n",
++    "                                                          # works as any other model would \n",
+     "\n",
+     "# define the grid search parameters\n",
+     "# batch_size = [10, 20, 40, 60, 80, 100]\n",
+     "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
+     "\n",
+     "# define the grid search parameters\n",
+-    "param_grid = {'batch_size': [10, 20, 40, 60, 80, 100],\n",
++    "param_grid = {'batch_size': [10, 20, 40, 60, 80, 100],    # these are some of the params we will be manipulating\n",
+     "              'epochs': [20]}\n",
+     "\n",
+     "# Create Grid Search\n",
+-    "grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=1)\n",
+-    "grid_result = grid.fit(X, Y)\n",
++    "grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=1)  # Not dist. training, dist exp trying to\n",
++    "grid_result = grid.fit(X, Y)                                           \n",
++    "\n",
++    "# Note: look into what is cross validate, again!\n",
+     "\n",
+     "# Report Results\n",
+     "print(f\"Best: {grid_result.best_score_} using {grid_result.best_params_}\")\n",
+@@ -551,7 +550,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 5,
++   "execution_count": 7,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -566,11 +565,11 @@
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "Best: 0.7044270833333334 using {'batch_size': 20, 'epochs': 200}\n",
+-      "Means: 0.6666666666666666, Stdev: 0.028940248399600087 with: {'batch_size': 20, 'epochs': 20}\n",
+-      "Means: 0.6588541666666666, Stdev: 0.028940248399600087 with: {'batch_size': 20, 'epochs': 40}\n",
+-      "Means: 0.6848958333333334, Stdev: 0.03498705427745938 with: {'batch_size': 20, 'epochs': 60}\n",
+-      "Means: 0.7044270833333334, Stdev: 0.018414239093399672 with: {'batch_size': 20, 'epochs': 200}\n"
++      "Best: 0.7304982662200927 using {'batch_size': 20, 'epochs': 200}\n",
++      "Means: 0.6705627799034118, Stdev: 0.010014703041215987 with: {'batch_size': 20, 'epochs': 20}\n",
++      "Means: 0.656268572807312, Stdev: 0.03439644921194647 with: {'batch_size': 20, 'epochs': 40}\n",
++      "Means: 0.6953229904174805, Stdev: 0.03848464919676255 with: {'batch_size': 20, 'epochs': 60}\n",
++      "Means: 0.7304982662200927, Stdev: 0.020804450487169657 with: {'batch_size': 20, 'epochs': 200}\n"
+      ]
+     }
+    ],
+@@ -599,7 +598,7 @@
+     "id": "EKcuY6OiaLfz"
+    },
+    "source": [
+-    "## Optimizer\n",
++    "# Optimizer\n",
+     "\n",
+     "Remember that there's a different optimizers [optimizers](https://keras.io/optimizers/). At some point, take some time to read up on them a little bit. \"adam\" usually gives the best results. The thing to know about choosing an optimizer is that different optimizers have different hyperparameters like learning rate, momentum, etc. So based on the optimizer you choose you might also have to tune the learning rate and momentum of those optimizers after that. "
+    ]
+@@ -617,7 +616,9 @@
+     "\n",
+     "Once you have narrowed it down, make the window even smaller and try it again. If after running the above specification your model reports that .1 is the best optimizer, then you should probably try things like [.05, .08, .1, .12, .15] to try and narrow it down. \n",
+     "\n",
+-    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. "
++    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. \n",
++    "\n",
++    "in addition to tuning a statistic learning rate, you can alsu use aa dynamic learning rate via a LearningRateScheduler.  The choise of how the rate is scheduled is itself a hyperperam.  Common choices..."
+    ]
+   },
+   {
+@@ -629,7 +630,9 @@
+    "source": [
+     "## Momentum\n",
+     "\n",
+-    "Momentum is a hyperparameter that is more commonly associated with Stochastic Gradient Descent. SGD is a common optimizer because it's what people understand and know, but I doubt it will get you the best results, you can try hyperparameter tuning its attributes and see if you can beat the performance from adam. Momentum is a property that decides the willingness of an optimizer to overshoot the minimum. Imagine a ball rolling down one side of a bowl and then up the opposite side a little bit before settling back to the bottom. The purpose of momentum is to try and escale local minima."
++    "Momentum is a hyperparameter that is more commonly associated with Stochastic Gradient Descent. SGD is a common optimizer because it's what people understand and know, but I doubt it will get you the best results, you can try hyperparameter tuning its attributes and see if you can beat the performance from adam. Momentum is a property that decides the willingness of an optimizer to overshoot the minimum. Imagine a ball rolling down one side of a bowl and then up the opposite side a little bit before settling back to the bottom. The purpose of momentum is to try and escale local minima.\n",
++    "\n",
++    "Note: you'll see ppl use this with the things we are using today"
+    ]
+   },
+   {
+@@ -641,7 +644,9 @@
+    "source": [
+     "## Activation Functions\n",
+     "\n",
+-    "We've talked about this a little bit, typically you'l want to use ReLU for hidden layers and either Sigmoid, or Softmax for output layers of binary and multi-class classification implementations respectively, but try other activation functions and see if you can get any better results with sigmoid or tanh or something. There are a lot of activation functions that we haven't really talked about. Maybe you'll get good results with them. Maybe you won't. :) <https://keras.io/activations/>"
++    "We've talked about this a little bit, typically you'l want to use ReLU for hidden layers and either Sigmoid, or Softmax for output layers of binary and multi-class classification implementations respectively, but try other activation functions and see if you can get any better results with sigmoid or tanh or something. There are a lot of activation functions that we haven't really talked about. Maybe you'll get good results with them. Maybe you won't. :) <https://keras.io/activations/>\n",
++    "\n",
++    "Note: no activation functions for regression probs"
+    ]
+   },
+   {
+@@ -730,36 +735,27 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 6,
++   "execution_count": 9,
+    "metadata": {},
+    "outputs": [
+     {
+-     "data": {
+-      "text/html": [
+-       "\n",
+-       "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+-       "                Project page: <a href=\"https://app.wandb.ai/lambda-ds7/boston\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston</a><br/>\n",
+-       "                Run page: <a href=\"https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro</a><br/>\n",
+-       "            "
+-      ],
+-      "text/plain": [
+-       "<IPython.core.display.HTML object>"
+-      ]
+-     },
+-     "metadata": {},
+-     "output_type": "display_data"
+-    },
+-    {
+-     "data": {
+-      "text/plain": [
+-       "W&B Run: https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro"
+-      ]
+-     },
+-     "execution_count": 6,
+-     "metadata": {},
+-     "output_type": "execute_result"
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Appending key for api.wandb.ai to your netrc file: /Users/flanuer/.netrc\n",
++      "\u001b[32mSuccessfully logged in to Weights & Biases!\u001b[0m\n"
++     ]
+     }
+    ],
++   "source": [
++    "!wandb login db24a3abcb3e599299e5cddedefda9616c319c85"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 10,
++   "metadata": {},
++   "outputs": [],
+    "source": [
+     "import wandb\n",
+     "from wandb.keras import WandbCallback"
+@@ -767,7 +763,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 8,
++   "execution_count": 11,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -783,8 +779,8 @@
+       "text/html": [
+        "\n",
+        "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+-       "                Project page: <a href=\"https://app.wandb.ai/lambda-ds7/boston\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston</a><br/>\n",
+-       "                Run page: <a href=\"https://app.wandb.ai/lambda-ds7/boston/runs/kkgdtc31\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston/runs/kkgdtc31</a><br/>\n",
++       "                Project page: <a href=\"https://app.wandb.ai/ds8/ds10_inclass\" target=\"_blank\">https://app.wandb.ai/ds8/ds10_inclass</a><br/>\n",
++       "                Run page: <a href=\"https://app.wandb.ai/ds8/ds10_inclass/runs/8w7nyxsb\" target=\"_blank\">https://app.wandb.ai/ds8/ds10_inclass/runs/8w7nyxsb</a><br/>\n",
+        "            "
+       ],
+       "text/plain": [
+@@ -794,126 +790,140 @@
+      "metadata": {},
+      "output_type": "display_data"
+     },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "Failed to query for notebook name, you can set it manually with the WANDB_NOTEBOOK_NAME environment variable\n"
++     ]
++    },
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+       "Train on 270 samples, validate on 134 samples\n",
+       "Epoch 1/50\n",
+-      "270/270 [==============================] - 1s 3ms/sample - loss: 492.3539 - mse: 492.3539 - mae: 20.3197 - val_loss: 481.5445 - val_mse: 481.5445 - val_mae: 19.6138\n",
++      "270/270 [==============================] - 1s 2ms/sample - loss: 494.1929 - mse: 494.1929 - mae: 20.3911 - val_loss: 470.4711 - val_mse: 470.4711 - val_mae: 19.4155\n",
+       "Epoch 2/50\n",
+-      "270/270 [==============================] - 0s 591us/sample - loss: 239.4999 - mse: 239.4999 - mae: 12.8064 - val_loss: 113.8561 - val_mse: 113.8561 - val_mae: 8.2962\n",
++      "270/270 [==============================] - 0s 356us/sample - loss: 217.5678 - mse: 217.5678 - mae: 12.2162 - val_loss: 92.0712 - val_mse: 92.0712 - val_mae: 7.4508\n",
+       "Epoch 3/50\n",
+-      "270/270 [==============================] - 0s 618us/sample - loss: 56.2921 - mse: 56.2921 - mae: 5.8988 - val_loss: 62.7912 - val_mse: 62.7912 - val_mae: 5.6465\n",
++      "270/270 [==============================] - 0s 1ms/sample - loss: 53.8336 - mse: 53.8336 - mae: 5.5648 - val_loss: 55.2149 - val_mse: 55.2149 - val_mae: 5.2478\n",
+       "Epoch 4/50\n",
+-      "270/270 [==============================] - 0s 613us/sample - loss: 29.4994 - mse: 29.4994 - mae: 3.9653 - val_loss: 37.9256 - val_mse: 37.9256 - val_mae: 4.1730\n",
++      "270/270 [==============================] - 0s 895us/sample - loss: 27.1661 - mse: 27.1661 - mae: 3.7730 - val_loss: 33.9765 - val_mse: 33.9765 - val_mae: 3.9444\n",
+       "Epoch 5/50\n",
+-      "270/270 [==============================] - 0s 608us/sample - loss: 20.6919 - mse: 20.6919 - mae: 3.3022 - val_loss: 31.7489 - val_mse: 31.7489 - val_mae: 3.7113\n",
++      "270/270 [==============================] - 0s 765us/sample - loss: 19.0552 - mse: 19.0552 - mae: 3.2289 - val_loss: 29.2896 - val_mse: 29.2896 - val_mae: 3.6429\n",
+       "Epoch 6/50\n",
+-      "270/270 [==============================] - 0s 602us/sample - loss: 17.2701 - mse: 17.2701 - mae: 3.0291 - val_loss: 27.3921 - val_mse: 27.3921 - val_mae: 3.4958\n",
++      "270/270 [==============================] - 0s 858us/sample - loss: 16.3565 - mse: 16.3565 - mae: 2.9878 - val_loss: 25.6096 - val_mse: 25.6096 - val_mae: 3.3611\n",
+       "Epoch 7/50\n",
+-      "270/270 [==============================] - 0s 671us/sample - loss: 15.5172 - mse: 15.5172 - mae: 2.8537 - val_loss: 25.3208 - val_mse: 25.3208 - val_mae: 3.3650\n",
++      "270/270 [==============================] - 0s 774us/sample - loss: 14.2510 - mse: 14.2510 - mae: 2.7517 - val_loss: 23.8755 - val_mse: 23.8755 - val_mae: 3.2311\n",
+       "Epoch 8/50\n",
+-      "270/270 [==============================] - 0s 661us/sample - loss: 13.7548 - mse: 13.7548 - mae: 2.7089 - val_loss: 23.8920 - val_mse: 23.8920 - val_mae: 3.2746\n",
++      "270/270 [==============================] - 0s 821us/sample - loss: 13.0260 - mse: 13.0260 - mae: 2.6703 - val_loss: 22.4983 - val_mse: 22.4983 - val_mae: 3.1492\n",
+       "Epoch 9/50\n",
+-      "270/270 [==============================] - 0s 606us/sample - loss: 12.3745 - mse: 12.3745 - mae: 2.5662 - val_loss: 22.1294 - val_mse: 22.1294 - val_mae: 3.1509\n",
++      "270/270 [==============================] - 0s 666us/sample - loss: 12.4544 - mse: 12.4544 - mae: 2.5906 - val_loss: 21.3991 - val_mse: 21.3991 - val_mae: 3.0664\n",
+       "Epoch 10/50\n",
+-      "270/270 [==============================] - 0s 614us/sample - loss: 11.2424 - mse: 11.2424 - mae: 2.4804 - val_loss: 20.5718 - val_mse: 20.5718 - val_mae: 3.0461\n",
++      "270/270 [==============================] - 0s 2ms/sample - loss: 11.3810 - mse: 11.3810 - mae: 2.5374 - val_loss: 19.9650 - val_mse: 19.9650 - val_mae: 2.8962\n",
+       "Epoch 11/50\n",
+-      "270/270 [==============================] - 0s 605us/sample - loss: 10.6098 - mse: 10.6098 - mae: 2.4178 - val_loss: 20.3467 - val_mse: 20.3467 - val_mae: 3.0251\n",
++      "270/270 [==============================] - 0s 743us/sample - loss: 10.6509 - mse: 10.6509 - mae: 2.4565 - val_loss: 18.7696 - val_mse: 18.7696 - val_mae: 2.8315\n",
+       "Epoch 12/50\n",
+-      "270/270 [==============================] - 0s 576us/sample - loss: 10.0011 - mse: 10.0011 - mae: 2.3257 - val_loss: 18.4283 - val_mse: 18.4283 - val_mae: 2.8938\n",
++      "270/270 [==============================] - 0s 552us/sample - loss: 9.7689 - mse: 9.7689 - mae: 2.3302 - val_loss: 18.0347 - val_mse: 18.0347 - val_mae: 2.7788\n",
+       "Epoch 13/50\n",
+-      "270/270 [==============================] - 0s 666us/sample - loss: 9.1287 - mse: 9.1287 - mae: 2.2384 - val_loss: 18.2024 - val_mse: 18.2024 - val_mae: 2.9116\n",
++      "270/270 [==============================] - 0s 432us/sample - loss: 9.4523 - mse: 9.4523 - mae: 2.3587 - val_loss: 18.0743 - val_mse: 18.0743 - val_mae: 2.7528\n",
+       "Epoch 14/50\n",
+-      "270/270 [==============================] - 0s 603us/sample - loss: 8.6211 - mse: 8.6211 - mae: 2.1980 - val_loss: 17.4749 - val_mse: 17.4749 - val_mae: 2.8290\n",
++      "270/270 [==============================] - 0s 551us/sample - loss: 8.7452 - mse: 8.7452 - mae: 2.1984 - val_loss: 16.7301 - val_mse: 16.7301 - val_mae: 2.6431\n",
+       "Epoch 15/50\n",
+-      "270/270 [==============================] - 0s 463us/sample - loss: 8.4558 - mse: 8.4558 - mae: 2.2087 - val_loss: 17.7878 - val_mse: 17.7878 - val_mae: 2.8516\n",
++      "270/270 [==============================] - 0s 535us/sample - loss: 8.5949 - mse: 8.5949 - mae: 2.1944 - val_loss: 18.1186 - val_mse: 18.1186 - val_mae: 2.8271\n",
+       "Epoch 16/50\n",
+-      "270/270 [==============================] - 0s 626us/sample - loss: 8.3626 - mse: 8.3626 - mae: 2.2031 - val_loss: 16.7101 - val_mse: 16.7101 - val_mae: 2.7820\n",
++      "270/270 [==============================] - 0s 614us/sample - loss: 8.3255 - mse: 8.3255 - mae: 2.1567 - val_loss: 16.2133 - val_mse: 16.2133 - val_mae: 2.6389\n",
+       "Epoch 17/50\n",
+-      "270/270 [==============================] - 0s 607us/sample - loss: 7.9180 - mse: 7.9180 - mae: 2.1265 - val_loss: 16.6064 - val_mse: 16.6064 - val_mae: 2.7419\n",
++      "270/270 [==============================] - 0s 409us/sample - loss: 8.1323 - mse: 8.1323 - mae: 2.1966 - val_loss: 16.7429 - val_mse: 16.7429 - val_mae: 2.6917\n",
+       "Epoch 18/50\n",
+-      "270/270 [==============================] - 0s 479us/sample - loss: 7.5552 - mse: 7.5552 - mae: 2.0235 - val_loss: 17.2872 - val_mse: 17.2872 - val_mae: 2.8539\n",
++      "270/270 [==============================] - 0s 553us/sample - loss: 7.6406 - mse: 7.6406 - mae: 2.0934 - val_loss: 15.7709 - val_mse: 15.7709 - val_mae: 2.5842\n",
+       "Epoch 19/50\n",
+-      "270/270 [==============================] - 0s 616us/sample - loss: 7.0971 - mse: 7.0971 - mae: 2.0038 - val_loss: 16.5110 - val_mse: 16.5110 - val_mae: 2.8042\n",
++      "270/270 [==============================] - 0s 285us/sample - loss: 7.6732 - mse: 7.6732 - mae: 2.1297 - val_loss: 16.0726 - val_mse: 16.0726 - val_mae: 2.6371\n",
+       "Epoch 20/50\n",
+-      "270/270 [==============================] - 0s 606us/sample - loss: 6.7068 - mse: 6.7068 - mae: 1.9539 - val_loss: 15.5886 - val_mse: 15.5886 - val_mae: 2.7048\n",
++      "270/270 [==============================] - 0s 266us/sample - loss: 7.6705 - mse: 7.6705 - mae: 2.0845 - val_loss: 15.8810 - val_mse: 15.8810 - val_mae: 2.5944\n",
+       "Epoch 21/50\n",
+-      "270/270 [==============================] - 0s 461us/sample - loss: 6.8542 - mse: 6.8542 - mae: 1.9979 - val_loss: 17.2378 - val_mse: 17.2378 - val_mae: 2.8853\n",
++      "270/270 [==============================] - 0s 348us/sample - loss: 7.0864 - mse: 7.0864 - mae: 2.0307 - val_loss: 15.8831 - val_mse: 15.8831 - val_mae: 2.6108\n",
+       "Epoch 22/50\n",
+-      "270/270 [==============================] - 0s 474us/sample - loss: 6.5719 - mse: 6.5719 - mae: 1.9312 - val_loss: 16.3043 - val_mse: 16.3043 - val_mae: 2.7756\n",
++      "270/270 [==============================] - 0s 257us/sample - loss: 7.0356 - mse: 7.0356 - mae: 2.0006 - val_loss: 15.9357 - val_mse: 15.9357 - val_mae: 2.6225\n",
+       "Epoch 23/50\n",
+-      "270/270 [==============================] - 0s 478us/sample - loss: 6.6161 - mse: 6.6161 - mae: 1.9572 - val_loss: 15.7992 - val_mse: 15.7992 - val_mae: 2.7219\n",
++      "270/270 [==============================] - 0s 357us/sample - loss: 7.3806 - mse: 7.3806 - mae: 2.0463 - val_loss: 14.9585 - val_mse: 14.9585 - val_mae: 2.5340\n",
+       "Epoch 24/50\n",
+-      "270/270 [==============================] - 0s 491us/sample - loss: 7.1269 - mse: 7.1269 - mae: 2.0137 - val_loss: 16.5402 - val_mse: 16.5402 - val_mae: 2.8005\n",
++      "270/270 [==============================] - 0s 277us/sample - loss: 6.6504 - mse: 6.6504 - mae: 1.9771 - val_loss: 15.5170 - val_mse: 15.5170 - val_mae: 2.5761\n",
+       "Epoch 25/50\n",
+-      "270/270 [==============================] - 0s 479us/sample - loss: 6.3382 - mse: 6.3382 - mae: 1.8540 - val_loss: 16.5034 - val_mse: 16.5034 - val_mae: 2.7864\n",
++      "270/270 [==============================] - 0s 241us/sample - loss: 6.7079 - mse: 6.7079 - mae: 1.9485 - val_loss: 15.1871 - val_mse: 15.1871 - val_mae: 2.5420\n",
+       "Epoch 26/50\n",
+-      "270/270 [==============================] - 0s 488us/sample - loss: 5.9442 - mse: 5.9442 - mae: 1.8251 - val_loss: 15.6558 - val_mse: 15.6558 - val_mae: 2.7102\n",
++      "270/270 [==============================] - 0s 241us/sample - loss: 6.7171 - mse: 6.7171 - mae: 1.9000 - val_loss: 15.5308 - val_mse: 15.5308 - val_mae: 2.6287\n",
+       "Epoch 27/50\n",
+-      "270/270 [==============================] - 0s 604us/sample - loss: 5.5832 - mse: 5.5832 - mae: 1.7432 - val_loss: 15.3021 - val_mse: 15.3021 - val_mae: 2.6862\n",
++      "270/270 [==============================] - 0s 238us/sample - loss: 6.9640 - mse: 6.9640 - mae: 1.9757 - val_loss: 15.3171 - val_mse: 15.3171 - val_mae: 2.5880\n",
+       "Epoch 28/50\n",
+-      "270/270 [==============================] - 0s 436us/sample - loss: 5.4530 - mse: 5.4530 - mae: 1.7354 - val_loss: 15.4570 - val_mse: 15.4570 - val_mae: 2.6846\n",
++      "270/270 [==============================] - 0s 365us/sample - loss: 6.3624 - mse: 6.3624 - mae: 1.8621 - val_loss: 14.9202 - val_mse: 14.9202 - val_mae: 2.5236\n",
+       "Epoch 29/50\n",
+-      "270/270 [==============================] - 0s 441us/sample - loss: 5.3070 - mse: 5.3070 - mae: 1.7079 - val_loss: 15.8510 - val_mse: 15.8510 - val_mae: 2.7644\n",
++      "270/270 [==============================] - 0s 257us/sample - loss: 6.2111 - mse: 6.2111 - mae: 1.8804 - val_loss: 16.0893 - val_mse: 16.0893 - val_mae: 2.6558\n",
+       "Epoch 30/50\n",
+-      "270/270 [==============================] - 0s 477us/sample - loss: 5.4157 - mse: 5.4157 - mae: 1.7321 - val_loss: 15.9160 - val_mse: 15.9160 - val_mae: 2.7134\n",
++      "270/270 [==============================] - 0s 294us/sample - loss: 5.8354 - mse: 5.8354 - mae: 1.8106 - val_loss: 14.9376 - val_mse: 14.9376 - val_mae: 2.5399\n",
+       "Epoch 31/50\n",
+-      "270/270 [==============================] - 0s 452us/sample - loss: 5.2639 - mse: 5.2639 - mae: 1.6981 - val_loss: 15.3554 - val_mse: 15.3554 - val_mae: 2.6662\n",
++      "270/270 [==============================] - 0s 267us/sample - loss: 5.7093 - mse: 5.7093 - mae: 1.7448 - val_loss: 14.9402 - val_mse: 14.9402 - val_mae: 2.5480\n",
+       "Epoch 32/50\n",
+-      "270/270 [==============================] - 0s 475us/sample - loss: 5.7687 - mse: 5.7687 - mae: 1.8045 - val_loss: 15.7151 - val_mse: 15.7151 - val_mae: 2.6867\n",
++      "270/270 [==============================] - 0s 274us/sample - loss: 5.7283 - mse: 5.7283 - mae: 1.7928 - val_loss: 15.2341 - val_mse: 15.2341 - val_mae: 2.5649\n",
+       "Epoch 33/50\n",
+-      "270/270 [==============================] - 0s 462us/sample - loss: 5.5210 - mse: 5.5210 - mae: 1.7367 - val_loss: 15.4227 - val_mse: 15.4227 - val_mae: 2.6561\n",
++      "270/270 [==============================] - 0s 248us/sample - loss: 5.4862 - mse: 5.4862 - mae: 1.7267 - val_loss: 15.0756 - val_mse: 15.0756 - val_mae: 2.5462\n",
+       "Epoch 34/50\n",
+-      "270/270 [==============================] - 0s 474us/sample - loss: 5.5663 - mse: 5.5663 - mae: 1.7294 - val_loss: 15.3376 - val_mse: 15.3376 - val_mae: 2.6991\n",
++      "270/270 [==============================] - 0s 235us/sample - loss: 5.3931 - mse: 5.3931 - mae: 1.7626 - val_loss: 15.1936 - val_mse: 15.1936 - val_mae: 2.5501\n",
+       "Epoch 35/50\n",
+-      "270/270 [==============================] - 0s 626us/sample - loss: 5.0063 - mse: 5.0063 - mae: 1.6196 - val_loss: 15.2642 - val_mse: 15.2642 - val_mae: 2.6796\n",
++      "270/270 [==============================] - 0s 232us/sample - loss: 5.2805 - mse: 5.2805 - mae: 1.6993 - val_loss: 14.9224 - val_mse: 14.9224 - val_mae: 2.5493\n",
+       "Epoch 36/50\n",
+-      "270/270 [==============================] - 0s 459us/sample - loss: 4.7251 - mse: 4.7251 - mae: 1.5727 - val_loss: 15.4858 - val_mse: 15.4858 - val_mae: 2.7288\n",
++      "270/270 [==============================] - 0s 331us/sample - loss: 5.1415 - mse: 5.1415 - mae: 1.6755 - val_loss: 14.6633 - val_mse: 14.6633 - val_mae: 2.4811\n",
+       "Epoch 37/50\n",
+-      "270/270 [==============================] - 0s 604us/sample - loss: 4.6394 - mse: 4.6394 - mae: 1.5854 - val_loss: 15.1139 - val_mse: 15.1139 - val_mae: 2.6305\n",
++      "270/270 [==============================] - 0s 258us/sample - loss: 5.2342 - mse: 5.2342 - mae: 1.6945 - val_loss: 15.1957 - val_mse: 15.1957 - val_mae: 2.5902\n",
+       "Epoch 38/50\n",
+-      "270/270 [==============================] - 0s 592us/sample - loss: 4.5669 - mse: 4.5669 - mae: 1.5548 - val_loss: 14.9898 - val_mse: 14.9898 - val_mae: 2.6340\n",
++      "270/270 [==============================] - 0s 269us/sample - loss: 5.2324 - mse: 5.2324 - mae: 1.6709 - val_loss: 15.1918 - val_mse: 15.1918 - val_mae: 2.5952\n",
+       "Epoch 39/50\n",
+-      "270/270 [==============================] - 0s 458us/sample - loss: 4.4480 - mse: 4.4480 - mae: 1.5334 - val_loss: 15.6389 - val_mse: 15.6389 - val_mae: 2.7337\n",
++      "270/270 [==============================] - 0s 265us/sample - loss: 5.1071 - mse: 5.1071 - mae: 1.6632 - val_loss: 14.8405 - val_mse: 14.8405 - val_mae: 2.5283\n",
+       "Epoch 40/50\n",
+-      "270/270 [==============================] - 0s 455us/sample - loss: 4.4119 - mse: 4.4119 - mae: 1.5426 - val_loss: 15.0723 - val_mse: 15.0723 - val_mae: 2.6709\n",
++      "270/270 [==============================] - 0s 257us/sample - loss: 5.2146 - mse: 5.2146 - mae: 1.6881 - val_loss: 15.6369 - val_mse: 15.6369 - val_mae: 2.6713\n",
+       "Epoch 41/50\n",
+-      "270/270 [==============================] - 0s 473us/sample - loss: 4.0797 - mse: 4.0797 - mae: 1.4725 - val_loss: 15.4706 - val_mse: 15.4706 - val_mae: 2.6707\n",
++      "270/270 [==============================] - 0s 605us/sample - loss: 5.2687 - mse: 5.2687 - mae: 1.7130 - val_loss: 15.9848 - val_mse: 15.9848 - val_mae: 2.7402\n",
+       "Epoch 42/50\n",
+-      "270/270 [==============================] - 0s 449us/sample - loss: 4.0619 - mse: 4.0619 - mae: 1.4692 - val_loss: 15.2423 - val_mse: 15.2423 - val_mae: 2.6165\n",
++      "270/270 [==============================] - 0s 494us/sample - loss: 5.0429 - mse: 5.0429 - mae: 1.6362 - val_loss: 14.9348 - val_mse: 14.9348 - val_mae: 2.5490\n",
+       "Epoch 43/50\n",
+-      "270/270 [==============================] - 0s 465us/sample - loss: 4.1861 - mse: 4.1861 - mae: 1.5076 - val_loss: 15.7510 - val_mse: 15.7510 - val_mae: 2.7279\n",
++      "270/270 [==============================] - 0s 511us/sample - loss: 4.6619 - mse: 4.6619 - mae: 1.5873 - val_loss: 14.9518 - val_mse: 14.9518 - val_mae: 2.5420\n",
+       "Epoch 44/50\n",
+-      "270/270 [==============================] - 0s 462us/sample - loss: 4.1128 - mse: 4.1128 - mae: 1.4810 - val_loss: 15.4814 - val_mse: 15.4814 - val_mae: 2.6562\n",
++      "270/270 [==============================] - 0s 459us/sample - loss: 4.3040 - mse: 4.3040 - mae: 1.5309 - val_loss: 14.9584 - val_mse: 14.9584 - val_mae: 2.5916\n",
+       "Epoch 45/50\n",
+-      "270/270 [==============================] - 0s 441us/sample - loss: 4.2171 - mse: 4.2171 - mae: 1.5205 - val_loss: 16.3839 - val_mse: 16.3839 - val_mae: 2.8194\n",
++      "270/270 [==============================] - 0s 739us/sample - loss: 4.3753 - mse: 4.3753 - mae: 1.5293 - val_loss: 14.5134 - val_mse: 14.5134 - val_mae: 2.5086\n",
+       "Epoch 46/50\n",
+-      "270/270 [==============================] - 0s 422us/sample - loss: 4.2609 - mse: 4.2609 - mae: 1.5548 - val_loss: 15.3587 - val_mse: 15.3587 - val_mae: 2.7161\n",
++      "270/270 [==============================] - 0s 563us/sample - loss: 4.2786 - mse: 4.2786 - mae: 1.4974 - val_loss: 14.6007 - val_mse: 14.6007 - val_mae: 2.5090\n",
+       "Epoch 47/50\n",
+-      "270/270 [==============================] - 0s 454us/sample - loss: 4.4635 - mse: 4.4635 - mae: 1.5440 - val_loss: 15.7736 - val_mse: 15.7736 - val_mae: 2.7184\n",
++      "270/270 [==============================] - 0s 488us/sample - loss: 4.4010 - mse: 4.4010 - mae: 1.5189 - val_loss: 14.6114 - val_mse: 14.6114 - val_mae: 2.5255\n",
+       "Epoch 48/50\n",
+-      "270/270 [==============================] - 0s 426us/sample - loss: 3.7406 - mse: 3.7406 - mae: 1.4147 - val_loss: 15.6718 - val_mse: 15.6718 - val_mae: 2.7468\n",
++      "270/270 [==============================] - 0s 642us/sample - loss: 4.2031 - mse: 4.2031 - mae: 1.4960 - val_loss: 14.4710 - val_mse: 14.4710 - val_mae: 2.4815\n",
+       "Epoch 49/50\n",
+-      "270/270 [==============================] - 0s 445us/sample - loss: 3.6173 - mse: 3.6173 - mae: 1.3816 - val_loss: 15.7291 - val_mse: 15.7291 - val_mae: 2.7789\n",
++      "270/270 [==============================] - 0s 563us/sample - loss: 4.1056 - mse: 4.1056 - mae: 1.4805 - val_loss: 14.5739 - val_mse: 14.5739 - val_mae: 2.5103\n",
+       "Epoch 50/50\n",
+-      "270/270 [==============================] - 0s 430us/sample - loss: 3.6303 - mse: 3.6303 - mae: 1.4266 - val_loss: 15.4937 - val_mse: 15.4937 - val_mae: 2.7390\n"
++      "270/270 [==============================] - 0s 481us/sample - loss: 3.9219 - mse: 3.9219 - mae: 1.4342 - val_loss: 14.8441 - val_mse: 14.8441 - val_mae: 2.5713\n"
+      ]
+     },
+     {
+      "data": {
+       "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x7f315c319be0>"
++       "<tensorflow.python.keras.callbacks.History at 0x132bdb400>"
+       ]
+      },
+-     "execution_count": 8,
++     "execution_count": 11,
+      "metadata": {},
+      "output_type": "execute_result"
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "wandb: Network error resolved after 0:00:27.763106, resuming normal operation.\n"
++     ]
+     }
+    ],
+    "source": [
+-    "wandb.init(project=\"boston\", entity=\"lambda-ds7\") #Initializes and Experiment\n",
++    "wandb.init(project=\"ds10_inclass\", entity=\"ds8\") #Initializes and Experiment\n",
+     "\n",
+     "# Important Hyperparameters\n",
+     "X =  x_train\n",
+@@ -1153,9 +1163,9 @@
+  ],
+  "metadata": {
+   "kernelspec": {
+-   "display_name": "conda_tensorflow_p36",
++   "display_name": "U4-S2-NN (Python3)",
+    "language": "python",
+-   "name": "conda_tensorflow_p36"
++   "name": "u4-s1-nn"
+   },
+   "language_info": {
+    "codemirror_mode": {
+@@ -1167,7 +1177,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.6.5"
++   "version": "3.7.0"
+   }
+  },
+  "nbformat": 4,

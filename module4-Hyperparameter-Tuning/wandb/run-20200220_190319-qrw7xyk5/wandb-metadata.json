@@ -1,0 +1,26 @@
+{
+    "root": "/Users/flanuer/Downloads/Lambda/DS-Unit-4/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/AVData/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "6fdecf01f8cd917f75f4061c7677343963ee19e2"
+    },
+    "email": "AVData@users.noreply.github.com",
+    "startedAt": "2020-02-20T19:03:19.554120",
+    "host": "agustins-mbp.lan",
+    "username": "flanuer",
+    "executable": "/Users/flanuer/opt/anaconda3/envs/U4-S2-NN/bin/python",
+    "os": "Darwin-19.3.0-x86_64-i386-64bit",
+    "python": "3.7.0",
+    "cpu_count": 4,
+    "args": [
+        "-f",
+        "/Users/flanuer/Library/Jupyter/runtime/kernel-b346053e-ee46-4266-87d1-a5cfd45d51d0.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "rose-wildflower-24",
+    "project": "ds10_inclass",
+    "heartbeatAt": "2020-02-20T19:03:28.037631"
+}
