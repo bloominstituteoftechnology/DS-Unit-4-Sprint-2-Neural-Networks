@@ -1,5 +1,5 @@
 ipykernel==5.1.1
 pandas==1.0.1
-scikit-learn==0.21.4
+scikitlearn==*.*
 tensorflow==2.1.0
 wandb==0.8.27
