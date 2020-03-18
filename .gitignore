@@ -104,3 +104,7 @@ venv.bak/
 .mypy_cache/
 
 .vscode
+
+module3-Intro-to-Keras/logs
+
+module3-Intro-to-Keras/logs_assignment
