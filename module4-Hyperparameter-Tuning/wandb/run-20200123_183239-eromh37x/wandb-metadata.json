@@ -1,0 +1,27 @@
+{
+    "root": "C:/Users/Dylan Nason/Documents/GitHub/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/DNason1999/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "4842f53564260cb7e190a539b96fbda5c0505e35"
+    },
+    "email": "50815684+DNason1999@users.noreply.github.com",
+    "startedAt": "2020-01-23T18:27:57.932227",
+    "host": "DESKTOP-KN9UU94",
+    "username": "Tony The Tortoise",
+    "executable": "c:\\users\\dylan nason\\anaconda3\\envs\\u4-s2-nn\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.6",
+    "gpu": "GeForce GTX 1070",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "args": [
+        "-f",
+        "C:\\Users\\Dylan Nason\\AppData\\Roaming\\jupyter\\runtime\\kernel-6612a24a-2fe1-4f78-8052-d6d0a1917d73.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "project": "ds9-boston",
+    "heartbeatAt": "2020-01-23T18:33:02.472336"
+}
