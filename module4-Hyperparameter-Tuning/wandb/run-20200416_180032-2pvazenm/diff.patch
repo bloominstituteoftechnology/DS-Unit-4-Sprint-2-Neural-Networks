@@ -1,0 +1,1024 @@
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index 7b8a8f4..6cc94ca 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -46,8 +46,8 @@
+    "metadata": {},
+    "outputs": [],
+    "source": [
+-    "wandb_group = \"ds8\"\n",
+-    "wandb_project = \"inclass\""
++    "wandb_group = \"...\"\n",
++    "wandb_project = \"...\""
+    ]
+   },
+   {
+@@ -81,7 +81,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 1,
++   "execution_count": 8,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -106,7 +106,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 2,
++   "execution_count": 3,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -170,7 +170,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 3,
++   "execution_count": 10,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -182,171 +182,17 @@
+    },
+    "outputs": [
+     {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Train on 404 samples, validate on 102 samples\n",
+-      "Epoch 1/75\n",
+-      "404/404 [==============================] - 2s 4ms/sample - loss: 498.2045 - mse: 498.2046 - mae: 20.2543 - val_loss: 421.5039 - val_mse: 421.5038 - val_mae: 18.3349\n",
+-      "Epoch 2/75\n",
+-      "404/404 [==============================] - 0s 347us/sample - loss: 249.6985 - mse: 249.6985 - mae: 13.2672 - val_loss: 111.3743 - val_mse: 111.3743 - val_mae: 8.6210\n",
+-      "Epoch 3/75\n",
+-      "404/404 [==============================] - 0s 344us/sample - loss: 56.6755 - mse: 56.6755 - mae: 5.4817 - val_loss: 39.1997 - val_mse: 39.1997 - val_mae: 4.9872\n",
+-      "Epoch 4/75\n",
+-      "404/404 [==============================] - 0s 364us/sample - loss: 28.3243 - mse: 28.3243 - mae: 3.7054 - val_loss: 26.9866 - val_mse: 26.9866 - val_mae: 4.0796\n",
+-      "Epoch 5/75\n",
+-      "404/404 [==============================] - 0s 382us/sample - loss: 20.5281 - mse: 20.5281 - mae: 3.1209 - val_loss: 24.6172 - val_mse: 24.6172 - val_mae: 3.8052\n",
+-      "Epoch 6/75\n",
+-      "404/404 [==============================] - 0s 393us/sample - loss: 17.9283 - mse: 17.9283 - mae: 2.8665 - val_loss: 23.6524 - val_mse: 23.6524 - val_mae: 3.6746\n",
+-      "Epoch 7/75\n",
+-      "404/404 [==============================] - 0s 440us/sample - loss: 16.9179 - mse: 16.9179 - mae: 2.8781 - val_loss: 23.4620 - val_mse: 23.4620 - val_mae: 3.5778\n",
+-      "Epoch 8/75\n",
+-      "404/404 [==============================] - 0s 366us/sample - loss: 15.1579 - mse: 15.1579 - mae: 2.6440 - val_loss: 24.1374 - val_mse: 24.1374 - val_mae: 3.5929\n",
+-      "Epoch 9/75\n",
+-      "404/404 [==============================] - 0s 367us/sample - loss: 14.1717 - mse: 14.1717 - mae: 2.5937 - val_loss: 24.4829 - val_mse: 24.4829 - val_mae: 3.5639\n",
+-      "Epoch 10/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 13.5002 - mse: 13.5002 - mae: 2.5633 - val_loss: 25.0170 - val_mse: 25.0170 - val_mae: 3.5601\n",
+-      "Epoch 11/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 12.8641 - mse: 12.8641 - mae: 2.4963 - val_loss: 25.1162 - val_mse: 25.1162 - val_mae: 3.5449\n",
+-      "Epoch 12/75\n",
+-      "404/404 [==============================] - 0s 351us/sample - loss: 12.4033 - mse: 12.4033 - mae: 2.5224 - val_loss: 25.0382 - val_mse: 25.0382 - val_mae: 3.4858\n",
+-      "Epoch 13/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 12.2653 - mse: 12.2653 - mae: 2.4637 - val_loss: 26.7274 - val_mse: 26.7274 - val_mae: 3.6054\n",
+-      "Epoch 14/75\n",
+-      "404/404 [==============================] - 0s 368us/sample - loss: 11.8249 - mse: 11.8249 - mae: 2.4648 - val_loss: 25.2347 - val_mse: 25.2347 - val_mae: 3.4602\n",
+-      "Epoch 15/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 11.3965 - mse: 11.3965 - mae: 2.4134 - val_loss: 25.3070 - val_mse: 25.3070 - val_mae: 3.4305\n",
+-      "Epoch 16/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 11.0982 - mse: 11.0982 - mae: 2.3616 - val_loss: 25.0599 - val_mse: 25.0599 - val_mae: 3.3784\n",
+-      "Epoch 17/75\n",
+-      "404/404 [==============================] - 0s 365us/sample - loss: 11.1969 - mse: 11.1969 - mae: 2.3806 - val_loss: 25.1976 - val_mse: 25.1976 - val_mae: 3.3732\n",
+-      "Epoch 18/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 10.9278 - mse: 10.9278 - mae: 2.3653 - val_loss: 24.2875 - val_mse: 24.2875 - val_mae: 3.3114\n",
+-      "Epoch 19/75\n",
+-      "404/404 [==============================] - 0s 365us/sample - loss: 10.5854 - mse: 10.5854 - mae: 2.3170 - val_loss: 26.1450 - val_mse: 26.1450 - val_mae: 3.3971\n",
+-      "Epoch 20/75\n",
+-      "404/404 [==============================] - 0s 401us/sample - loss: 10.2546 - mse: 10.2546 - mae: 2.2813 - val_loss: 26.5278 - val_mse: 26.5278 - val_mae: 3.4465\n",
+-      "Epoch 21/75\n",
+-      "404/404 [==============================] - 0s 380us/sample - loss: 10.1321 - mse: 10.1321 - mae: 2.2866 - val_loss: 24.0363 - val_mse: 24.0363 - val_mae: 3.2792\n",
+-      "Epoch 22/75\n",
+-      "404/404 [==============================] - 0s 421us/sample - loss: 9.9169 - mse: 9.9169 - mae: 2.2907 - val_loss: 23.7310 - val_mse: 23.7310 - val_mae: 3.2334\n",
+-      "Epoch 23/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 9.6588 - mse: 9.6588 - mae: 2.2284 - val_loss: 23.6472 - val_mse: 23.6472 - val_mae: 3.2013\n",
+-      "Epoch 24/75\n",
+-      "404/404 [==============================] - 0s 363us/sample - loss: 9.6887 - mse: 9.6887 - mae: 2.2468 - val_loss: 23.5379 - val_mse: 23.5379 - val_mae: 3.1921\n",
+-      "Epoch 25/75\n",
+-      "404/404 [==============================] - 0s 373us/sample - loss: 9.4049 - mse: 9.4049 - mae: 2.1999 - val_loss: 23.7713 - val_mse: 23.7713 - val_mae: 3.2273\n",
+-      "Epoch 26/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 9.2304 - mse: 9.2304 - mae: 2.1946 - val_loss: 23.5093 - val_mse: 23.5093 - val_mae: 3.2072\n",
+-      "Epoch 27/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 9.0493 - mse: 9.0493 - mae: 2.1528 - val_loss: 23.7969 - val_mse: 23.7969 - val_mae: 3.2005\n",
+-      "Epoch 28/75\n",
+-      "404/404 [==============================] - 0s 359us/sample - loss: 8.9363 - mse: 8.9363 - mae: 2.1475 - val_loss: 22.1030 - val_mse: 22.1030 - val_mae: 3.0707\n",
+-      "Epoch 29/75\n",
+-      "404/404 [==============================] - 0s 373us/sample - loss: 8.7834 - mse: 8.7834 - mae: 2.1231 - val_loss: 22.5153 - val_mse: 22.5153 - val_mae: 3.1532\n",
+-      "Epoch 30/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 8.7925 - mse: 8.7925 - mae: 2.1531 - val_loss: 22.0449 - val_mse: 22.0449 - val_mae: 3.1245\n",
+-      "Epoch 31/75\n",
+-      "404/404 [==============================] - 0s 374us/sample - loss: 9.1879 - mse: 9.1879 - mae: 2.2029 - val_loss: 22.1780 - val_mse: 22.1780 - val_mae: 3.0623\n",
+-      "Epoch 32/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 8.7136 - mse: 8.7136 - mae: 2.1164 - val_loss: 21.9815 - val_mse: 21.9815 - val_mae: 3.0969\n",
+-      "Epoch 33/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 8.3018 - mse: 8.3018 - mae: 2.0639 - val_loss: 21.0477 - val_mse: 21.0477 - val_mae: 2.9645\n",
+-      "Epoch 34/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 8.4156 - mse: 8.4156 - mae: 2.0970 - val_loss: 22.6659 - val_mse: 22.6659 - val_mae: 3.1235\n",
+-      "Epoch 35/75\n",
+-      "404/404 [==============================] - 0s 350us/sample - loss: 8.2938 - mse: 8.2938 - mae: 2.0567 - val_loss: 20.9574 - val_mse: 20.9574 - val_mae: 2.9746\n",
+-      "Epoch 36/75\n",
+-      "404/404 [==============================] - 0s 357us/sample - loss: 8.0515 - mse: 8.0515 - mae: 2.0591 - val_loss: 23.2063 - val_mse: 23.2063 - val_mae: 3.1980\n",
+-      "Epoch 37/75\n",
+-      "404/404 [==============================] - 0s 381us/sample - loss: 8.1403 - mse: 8.1403 - mae: 2.0584 - val_loss: 24.5238 - val_mse: 24.5237 - val_mae: 3.3531\n",
+-      "Epoch 38/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 8.0043 - mse: 8.0043 - mae: 2.0776 - val_loss: 22.5424 - val_mse: 22.5424 - val_mae: 3.1494\n",
+-      "Epoch 39/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 8.1182 - mse: 8.1182 - mae: 2.0683 - val_loss: 19.7576 - val_mse: 19.7576 - val_mae: 2.8799\n",
+-      "Epoch 40/75\n",
+-      "404/404 [==============================] - 0s 374us/sample - loss: 7.8578 - mse: 7.8578 - mae: 2.0131 - val_loss: 20.7728 - val_mse: 20.7728 - val_mae: 2.9499\n",
+-      "Epoch 41/75\n",
+-      "404/404 [==============================] - 0s 382us/sample - loss: 7.5711 - mse: 7.5711 - mae: 1.9896 - val_loss: 20.6170 - val_mse: 20.6170 - val_mae: 2.9936\n",
+-      "Epoch 42/75\n",
+-      "404/404 [==============================] - 0s 385us/sample - loss: 7.5822 - mse: 7.5822 - mae: 1.9683 - val_loss: 20.8541 - val_mse: 20.8541 - val_mae: 3.0054\n",
+-      "Epoch 43/75\n",
+-      "404/404 [==============================] - 0s 408us/sample - loss: 7.4533 - mse: 7.4533 - mae: 1.9645 - val_loss: 20.4473 - val_mse: 20.4473 - val_mae: 2.8861\n",
+-      "Epoch 44/75\n",
+-      "404/404 [==============================] - 0s 396us/sample - loss: 7.5226 - mse: 7.5226 - mae: 1.9509 - val_loss: 20.5193 - val_mse: 20.5193 - val_mae: 2.9619\n",
+-      "Epoch 45/75\n",
+-      "404/404 [==============================] - 0s 355us/sample - loss: 7.2819 - mse: 7.2819 - mae: 1.9350 - val_loss: 21.4862 - val_mse: 21.4862 - val_mae: 2.9908\n",
+-      "Epoch 46/75\n",
+-      "404/404 [==============================] - 0s 354us/sample - loss: 7.0130 - mse: 7.0130 - mae: 1.9152 - val_loss: 20.1577 - val_mse: 20.1577 - val_mae: 2.9370\n",
+-      "Epoch 47/75\n",
+-      "404/404 [==============================] - 0s 375us/sample - loss: 6.9431 - mse: 6.9431 - mae: 1.8819 - val_loss: 21.1210 - val_mse: 21.1210 - val_mae: 2.9746\n",
+-      "Epoch 48/75\n",
+-      "404/404 [==============================] - 0s 371us/sample - loss: 6.8982 - mse: 6.8982 - mae: 1.9037 - val_loss: 19.2999 - val_mse: 19.2999 - val_mae: 2.8638\n",
+-      "Epoch 49/75\n",
+-      "404/404 [==============================] - 0s 368us/sample - loss: 6.9521 - mse: 6.9521 - mae: 1.8862 - val_loss: 20.7825 - val_mse: 20.7825 - val_mae: 2.9369\n",
+-      "Epoch 50/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 6.8718 - mse: 6.8718 - mae: 1.8889 - val_loss: 20.0288 - val_mse: 20.0288 - val_mae: 2.8915\n",
+-      "Epoch 51/75\n",
+-      "404/404 [==============================] - 0s 354us/sample - loss: 6.7111 - mse: 6.7111 - mae: 1.8702 - val_loss: 20.4913 - val_mse: 20.4913 - val_mae: 3.0116\n",
+-      "Epoch 52/75\n",
+-      "404/404 [==============================] - 0s 361us/sample - loss: 6.7492 - mse: 6.7492 - mae: 1.8482 - val_loss: 18.3008 - val_mse: 18.3008 - val_mae: 2.7362\n",
+-      "Epoch 53/75\n",
+-      "404/404 [==============================] - 0s 356us/sample - loss: 6.6262 - mse: 6.6262 - mae: 1.8395 - val_loss: 18.1885 - val_mse: 18.1885 - val_mae: 2.6920\n",
+-      "Epoch 54/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 6.7148 - mse: 6.7148 - mae: 1.8611 - val_loss: 18.5764 - val_mse: 18.5764 - val_mae: 2.6977\n",
+-      "Epoch 55/75\n",
+-      "404/404 [==============================] - 0s 358us/sample - loss: 6.5425 - mse: 6.5425 - mae: 1.8522 - val_loss: 19.5772 - val_mse: 19.5772 - val_mae: 2.8326\n",
+-      "Epoch 56/75\n",
+-      "404/404 [==============================] - 0s 423us/sample - loss: 6.3349 - mse: 6.3349 - mae: 1.8175 - val_loss: 19.0932 - val_mse: 19.0932 - val_mae: 2.8260\n",
+-      "Epoch 57/75\n",
+-      "404/404 [==============================] - 0s 375us/sample - loss: 6.4253 - mse: 6.4253 - mae: 1.7972 - val_loss: 20.4036 - val_mse: 20.4036 - val_mae: 2.9258\n",
+-      "Epoch 58/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 6.2897 - mse: 6.2897 - mae: 1.7785 - val_loss: 21.2845 - val_mse: 21.2845 - val_mae: 3.0715\n",
+-      "Epoch 59/75\n",
+-      "404/404 [==============================] - 0s 378us/sample - loss: 6.7839 - mse: 6.7839 - mae: 1.9027 - val_loss: 18.6853 - val_mse: 18.6853 - val_mae: 2.7709\n",
+-      "Epoch 60/75\n",
+-      "404/404 [==============================] - 0s 395us/sample - loss: 6.7178 - mse: 6.7178 - mae: 1.8871 - val_loss: 19.5394 - val_mse: 19.5394 - val_mae: 2.8101\n",
+-      "Epoch 61/75\n",
+-      "404/404 [==============================] - 0s 366us/sample - loss: 6.4152 - mse: 6.4152 - mae: 1.8175 - val_loss: 18.2377 - val_mse: 18.2377 - val_mae: 2.7450\n",
+-      "Epoch 62/75\n",
+-      "404/404 [==============================] - 0s 384us/sample - loss: 5.9727 - mse: 5.9727 - mae: 1.7630 - val_loss: 19.0252 - val_mse: 19.0252 - val_mae: 2.7960\n",
+-      "Epoch 63/75\n",
+-      "404/404 [==============================] - 0s 380us/sample - loss: 6.0973 - mse: 6.0973 - mae: 1.8071 - val_loss: 18.8069 - val_mse: 18.8069 - val_mae: 2.8894\n",
+-      "Epoch 64/75\n",
+-      "404/404 [==============================] - 0s 362us/sample - loss: 6.1074 - mse: 6.1074 - mae: 1.7978 - val_loss: 18.4702 - val_mse: 18.4702 - val_mae: 2.7851\n",
+-      "Epoch 65/75\n",
+-      "404/404 [==============================] - 0s 369us/sample - loss: 5.9329 - mse: 5.9329 - mae: 1.7545 - val_loss: 18.5321 - val_mse: 18.5321 - val_mae: 2.7933\n",
+-      "Epoch 66/75\n",
+-      "404/404 [==============================] - 0s 341us/sample - loss: 5.7473 - mse: 5.7473 - mae: 1.7211 - val_loss: 18.5536 - val_mse: 18.5536 - val_mae: 2.8010\n",
+-      "Epoch 67/75\n",
+-      "404/404 [==============================] - 0s 339us/sample - loss: 5.8866 - mse: 5.8866 - mae: 1.7224 - val_loss: 18.0067 - val_mse: 18.0067 - val_mae: 2.7054\n",
+-      "Epoch 68/75\n",
+-      "404/404 [==============================] - 0s 337us/sample - loss: 5.7885 - mse: 5.7885 - mae: 1.7391 - val_loss: 17.5502 - val_mse: 17.5502 - val_mae: 2.6767\n",
+-      "Epoch 69/75\n",
+-      "404/404 [==============================] - 0s 331us/sample - loss: 5.8809 - mse: 5.8809 - mae: 1.7542 - val_loss: 17.0280 - val_mse: 17.0280 - val_mae: 2.6404\n",
+-      "Epoch 70/75\n",
+-      "404/404 [==============================] - 0s 343us/sample - loss: 5.6028 - mse: 5.6028 - mae: 1.6972 - val_loss: 17.7188 - val_mse: 17.7188 - val_mae: 2.6979\n",
+-      "Epoch 71/75\n",
+-      "404/404 [==============================] - 0s 337us/sample - loss: 5.4361 - mse: 5.4361 - mae: 1.6741 - val_loss: 16.8852 - val_mse: 16.8852 - val_mae: 2.6126\n",
+-      "Epoch 72/75\n",
+-      "404/404 [==============================] - 0s 345us/sample - loss: 5.5608 - mse: 5.5608 - mae: 1.7252 - val_loss: 16.7483 - val_mse: 16.7483 - val_mae: 2.6063\n",
+-      "Epoch 73/75\n",
+-      "404/404 [==============================] - 0s 341us/sample - loss: 5.5022 - mse: 5.5022 - mae: 1.6912 - val_loss: 17.6786 - val_mse: 17.6786 - val_mae: 2.7316\n",
+-      "Epoch 74/75\n",
+-      "404/404 [==============================] - 0s 396us/sample - loss: 5.2794 - mse: 5.2794 - mae: 1.6478 - val_loss: 17.6115 - val_mse: 17.6115 - val_mae: 2.6773\n",
+-      "Epoch 75/75\n",
+-      "404/404 [==============================] - 0s 338us/sample - loss: 5.4796 - mse: 5.4796 - mae: 1.6876 - val_loss: 17.2835 - val_mse: 17.2835 - val_mae: 2.7126\n"
++     "ename": "TypeError",
++     "evalue": "'NoneType' object is not iterable",
++     "output_type": "error",
++     "traceback": [
++      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
++      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
++      "\u001b[0;32m<ipython-input-10-ca2a1412e3bb>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     22\u001b[0m           \u001b[0mvalidation_data\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mx_test\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0my_test\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     23\u001b[0m           \u001b[0mepochs\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mepochs\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 24\u001b[0;31m           \u001b[0mbatch_size\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mbatch_size\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     25\u001b[0m          )\n",
++      "\u001b[0;32m~/anaconda3/envs/U4-Sprint2/lib/python3.7/site-packages/tensorflow_core/python/keras/engine/training.py\u001b[0m in \u001b[0;36mfit\u001b[0;34m(self, x, y, batch_size, epochs, verbose, callbacks, validation_split, validation_data, shuffle, class_weight, sample_weight, initial_epoch, steps_per_epoch, validation_steps, validation_freq, max_queue_size, workers, use_multiprocessing, **kwargs)\u001b[0m\n\u001b[1;32m    817\u001b[0m         \u001b[0mmax_queue_size\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mmax_queue_size\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    818\u001b[0m         \u001b[0mworkers\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mworkers\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 819\u001b[0;31m         use_multiprocessing=use_multiprocessing)\n\u001b[0m\u001b[1;32m    820\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    821\u001b[0m   def evaluate(self,\n",
++      "\u001b[0;32m~/anaconda3/envs/U4-Sprint2/lib/python3.7/site-packages/wandb/keras/__init__.py\u001b[0m in \u001b[0;36mnew_v2\u001b[0;34m(*args, **kwargs)\u001b[0m\n\u001b[1;32m    108\u001b[0m         \u001b[0mval_data\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mkwargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"validation_data\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    109\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mval_data\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 110\u001b[0;31m             \u001b[0;32mfor\u001b[0m \u001b[0mcbk\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mcbks\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    111\u001b[0m                 \u001b[0mset_wandb_attrs\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcbk\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mval_data\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    112\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0mold_v2\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0margs\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
++      "\u001b[0;31mTypeError\u001b[0m: 'NoneType' object is not iterable"
+      ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x7f36340c6b38>"
+-      ]
+-     },
+-     "execution_count": 3,
+-     "metadata": {},
+-     "output_type": "execute_result"
+     }
+    ],
+    "source": [
+@@ -404,7 +250,7 @@
+     "\n",
+     "#### 4) Bayesian Methods\n",
+     "\n",
+-    "One thing that can make more manual methods like babysitting and gridsearch effective is that as the experimenter sees results he can then make updates to his future searches taking into account the results of past specifications. If only we could hyperparameter tune our hyperparameter tuning. Well, we kind of can. Enter Bayesian Optimization. Neural Networks are like an optimization problem within an optimization problem, and Bayesian Optimization is a search strategy that tries to take into account the results of past searches in order to improve future ones. This is the most advanced method but can be a little bit tricky to implement, but there are some early steps with `hyperas` which is Bayesian optimization wrapper for `keras`. "
++    "One thing that can make more manual methods like babysitting and gridsearch effective is that as the experimenter sees results he can then make updates to his future searches taking into account the results of past specifications. If only we could hyperparameter tune our hyperparameter tuning. Well, we kind of can. Enter Bayesian Optimization. Neural Networks are like an optimization problem within an optimization problem, and Bayesian Optimization is a search strategy that tries to take into account the results of past searches in order to improve future ones. Check out the new library `keras-tuner` for easy implementations of Bayesian methods. \n"
+    ]
+   },
+   {
+@@ -444,12 +290,23 @@
+    "source": [
+     "## Batch Size\n",
+     "\n",
+-    "Batch size determines how many observations the model is shown before it calculates loss/error and updates the model weights via gradient descent. You're looking for a sweet spot here where you're showing it enough observations that you have enough information to updates the weights, but not such a large batch size that you don't get a lot of weight update iterations performed in a given epoch. Feed-forward Neural Networks aren't as sensitive to bach_size as other networks, but it is still an important hyperparameter to tune. Smaller batch sizes will also take longer to train. "
++    "Batch size determines how many observations the model is shown before it calculates loss/error and updates the model weights via gradient descent. You're looking for a sweet spot here where you're showing it enough observations that you have enough information to updates the weights, but not such a large batch size that you don't get a lot of weight update iterations performed in a given epoch. Feed-forward Neural Networks aren't as sensitive to bach_size as other networks, but it is still an important hyperparameter to tune. Smaller batch sizes will also take longer to train. \n",
++    "\n",
++    "Traditionally, batch size is set in powers of 2 starting at 32 up to 512. Keras defaults to a batch size of 32 if you do not specify it. Yann LeCun famously Twitted: \n",
++    "\n",
++    "> Training with large minibatches is bad for your health.\n",
++    "More importantly, it's bad for your test error.\n",
++    "Friends dont let friends use minibatches larger than 32.\n",
++    "\n",
++    "Check out this paper for more reference on his tweet. https://arxiv.org/abs/1804.07612. \n",
++    "\n",
++    "Check out this SO question on why batch size is typically set in powers of two: https://datascience.stackexchange.com/questions/20179/what-is-the-advantage-of-keeping-batch-size-a-power-of-2\n",
++    "\n"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 4,
++   "execution_count": 10,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -460,25 +317,16 @@
+     "outputId": "ae996575-78e2-43fb-9dbe-5d44aaf0b430"
+    },
+    "outputs": [
+-    {
+-     "name": "stderr",
+-     "output_type": "stream",
+-     "text": [
+-      "/usr/local/lib/python3.6/dist-packages/sklearn/model_selection/_split.py:1978: FutureWarning: The default value of cv will change from 3 to 5 in version 0.22. Specify it explicitly to silence this warning.\n",
+-      "  warnings.warn(CV_WARNING, FutureWarning)\n"
+-     ]
+-    },
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "Best: 0.65234375 using {'batch_size': 10, 'epochs': 20}\n",
+-      "Means: 0.65234375, Stdev: 0.033298728782667764 with: {'batch_size': 10, 'epochs': 20}\n",
+-      "Means: 0.6263020833333334, Stdev: 0.01813592223591682 with: {'batch_size': 20, 'epochs': 20}\n",
+-      "Means: 0.6041666666666666, Stdev: 0.037782859709757574 with: {'batch_size': 40, 'epochs': 20}\n",
+-      "Means: 0.5533854166666666, Stdev: 0.03210632293213009 with: {'batch_size': 60, 'epochs': 20}\n",
+-      "Means: 0.61328125, Stdev: 0.024079742199097563 with: {'batch_size': 80, 'epochs': 20}\n",
+-      "Means: 0.5611979166666666, Stdev: 0.038450060052691144 with: {'batch_size': 100, 'epochs': 20}\n"
++      "Best: 0.6274425029754639 using {'batch_size': 32, 'epochs': 20}\n",
++      "Means: 0.6274425029754639, Stdev: 0.06777371027621543 with: {'batch_size': 32, 'epochs': 20}\n",
++      "Means: 0.5652321636676788, Stdev: 0.0672931122182917 with: {'batch_size': 64, 'epochs': 20}\n",
++      "Means: 0.5885239005088806, Stdev: 0.052434982283063036 with: {'batch_size': 128, 'epochs': 20}\n",
++      "Means: 0.5039385497570038, Stdev: 0.09013194735473495 with: {'batch_size': 256, 'epochs': 20}\n",
++      "Means: 0.5077243089675904, Stdev: 0.08855690157292835 with: {'batch_size': 512, 'epochs': 20}\n"
+      ]
+     }
+    ],
+@@ -521,7 +369,7 @@
+     "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
+     "\n",
+     "# define the grid search parameters\n",
+-    "param_grid = {'batch_size': [10, 20, 40, 60, 80, 100],\n",
++    "param_grid = {'batch_size': [32,64,128,256,512],\n",
+     "              'epochs': [20]}\n",
+     "\n",
+     "# Create Grid Search\n",
+@@ -541,43 +389,74 @@
+    "cell_type": "markdown",
+    "metadata": {
+     "colab_type": "text",
+-    "id": "pmABfjlvXbqi"
++    "id": "EKcuY6OiaLfz"
+    },
+    "source": [
+-    "## Epochs\n",
++    "## Optimizer\n",
+     "\n",
+-    "The number of training epochs has a large and direct affect on the accuracy, However, more epochs is almost always goign to better than less epochs. This means that if you tune this parameter at the beginning and try and maintain the same value all throughout your training, you're going to be waiting a long time for each iteration of GridSearch. I suggest picking a fixed moderat # of epochs all throughout your training and then Grid Searching this parameter at the very end. "
++    "Remember that there's a different optimizers [optimizers](https://keras.io/optimizers/). At some point, take some time to read up on them a little bit. \"adam\" usually gives the best results. The thing to know about choosing an optimizer is that different optimizers have different hyperparameters like learning rate, momentum, etc. So based on the optimizer you choose you might also have to tune the learning rate and momentum of those optimizers after that. "
+    ]
+   },
+   {
+-   "cell_type": "code",
+-   "execution_count": 5,
++   "cell_type": "markdown",
+    "metadata": {
+-    "colab": {
+-     "base_uri": "https://localhost:8080/",
+-     "height": 26329
+-    },
+-    "colab_type": "code",
+-    "id": "bAmxP3N7TmFh",
+-    "outputId": "3ddb08c4-51ac-4eaa-ff39-143397024544"
++    "colab_type": "text",
++    "id": "DG3wq5iOaLig"
+    },
++   "source": [
++    "## Learning Rate\n",
++    "\n",
++    "Remember that the Learning Rate is a hyperparameter that is specific to your gradient-descent based optimizer selection. A learning rate that is too high will cause divergent behavior, but a Learning Rate that is too low will fail to converge, again, you're looking for the sweet spot. I would start out tuning learning rates by orders of magnitude: [.001, .01, .1, .2, .3, .5] etc. I wouldn't go above .5, but you can try it and see what the behavior is like. \n",
++    "\n",
++    "Once you have narrowed it down, make the window even smaller and try it again. If after running the above specification your model reports that .1 is the best optimizer, then you should probably try things like [.05, .08, .1, .12, .15] to try and narrow it down. \n",
++    "\n",
++    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. "
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 12,
++   "metadata": {},
+    "outputs": [
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+-      "Best: 0.7044270833333334 using {'batch_size': 20, 'epochs': 200}\n",
+-      "Means: 0.6666666666666666, Stdev: 0.028940248399600087 with: {'batch_size': 20, 'epochs': 20}\n",
+-      "Means: 0.6588541666666666, Stdev: 0.028940248399600087 with: {'batch_size': 20, 'epochs': 40}\n",
+-      "Means: 0.6848958333333334, Stdev: 0.03498705427745938 with: {'batch_size': 20, 'epochs': 60}\n",
+-      "Means: 0.7044270833333334, Stdev: 0.018414239093399672 with: {'batch_size': 20, 'epochs': 200}\n"
++      "Best: 0.6548765063285827 using {'epochs': 100, 'learning_rate': 0.001}\n",
++      "Means: 0.6548765063285827, Stdev: 0.025685443533032128 with: {'epochs': 100, 'learning_rate': 0.001}\n",
++      "Means: 0.6367286443710327, Stdev: 0.07908793530699246 with: {'epochs': 100, 'learning_rate': 0.01}\n",
++      "Means: 0.6511586427688598, Stdev: 0.05244526932680711 with: {'epochs': 100, 'learning_rate': 0.1}\n",
++      "Means: 0.6511586427688598, Stdev: 0.05244526932680711 with: {'epochs': 100, 'learning_rate': 0.2}\n",
++      "Means: 0.6511586427688598, Stdev: 0.05244526932680711 with: {'epochs': 100, 'learning_rate': 0.3}\n",
++      "Means: 0.6498599529266358, Stdev: 0.05413510687376454 with: {'epochs': 100, 'learning_rate': 0.5}\n"
+      ]
+     }
+    ],
+    "source": [
++    "from tensorflow.keras.optimizers import Nadam\n",
++    "\n",
++    "\n",
++    "# Function to create model, required for KerasClassifier\n",
++    "def create_model(learning_rate=.01):\n",
++    "    # create model\n",
++    "    model = Sequential()\n",
++    "    model.add(Dense(12, input_dim=8, activation='relu'))\n",
++    "    model.add(Dense(1, activation='sigmoid'))\n",
++    "    # Compile model\n",
++    "    optimizer= Nadam(learning_rate = learning_rate)\n",
++    "    model.compile(loss='binary_crossentropy', optimizer=optimizer, metrics=['accuracy'])\n",
++    "    return model\n",
++    "\n",
++    "# create model\n",
++    "model = KerasClassifier(build_fn=create_model, verbose=0)\n",
++    "\n",
++    "# define the grid search parameters\n",
++    "# batch_size = [10, 20, 40, 60, 80, 100]\n",
++    "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
++    "\n",
+     "# define the grid search parameters\n",
+-    "param_grid = {'batch_size': [20],\n",
+-    "              'epochs': [20, 40, 60,200]}\n",
++    "param_grid = {'learning_rate': [.001, .01, .1, .2, .3, .5],\n",
++    "              'epochs': [100]}\n",
+     "\n",
+     "# Create Grid Search\n",
+     "grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=1)\n",
+@@ -589,35 +468,7 @@
+     "stds = grid_result.cv_results_['std_test_score']\n",
+     "params = grid_result.cv_results_['params']\n",
+     "for mean, stdev, param in zip(means, stds, params):\n",
+-    "    print(f\"Means: {mean}, Stdev: {stdev} with: {param}\")"
+-   ]
+-  },
+-  {
+-   "cell_type": "markdown",
+-   "metadata": {
+-    "colab_type": "text",
+-    "id": "EKcuY6OiaLfz"
+-   },
+-   "source": [
+-    "## Optimizer\n",
+-    "\n",
+-    "Remember that there's a different optimizers [optimizers](https://keras.io/optimizers/). At some point, take some time to read up on them a little bit. \"adam\" usually gives the best results. The thing to know about choosing an optimizer is that different optimizers have different hyperparameters like learning rate, momentum, etc. So based on the optimizer you choose you might also have to tune the learning rate and momentum of those optimizers after that. "
+-   ]
+-  },
+-  {
+-   "cell_type": "markdown",
+-   "metadata": {
+-    "colab_type": "text",
+-    "id": "DG3wq5iOaLig"
+-   },
+-   "source": [
+-    "## Learning Rate\n",
+-    "\n",
+-    "Remember that the Learning Rate is a hyperparameter that is specific to your gradient-descent based optimizer selection. A learning rate that is too high will cause divergent behavior, but a Learning Rate that is too low will fail to converge, again, you're looking for the sweet spot. I would start out tuning learning rates by orders of magnitude: [.001, .01, .1, .2, .3, .5] etc. I wouldn't go above .5, but you can try it and see what the behavior is like. \n",
+-    "\n",
+-    "Once you have narrowed it down, make the window even smaller and try it again. If after running the above specification your model reports that .1 is the best optimizer, then you should probably try things like [.05, .08, .1, .12, .15] to try and narrow it down. \n",
+-    "\n",
+-    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. "
++    "    print(f\"Means: {mean}, Stdev: {stdev} with: {param}\") "
+    ]
+   },
+   {
+@@ -730,34 +581,15 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 6,
++   "execution_count": 5,
+    "metadata": {},
+    "outputs": [
+     {
+-     "data": {
+-      "text/html": [
+-       "\n",
+-       "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+-       "                Project page: <a href=\"https://app.wandb.ai/lambda-ds7/boston\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston</a><br/>\n",
+-       "                Run page: <a href=\"https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro</a><br/>\n",
+-       "            "
+-      ],
+-      "text/plain": [
+-       "<IPython.core.display.HTML object>"
+-      ]
+-     },
+-     "metadata": {},
+-     "output_type": "display_data"
+-    },
+-    {
+-     "data": {
+-      "text/plain": [
+-       "W&B Run: https://app.wandb.ai/lambda-ds7/boston/runs/whw09rro"
+-      ]
+-     },
+-     "execution_count": 6,
+-     "metadata": {},
+-     "output_type": "execute_result"
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: \u001b[33mWARNING\u001b[0m import wandb.keras called before import keras or import tensorflow.keras.  This can lead to a version mismatch, W&B now assumes tensorflow.keras\n"
++     ]
+     }
+    ],
+    "source": [
+@@ -767,7 +599,107 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 8,
++   "execution_count": 2,
++   "metadata": {},
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Collecting wandb\n",
++      "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/68/dd/ce719d36c4172b56c7579a79fcfd2f731c386b39f258bb186ef17b73fd7d/wandb-0.8.32-py2.py3-none-any.whl (1.4MB)\n",
++      "\u001b[K     |████████████████████████████████| 1.4MB 1.1MB/s eta 0:00:01\n",
++      "\u001b[?25hRequirement already satisfied: PyYAML>=3.10 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (5.1.2)\n",
++      "Collecting gql==0.2.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/c4/6f/cf9a3056045518f06184e804bae89390eb706168349daa9dff8ac609962a/gql-0.2.0.tar.gz\n",
++      "Collecting shortuuid>=0.5.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/25/a6/2ecc1daa6a304e7f1b216f0896b26156b78e7c38e1211e9b798b4716c53d/shortuuid-1.0.1-py3-none-any.whl\n",
++      "Requirement already satisfied: psutil>=5.0.0 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (5.6.3)\n",
++      "Requirement already satisfied: six>=1.10.0 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (1.12.0)\n",
++      "Collecting docker-pycreds>=0.4.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/f5/e8/f6bd1eee09314e7e6dee49cbe2c5e22314ccdb38db16c9fc72d2fa80d054/docker_pycreds-0.4.0-py2.py3-none-any.whl\n",
++      "Collecting GitPython>=1.0.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/19/1a/0df85d2bddbca33665d2148173d3281b290ac054b5f50163ea735740ac7b/GitPython-3.1.1-py3-none-any.whl\n",
++      "Collecting nvidia-ml-py3>=7.352.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/6d/64/cce82bddb80c0b0f5c703bbdafa94bfb69a1c5ad7a79cff00b482468f0d3/nvidia-ml-py3-7.352.0.tar.gz\n",
++      "Collecting sentry-sdk>=0.4.0 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/20/7e/19545324e83db4522b885808cd913c3b93ecc0c88b03e037b78c6a417fa8/sentry_sdk-0.14.3-py2.py3-none-any.whl\n",
++      "Requirement already satisfied: Click>=7.0 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (7.0)\n",
++      "Collecting configparser>=3.8.1 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/4b/6b/01baa293090240cf0562cc5eccb69c6f5006282127f2b846fad011305c79/configparser-5.0.0-py3-none-any.whl\n",
++      "Requirement already satisfied: requests>=2.0.0 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (2.22.0)\n",
++      "Requirement already satisfied: python-dateutil>=2.6.1 in /home/adriann/anaconda3/lib/python3.7/site-packages (from wandb) (2.8.0)\n",
++      "Collecting subprocess32>=3.5.3 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/32/c8/564be4d12629b912ea431f1a50eb8b3b9d00f1a0b1ceff17f266be190007/subprocess32-3.5.4.tar.gz\n",
++      "Collecting watchdog>=0.8.3 (from wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/73/c3/ed6d992006837e011baca89476a4bbffb0a91602432f73bd4473816c76e2/watchdog-0.10.2.tar.gz\n",
++      "Collecting graphql-core<2,>=0.5.0 (from gql==0.2.0->wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/b0/89/00ad5e07524d8c523b14d70c685e0299a8b0de6d0727e368c41b89b7ed0b/graphql-core-1.1.tar.gz\n",
++      "Collecting promise<3,>=2.0 (from gql==0.2.0->wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/cf/9c/fb5d48abfe5d791cd496e4242ebcf87a4bb2e0c3dcd6e0ae68c11426a528/promise-2.3.tar.gz\n",
++      "Collecting gitdb<5,>=4.0.1 (from GitPython>=1.0.0->wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/74/52/ca35448b56c53a079d3ffe18b1978c6e424f6d4df02404877094c89f5bfb/gitdb-4.0.4-py3-none-any.whl\n",
++      "Requirement already satisfied: certifi in /home/adriann/anaconda3/lib/python3.7/site-packages (from sentry-sdk>=0.4.0->wandb) (2019.9.11)\n",
++      "Requirement already satisfied: urllib3>=1.10.0 in /home/adriann/anaconda3/lib/python3.7/site-packages (from sentry-sdk>=0.4.0->wandb) (1.24.2)\n",
++      "Requirement already satisfied: idna<2.9,>=2.5 in /home/adriann/anaconda3/lib/python3.7/site-packages (from requests>=2.0.0->wandb) (2.8)\n",
++      "Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/adriann/anaconda3/lib/python3.7/site-packages (from requests>=2.0.0->wandb) (3.0.4)\n",
++      "Collecting pathtools>=0.1.1 (from watchdog>=0.8.3->wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/e7/7f/470d6fcdf23f9f3518f6b0b76be9df16dcc8630ad409947f8be2eb0ed13a/pathtools-0.1.2.tar.gz\n",
++      "Collecting smmap<4,>=3.0.1 (from gitdb<5,>=4.0.1->GitPython>=1.0.0->wandb)\n",
++      "  Using cached https://files.pythonhosted.org/packages/27/b1/e379cfb7c07bbf8faee29c4a1a2469dbea525f047c2b454c4afdefa20a30/smmap-3.0.2-py2.py3-none-any.whl\n",
++      "Building wheels for collected packages: gql, nvidia-ml-py3, subprocess32, watchdog, graphql-core, promise, pathtools\n",
++      "  Building wheel for gql (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for gql: filename=gql-0.2.0-cp37-none-any.whl size=7630 sha256=5436fb10b88c685c5c6ecd3251327e883fdde92dc3710cdc01b4edc105118619\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/ce/0e/7b/58a8a5268655b3ad74feef5aa97946f0addafb3cbb6bd2da23\n",
++      "  Building wheel for nvidia-ml-py3 (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for nvidia-ml-py3: filename=nvidia_ml_py3-7.352.0-cp37-none-any.whl size=19192 sha256=b720ec8b07b35233b3dda0f1edc9648d8ae0d844f41cd7bbd429d4eab6afea3b\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/e4/1d/06/640c93f5270d67d0247f30be91f232700d19023f9e66d735c7\n",
++      "  Building wheel for subprocess32 (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for subprocess32: filename=subprocess32-3.5.4-cp37-none-any.whl size=6490 sha256=d52d79c74bc29f04b447d745174d29c77c5ecdd2bf38145a73e27626c0ca5c8a\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/68/39/1a/5e402bdfdf004af1786c8b853fd92f8c4a04f22aad179654d1\n",
++      "  Building wheel for watchdog (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for watchdog: filename=watchdog-0.10.2-cp37-none-any.whl size=73606 sha256=739f2e6b7fade64409c666bd9fc593285dbcadc521900cab5012d036b1f08c4a\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/bc/ed/6c/028dea90d31b359cd2a7c8b0da4db80e41d24a59614154072e\n",
++      "  Building wheel for graphql-core (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for graphql-core: filename=graphql_core-1.1-cp37-none-any.whl size=104651 sha256=77fd01ec42f61dc9e57fe2245eaeaf7d8ef6402c26f4386ba9b91788cb1bb297\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/45/99/d7/c424029bb0fe910c63b68dbf2aa20d3283d023042521bcd7d5\n",
++      "  Building wheel for promise (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for promise: filename=promise-2.3-cp37-none-any.whl size=21494 sha256=f97f6ca21365424523b60d2d9408ea4e01dc313da00a188b14552ad1c6d41ddd\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/19/49/34/c3c1e78bcb954c49e5ec0d31784fe63d14d427f316b12fbde9\n",
++      "  Building wheel for pathtools (setup.py) ... \u001b[?25ldone\n",
++      "\u001b[?25h  Created wheel for pathtools: filename=pathtools-0.1.2-cp37-none-any.whl size=8786 sha256=1a38922b5e4b4d314519242f7d5917efcaab6ada83390e83f149cac72c43f73d\n",
++      "  Stored in directory: /home/adriann/.cache/pip/wheels/0b/04/79/c3b0c3a0266a3cb4376da31e5bfe8bba0c489246968a68e843\n",
++      "Successfully built gql nvidia-ml-py3 subprocess32 watchdog graphql-core promise pathtools\n",
++      "Installing collected packages: promise, graphql-core, gql, shortuuid, docker-pycreds, smmap, gitdb, GitPython, nvidia-ml-py3, sentry-sdk, configparser, subprocess32, pathtools, watchdog, wandb\n",
++      "Successfully installed GitPython-3.1.1 configparser-5.0.0 docker-pycreds-0.4.0 gitdb-4.0.4 gql-0.2.0 graphql-core-1.1 nvidia-ml-py3-7.352.0 pathtools-0.1.2 promise-2.3 sentry-sdk-0.14.3 shortuuid-1.0.1 smmap-3.0.2 subprocess32-3.5.4 wandb-0.8.32 watchdog-0.10.2\n"
++     ]
++    }
++   ],
++   "source": [
++    "!pip install wandb"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 3,
++   "metadata": {},
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Appending key for api.wandb.ai to your netrc file: /home/adriann/.netrc\n",
++      "\u001b[32mSuccessfully logged in to Weights & Biases!\u001b[0m\n"
++     ]
++    }
++   ],
++   "source": [
++    "!wandb login b7b6327df2a61f96856324533374853ec9b52665"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 11,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -783,8 +715,8 @@
+       "text/html": [
+        "\n",
+        "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+-       "                Project page: <a href=\"https://app.wandb.ai/lambda-ds7/boston\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston</a><br/>\n",
+-       "                Run page: <a href=\"https://app.wandb.ai/lambda-ds7/boston/runs/kkgdtc31\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston/runs/kkgdtc31</a><br/>\n",
++       "                Project page: <a href=\"https://app.wandb.ai/ds8/ds12_inclass\" target=\"_blank\">https://app.wandb.ai/ds8/ds12_inclass</a><br/>\n",
++       "                Run page: <a href=\"https://app.wandb.ai/ds8/ds12_inclass/runs/199y0mpa\" target=\"_blank\">https://app.wandb.ai/ds8/ds12_inclass/runs/199y0mpa</a><br/>\n",
+        "            "
+       ],
+       "text/plain": [
+@@ -794,126 +726,136 @@
+      "metadata": {},
+      "output_type": "display_data"
+     },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Wandb version 0.8.32 is available!  To upgrade, please run:\n",
++      "\u001b[34m\u001b[1mwandb\u001b[0m:  $ pip install wandb --upgrade\n"
++     ]
++    },
+     {
+      "name": "stdout",
+      "output_type": "stream",
+      "text": [
+       "Train on 270 samples, validate on 134 samples\n",
+       "Epoch 1/50\n",
+-      "270/270 [==============================] - 1s 3ms/sample - loss: 492.3539 - mse: 492.3539 - mae: 20.3197 - val_loss: 481.5445 - val_mse: 481.5445 - val_mae: 19.6138\n",
++      "270/270 [==============================] - 0s 1ms/sample - loss: 798.8621 - mse: 798.8622 - mae: 20.5490 - val_loss: 77.3797 - val_mse: 77.3797 - val_mae: 5.6656\n",
+       "Epoch 2/50\n",
+-      "270/270 [==============================] - 0s 591us/sample - loss: 239.4999 - mse: 239.4999 - mae: 12.8064 - val_loss: 113.8561 - val_mse: 113.8561 - val_mae: 8.2962\n",
++      "270/270 [==============================] - 0s 164us/sample - loss: 67.3510 - mse: 67.3510 - mae: 6.2942 - val_loss: 78.8642 - val_mse: 78.8642 - val_mae: 6.4534\n",
+       "Epoch 3/50\n",
+-      "270/270 [==============================] - 0s 618us/sample - loss: 56.2921 - mse: 56.2921 - mae: 5.8988 - val_loss: 62.7912 - val_mse: 62.7912 - val_mae: 5.6465\n",
++      "270/270 [==============================] - 0s 159us/sample - loss: 52.6724 - mse: 52.6724 - mae: 5.2644 - val_loss: 77.7380 - val_mse: 77.7380 - val_mae: 6.1896\n",
+       "Epoch 4/50\n",
+-      "270/270 [==============================] - 0s 613us/sample - loss: 29.4994 - mse: 29.4994 - mae: 3.9653 - val_loss: 37.9256 - val_mse: 37.9256 - val_mae: 4.1730\n",
++      "270/270 [==============================] - 0s 153us/sample - loss: 52.0575 - mse: 52.0575 - mae: 5.1350 - val_loss: 98.5906 - val_mse: 98.5906 - val_mae: 6.2236\n",
+       "Epoch 5/50\n",
+-      "270/270 [==============================] - 0s 608us/sample - loss: 20.6919 - mse: 20.6919 - mae: 3.3022 - val_loss: 31.7489 - val_mse: 31.7489 - val_mae: 3.7113\n",
++      "270/270 [==============================] - 0s 159us/sample - loss: 49.2439 - mse: 49.2439 - mae: 4.9981 - val_loss: 89.2329 - val_mse: 89.2329 - val_mae: 5.7988\n",
+       "Epoch 6/50\n",
+-      "270/270 [==============================] - 0s 602us/sample - loss: 17.2701 - mse: 17.2701 - mae: 3.0291 - val_loss: 27.3921 - val_mse: 27.3921 - val_mae: 3.4958\n",
++      "270/270 [==============================] - 0s 209us/sample - loss: 47.9963 - mse: 47.9963 - mae: 4.7539 - val_loss: 73.7933 - val_mse: 73.7933 - val_mae: 6.3837\n",
+       "Epoch 7/50\n",
+-      "270/270 [==============================] - 0s 671us/sample - loss: 15.5172 - mse: 15.5172 - mae: 2.8537 - val_loss: 25.3208 - val_mse: 25.3208 - val_mae: 3.3650\n",
++      "270/270 [==============================] - 0s 212us/sample - loss: 49.0869 - mse: 49.0869 - mae: 5.0328 - val_loss: 71.9188 - val_mse: 71.9188 - val_mae: 5.8143\n",
+       "Epoch 8/50\n",
+-      "270/270 [==============================] - 0s 661us/sample - loss: 13.7548 - mse: 13.7548 - mae: 2.7089 - val_loss: 23.8920 - val_mse: 23.8920 - val_mae: 3.2746\n",
++      "270/270 [==============================] - 0s 217us/sample - loss: 45.8015 - mse: 45.8015 - mae: 4.7511 - val_loss: 71.5944 - val_mse: 71.5944 - val_mae: 6.1448\n",
+       "Epoch 9/50\n",
+-      "270/270 [==============================] - 0s 606us/sample - loss: 12.3745 - mse: 12.3745 - mae: 2.5662 - val_loss: 22.1294 - val_mse: 22.1294 - val_mae: 3.1509\n",
++      "270/270 [==============================] - 0s 156us/sample - loss: 46.2976 - mse: 46.2976 - mae: 4.7462 - val_loss: 78.6316 - val_mse: 78.6316 - val_mae: 5.8175\n",
+       "Epoch 10/50\n",
+-      "270/270 [==============================] - 0s 614us/sample - loss: 11.2424 - mse: 11.2424 - mae: 2.4804 - val_loss: 20.5718 - val_mse: 20.5718 - val_mae: 3.0461\n",
++      "270/270 [==============================] - 0s 220us/sample - loss: 48.4485 - mse: 48.4485 - mae: 4.8706 - val_loss: 71.3152 - val_mse: 71.3152 - val_mae: 5.3447\n",
+       "Epoch 11/50\n",
+-      "270/270 [==============================] - 0s 605us/sample - loss: 10.6098 - mse: 10.6098 - mae: 2.4178 - val_loss: 20.3467 - val_mse: 20.3467 - val_mae: 3.0251\n",
++      "270/270 [==============================] - 0s 162us/sample - loss: 44.2521 - mse: 44.2522 - mae: 4.7968 - val_loss: 82.7303 - val_mse: 82.7303 - val_mae: 5.6337\n",
+       "Epoch 12/50\n",
+-      "270/270 [==============================] - 0s 576us/sample - loss: 10.0011 - mse: 10.0011 - mae: 2.3257 - val_loss: 18.4283 - val_mse: 18.4283 - val_mae: 2.8938\n",
++      "270/270 [==============================] - 0s 177us/sample - loss: 43.4455 - mse: 43.4455 - mae: 4.5968 - val_loss: 71.6199 - val_mse: 71.6199 - val_mae: 5.2251\n",
+       "Epoch 13/50\n",
+-      "270/270 [==============================] - 0s 666us/sample - loss: 9.1287 - mse: 9.1287 - mae: 2.2384 - val_loss: 18.2024 - val_mse: 18.2024 - val_mae: 2.9116\n",
++      "270/270 [==============================] - 0s 211us/sample - loss: 44.6299 - mse: 44.6299 - mae: 4.6376 - val_loss: 70.6441 - val_mse: 70.6441 - val_mae: 5.1886\n",
+       "Epoch 14/50\n",
+-      "270/270 [==============================] - 0s 603us/sample - loss: 8.6211 - mse: 8.6211 - mae: 2.1980 - val_loss: 17.4749 - val_mse: 17.4749 - val_mae: 2.8290\n",
++      "270/270 [==============================] - 0s 253us/sample - loss: 41.0544 - mse: 41.0544 - mae: 4.3540 - val_loss: 66.7721 - val_mse: 66.7721 - val_mae: 5.8431\n",
+       "Epoch 15/50\n",
+-      "270/270 [==============================] - 0s 463us/sample - loss: 8.4558 - mse: 8.4558 - mae: 2.2087 - val_loss: 17.7878 - val_mse: 17.7878 - val_mae: 2.8516\n",
++      "270/270 [==============================] - 0s 311us/sample - loss: 41.7039 - mse: 41.7039 - mae: 4.5229 - val_loss: 89.0398 - val_mse: 89.0398 - val_mae: 6.0406\n",
+       "Epoch 16/50\n",
+-      "270/270 [==============================] - 0s 626us/sample - loss: 8.3626 - mse: 8.3626 - mae: 2.2031 - val_loss: 16.7101 - val_mse: 16.7101 - val_mae: 2.7820\n",
++      "270/270 [==============================] - 0s 254us/sample - loss: 38.9035 - mse: 38.9035 - mae: 4.3491 - val_loss: 64.0908 - val_mse: 64.0908 - val_mae: 5.1439\n",
+       "Epoch 17/50\n",
+-      "270/270 [==============================] - 0s 607us/sample - loss: 7.9180 - mse: 7.9180 - mae: 2.1265 - val_loss: 16.6064 - val_mse: 16.6064 - val_mae: 2.7419\n",
++      "270/270 [==============================] - 0s 227us/sample - loss: 40.3547 - mse: 40.3547 - mae: 4.4239 - val_loss: 62.7170 - val_mse: 62.7170 - val_mae: 5.7308\n",
+       "Epoch 18/50\n",
+-      "270/270 [==============================] - 0s 479us/sample - loss: 7.5552 - mse: 7.5552 - mae: 2.0235 - val_loss: 17.2872 - val_mse: 17.2872 - val_mae: 2.8539\n",
++      "270/270 [==============================] - 0s 199us/sample - loss: 37.7843 - mse: 37.7843 - mae: 4.3079 - val_loss: 66.7454 - val_mse: 66.7454 - val_mae: 6.3451\n",
+       "Epoch 19/50\n",
+-      "270/270 [==============================] - 0s 616us/sample - loss: 7.0971 - mse: 7.0971 - mae: 2.0038 - val_loss: 16.5110 - val_mse: 16.5110 - val_mae: 2.8042\n",
++      "270/270 [==============================] - 0s 223us/sample - loss: 35.5745 - mse: 35.5745 - mae: 4.2148 - val_loss: 78.8708 - val_mse: 78.8708 - val_mae: 5.6811\n",
+       "Epoch 20/50\n",
+-      "270/270 [==============================] - 0s 606us/sample - loss: 6.7068 - mse: 6.7068 - mae: 1.9539 - val_loss: 15.5886 - val_mse: 15.5886 - val_mae: 2.7048\n",
++      "270/270 [==============================] - 0s 215us/sample - loss: 37.0693 - mse: 37.0693 - mae: 4.4775 - val_loss: 70.5016 - val_mse: 70.5016 - val_mae: 5.1523\n",
+       "Epoch 21/50\n",
+-      "270/270 [==============================] - 0s 461us/sample - loss: 6.8542 - mse: 6.8542 - mae: 1.9979 - val_loss: 17.2378 - val_mse: 17.2378 - val_mae: 2.8853\n",
++      "270/270 [==============================] - 0s 236us/sample - loss: 34.1464 - mse: 34.1464 - mae: 4.1437 - val_loss: 59.8946 - val_mse: 59.8946 - val_mae: 5.4639\n",
+       "Epoch 22/50\n",
+-      "270/270 [==============================] - 0s 474us/sample - loss: 6.5719 - mse: 6.5719 - mae: 1.9312 - val_loss: 16.3043 - val_mse: 16.3043 - val_mae: 2.7756\n",
++      "270/270 [==============================] - 0s 257us/sample - loss: 35.4069 - mse: 35.4069 - mae: 4.1200 - val_loss: 58.5140 - val_mse: 58.5140 - val_mae: 5.3489\n",
+       "Epoch 23/50\n",
+-      "270/270 [==============================] - 0s 478us/sample - loss: 6.6161 - mse: 6.6161 - mae: 1.9572 - val_loss: 15.7992 - val_mse: 15.7992 - val_mae: 2.7219\n",
++      "270/270 [==============================] - 0s 154us/sample - loss: 32.1894 - mse: 32.1894 - mae: 3.8952 - val_loss: 58.8853 - val_mse: 58.8853 - val_mae: 5.0186\n",
+       "Epoch 24/50\n",
+-      "270/270 [==============================] - 0s 491us/sample - loss: 7.1269 - mse: 7.1269 - mae: 2.0137 - val_loss: 16.5402 - val_mse: 16.5402 - val_mae: 2.8005\n",
++      "270/270 [==============================] - 0s 198us/sample - loss: 35.3442 - mse: 35.3442 - mae: 4.0335 - val_loss: 57.6116 - val_mse: 57.6116 - val_mae: 5.7401\n",
+       "Epoch 25/50\n",
+-      "270/270 [==============================] - 0s 479us/sample - loss: 6.3382 - mse: 6.3382 - mae: 1.8540 - val_loss: 16.5034 - val_mse: 16.5034 - val_mae: 2.7864\n",
++      "270/270 [==============================] - 0s 143us/sample - loss: 34.5882 - mse: 34.5882 - mae: 4.2953 - val_loss: 93.6613 - val_mse: 93.6613 - val_mae: 6.6301\n",
+       "Epoch 26/50\n",
+-      "270/270 [==============================] - 0s 488us/sample - loss: 5.9442 - mse: 5.9442 - mae: 1.8251 - val_loss: 15.6558 - val_mse: 15.6558 - val_mae: 2.7102\n",
++      "270/270 [==============================] - 0s 203us/sample - loss: 36.0373 - mse: 36.0373 - mae: 4.2854 - val_loss: 54.3680 - val_mse: 54.3680 - val_mae: 5.0041\n",
+       "Epoch 27/50\n",
+-      "270/270 [==============================] - 0s 604us/sample - loss: 5.5832 - mse: 5.5832 - mae: 1.7432 - val_loss: 15.3021 - val_mse: 15.3021 - val_mae: 2.6862\n",
++      "270/270 [==============================] - 0s 148us/sample - loss: 34.6975 - mse: 34.6975 - mae: 4.2332 - val_loss: 55.5185 - val_mse: 55.5185 - val_mae: 4.9930\n",
+       "Epoch 28/50\n",
+-      "270/270 [==============================] - 0s 436us/sample - loss: 5.4530 - mse: 5.4530 - mae: 1.7354 - val_loss: 15.4570 - val_mse: 15.4570 - val_mae: 2.6846\n",
++      "270/270 [==============================] - 0s 155us/sample - loss: 30.1020 - mse: 30.1020 - mae: 3.9146 - val_loss: 60.2846 - val_mse: 60.2846 - val_mae: 4.9235\n",
+       "Epoch 29/50\n",
+-      "270/270 [==============================] - 0s 441us/sample - loss: 5.3070 - mse: 5.3070 - mae: 1.7079 - val_loss: 15.8510 - val_mse: 15.8510 - val_mae: 2.7644\n",
++      "270/270 [==============================] - 0s 152us/sample - loss: 30.7130 - mse: 30.7130 - mae: 3.9109 - val_loss: 59.8533 - val_mse: 59.8533 - val_mae: 5.7298\n",
+       "Epoch 30/50\n",
+-      "270/270 [==============================] - 0s 477us/sample - loss: 5.4157 - mse: 5.4157 - mae: 1.7321 - val_loss: 15.9160 - val_mse: 15.9160 - val_mae: 2.7134\n",
++      "270/270 [==============================] - 0s 202us/sample - loss: 32.4025 - mse: 32.4025 - mae: 4.3177 - val_loss: 74.3567 - val_mse: 74.3567 - val_mae: 5.5705\n",
+       "Epoch 31/50\n",
+-      "270/270 [==============================] - 0s 452us/sample - loss: 5.2639 - mse: 5.2639 - mae: 1.6981 - val_loss: 15.3554 - val_mse: 15.3554 - val_mae: 2.6662\n",
++      "270/270 [==============================] - 0s 184us/sample - loss: 30.1513 - mse: 30.1513 - mae: 3.8397 - val_loss: 61.9226 - val_mse: 61.9226 - val_mae: 4.9321\n",
+       "Epoch 32/50\n",
+-      "270/270 [==============================] - 0s 475us/sample - loss: 5.7687 - mse: 5.7687 - mae: 1.8045 - val_loss: 15.7151 - val_mse: 15.7151 - val_mae: 2.6867\n",
++      "270/270 [==============================] - 0s 225us/sample - loss: 30.2650 - mse: 30.2650 - mae: 3.8563 - val_loss: 53.2454 - val_mse: 53.2454 - val_mae: 4.6645\n",
+       "Epoch 33/50\n",
+-      "270/270 [==============================] - 0s 462us/sample - loss: 5.5210 - mse: 5.5210 - mae: 1.7367 - val_loss: 15.4227 - val_mse: 15.4227 - val_mae: 2.6561\n",
++      "270/270 [==============================] - 0s 242us/sample - loss: 29.0574 - mse: 29.0574 - mae: 3.7969 - val_loss: 51.7788 - val_mse: 51.7788 - val_mae: 5.4795\n",
+       "Epoch 34/50\n",
+-      "270/270 [==============================] - 0s 474us/sample - loss: 5.5663 - mse: 5.5663 - mae: 1.7294 - val_loss: 15.3376 - val_mse: 15.3376 - val_mae: 2.6991\n",
++      "270/270 [==============================] - 0s 227us/sample - loss: 32.7370 - mse: 32.7370 - mae: 4.2302 - val_loss: 49.3415 - val_mse: 49.3415 - val_mae: 4.7749\n",
+       "Epoch 35/50\n",
+-      "270/270 [==============================] - 0s 626us/sample - loss: 5.0063 - mse: 5.0063 - mae: 1.6196 - val_loss: 15.2642 - val_mse: 15.2642 - val_mae: 2.6796\n",
++      "270/270 [==============================] - 0s 196us/sample - loss: 33.0930 - mse: 33.0930 - mae: 4.3645 - val_loss: 51.6136 - val_mse: 51.6137 - val_mae: 4.6334\n",
+       "Epoch 36/50\n",
+-      "270/270 [==============================] - 0s 459us/sample - loss: 4.7251 - mse: 4.7251 - mae: 1.5727 - val_loss: 15.4858 - val_mse: 15.4858 - val_mae: 2.7288\n",
++      "270/270 [==============================] - 0s 171us/sample - loss: 26.9496 - mse: 26.9496 - mae: 3.7023 - val_loss: 58.9083 - val_mse: 58.9083 - val_mae: 4.7441\n",
+       "Epoch 37/50\n",
+-      "270/270 [==============================] - 0s 604us/sample - loss: 4.6394 - mse: 4.6394 - mae: 1.5854 - val_loss: 15.1139 - val_mse: 15.1139 - val_mae: 2.6305\n",
++      "270/270 [==============================] - 0s 141us/sample - loss: 30.6165 - mse: 30.6165 - mae: 4.0320 - val_loss: 57.8178 - val_mse: 57.8178 - val_mae: 4.6124\n",
+       "Epoch 38/50\n",
+-      "270/270 [==============================] - 0s 592us/sample - loss: 4.5669 - mse: 4.5669 - mae: 1.5548 - val_loss: 14.9898 - val_mse: 14.9898 - val_mae: 2.6340\n",
++      "270/270 [==============================] - 0s 145us/sample - loss: 31.6969 - mse: 31.6969 - mae: 4.1960 - val_loss: 60.9349 - val_mse: 60.9349 - val_mae: 4.7256\n",
+       "Epoch 39/50\n",
+-      "270/270 [==============================] - 0s 458us/sample - loss: 4.4480 - mse: 4.4480 - mae: 1.5334 - val_loss: 15.6389 - val_mse: 15.6389 - val_mae: 2.7337\n",
++      "270/270 [==============================] - 0s 158us/sample - loss: 31.2971 - mse: 31.2971 - mae: 4.0149 - val_loss: 59.7800 - val_mse: 59.7800 - val_mae: 4.6942\n",
+       "Epoch 40/50\n",
+-      "270/270 [==============================] - 0s 455us/sample - loss: 4.4119 - mse: 4.4119 - mae: 1.5426 - val_loss: 15.0723 - val_mse: 15.0723 - val_mae: 2.6709\n",
++      "270/270 [==============================] - 0s 146us/sample - loss: 34.5033 - mse: 34.5033 - mae: 4.4404 - val_loss: 49.3709 - val_mse: 49.3710 - val_mae: 4.7404\n",
+       "Epoch 41/50\n",
+-      "270/270 [==============================] - 0s 473us/sample - loss: 4.0797 - mse: 4.0797 - mae: 1.4725 - val_loss: 15.4706 - val_mse: 15.4706 - val_mae: 2.6707\n",
++      "270/270 [==============================] - 0s 189us/sample - loss: 28.4742 - mse: 28.4742 - mae: 3.8397 - val_loss: 50.1566 - val_mse: 50.1566 - val_mae: 5.0938\n",
+       "Epoch 42/50\n",
+-      "270/270 [==============================] - 0s 449us/sample - loss: 4.0619 - mse: 4.0619 - mae: 1.4692 - val_loss: 15.2423 - val_mse: 15.2423 - val_mae: 2.6165\n",
++      "270/270 [==============================] - 0s 164us/sample - loss: 27.8381 - mse: 27.8382 - mae: 3.8567 - val_loss: 57.3404 - val_mse: 57.3404 - val_mae: 4.6159\n",
+       "Epoch 43/50\n",
+-      "270/270 [==============================] - 0s 465us/sample - loss: 4.1861 - mse: 4.1861 - mae: 1.5076 - val_loss: 15.7510 - val_mse: 15.7510 - val_mae: 2.7279\n",
++      "270/270 [==============================] - 0s 223us/sample - loss: 23.7725 - mse: 23.7725 - mae: 3.4946 - val_loss: 45.1418 - val_mse: 45.1418 - val_mae: 4.5369\n",
+       "Epoch 44/50\n",
+-      "270/270 [==============================] - 0s 462us/sample - loss: 4.1128 - mse: 4.1128 - mae: 1.4810 - val_loss: 15.4814 - val_mse: 15.4814 - val_mae: 2.6562\n",
++      "270/270 [==============================] - 0s 160us/sample - loss: 25.4555 - mse: 25.4555 - mae: 3.6020 - val_loss: 48.7849 - val_mse: 48.7850 - val_mae: 4.3016\n",
+       "Epoch 45/50\n",
+-      "270/270 [==============================] - 0s 441us/sample - loss: 4.2171 - mse: 4.2171 - mae: 1.5205 - val_loss: 16.3839 - val_mse: 16.3839 - val_mae: 2.8194\n",
++      "270/270 [==============================] - 0s 152us/sample - loss: 28.5583 - mse: 28.5583 - mae: 3.9467 - val_loss: 50.5784 - val_mse: 50.5784 - val_mae: 4.7717\n",
+       "Epoch 46/50\n",
+-      "270/270 [==============================] - 0s 422us/sample - loss: 4.2609 - mse: 4.2609 - mae: 1.5548 - val_loss: 15.3587 - val_mse: 15.3587 - val_mae: 2.7161\n",
++      "270/270 [==============================] - 0s 146us/sample - loss: 23.8947 - mse: 23.8947 - mae: 3.4549 - val_loss: 50.4320 - val_mse: 50.4320 - val_mae: 5.7559\n",
+       "Epoch 47/50\n",
+-      "270/270 [==============================] - 0s 454us/sample - loss: 4.4635 - mse: 4.4635 - mae: 1.5440 - val_loss: 15.7736 - val_mse: 15.7736 - val_mae: 2.7184\n",
++      "270/270 [==============================] - 0s 163us/sample - loss: 25.6637 - mse: 25.6637 - mae: 3.6330 - val_loss: 54.7190 - val_mse: 54.7190 - val_mae: 4.8611\n",
+       "Epoch 48/50\n",
+-      "270/270 [==============================] - 0s 426us/sample - loss: 3.7406 - mse: 3.7406 - mae: 1.4147 - val_loss: 15.6718 - val_mse: 15.6718 - val_mae: 2.7468\n",
++      "270/270 [==============================] - 0s 222us/sample - loss: 24.8217 - mse: 24.8217 - mae: 3.7114 - val_loss: 43.7988 - val_mse: 43.7988 - val_mae: 4.7695\n",
+       "Epoch 49/50\n",
+-      "270/270 [==============================] - 0s 445us/sample - loss: 3.6173 - mse: 3.6173 - mae: 1.3816 - val_loss: 15.7291 - val_mse: 15.7291 - val_mae: 2.7789\n",
++      "270/270 [==============================] - 0s 148us/sample - loss: 22.0226 - mse: 22.0226 - mae: 3.4353 - val_loss: 53.1435 - val_mse: 53.1435 - val_mae: 4.5796\n",
+       "Epoch 50/50\n",
+-      "270/270 [==============================] - 0s 430us/sample - loss: 3.6303 - mse: 3.6303 - mae: 1.4266 - val_loss: 15.4937 - val_mse: 15.4937 - val_mae: 2.7390\n"
++      "270/270 [==============================] - 0s 139us/sample - loss: 22.8072 - mse: 22.8072 - mae: 3.4947 - val_loss: 49.1180 - val_mse: 49.1180 - val_mae: 4.2974\n"
+      ]
+     },
+     {
+      "data": {
+       "text/plain": [
+-       "<tensorflow.python.keras.callbacks.History at 0x7f315c319be0>"
++       "<tensorflow.python.keras.callbacks.History at 0x7fc2941b09b0>"
+       ]
+      },
+-     "execution_count": 8,
++     "execution_count": 11,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+    ],
+    "source": [
+-    "wandb.init(project=\"boston\", entity=\"lambda-ds7\") #Initializes and Experiment\n",
++    "wandb_group = \"ds8\"\n",
++    "wandb_project = \"ds12_inclass\"\n",
++    "wandb.init(project=wandb_project, entity=wandb_group) #Initializes and Experiment\n",
+     "\n",
+     "# Important Hyperparameters\n",
+     "X =  x_train\n",
+@@ -941,6 +883,33 @@
+     "         )"
+    ]
+   },
++  {
++   "cell_type": "markdown",
++   "metadata": {},
++   "source": [
++    "### Your Turn\n",
++    "\n",
++    "Pick a few hyparameters that we *have not* tuned. Using the same code above, try changing a few parameters you're interested in and submitting the results to weights & biases. :) "
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "metadata": {},
++   "outputs": [],
++   "source": [
++    "wandb.init(project=wandb_project, entity=wand_group) #Initializes and Experiment\n",
++    "\n",
++    "wandb.config.epochs = 50\n",
++    "wandb.config.batch_size = 10\n",
++    "\n",
++    "\n",
++    "# Fit Model\n",
++    "model.fit(\n",
++    "          callbacks=[WandbCallback()]\n",
++    "         )"
++   ]
++  },
+   {
+    "cell_type": "markdown",
+    "metadata": {},
+@@ -963,7 +932,18 @@
+    "source": [
+     "## Overview\n",
+     "\n",
+-    "Basically `GridSearchCV` takes forever. You'll want to adopt a slightly more sophiscated strategy."
++    "Basically `GridSearchCV` takes forever. You'll want to adopt a slightly more sophiscated strategy.\n",
++    "\n",
++    "Let's also take a look at an alternative with Keras-Tuner."
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "metadata": {},
++   "outputs": [],
++   "source": [
++    "!pip install keras-tuner"
+    ]
+   },
+   {
+@@ -975,123 +955,81 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 9,
++   "execution_count": null,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+-    "sweep_config = {\n",
+-    "    'method': 'random',\n",
+-    "    'parameters': {\n",
+-    "        'learning_rate': {'distribution': 'normal'},\n",
+-    "        'epochs': {'distribution': 'uniform',\n",
+-    "                    'min': 100,\n",
+-    "                    'max': 1000},\n",
+-    "        'batch_size': {'distribution': 'uniform',\n",
+-    "            'min': 10,\n",
+-    "            'max': 400}\n",
+-    "    }\n",
+-    "}"
++    "from tensorflow import keras\n",
++    "from tensorflow.keras import layers\n",
++    "from kerastuner.tuners import RandomSearch\n",
++    "\n",
++    "\"\"\"\n",
++    "This model Tunes:\n",
++    "- Number of Neurons in the Hidden Layer\n",
++    "- Learning Rate in Adam\n",
++    "\n",
++    "\"\"\"\n",
++    "\n",
++    "def build_model(hp):\n",
++    "    model = keras.Sequential()\n",
++    "    model.add(layers.Dense(units=hp.Int('units',\n",
++    "                                        min_value=32,\n",
++    "                                        max_value=512,\n",
++    "                                        step=32),\n",
++    "                           activation='relu'))\n",
++    "    model.add(layers.Dense(10, activation='softmax'))\n",
++    "    model.compile(\n",
++    "        optimizer=keras.optimizers.Adam(\n",
++    "            hp.Choice('learning_rate',\n",
++    "                      values=[1e-2, 1e-3, 1e-4])),\n",
++    "        loss='sparse_categorical_crossentropy',\n",
++    "        metrics=['accuracy'])\n",
++    "    \n",
++    "    return model"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 13,
++   "execution_count": null,
+    "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Create sweep with ID: huau0u9r\n",
+-      "Sweep URL: https://app.wandb.ai/lambda-ds7/boston/sweeps/huau0u9r\n"
+-     ]
+-    }
+-   ],
++   "outputs": [],
+    "source": [
+-    "sweep_id = wandb.sweep(sweep_config)"
++    "tuner = RandomSearch(\n",
++    "    build_model,\n",
++    "    objective='val_accuracy',\n",
++    "    max_trials=5,\n",
++    "    executions_per_trial=3,\n",
++    "    directory='./keras-tuner-trial',\n",
++    "    project_name='helloworld')"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 11,
++   "execution_count": null,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+-    "import wandb\n",
+-    "from wandb.keras import WandbCallback\n",
+-    "#Initializes and Experiment\n",
+-    "\n",
+-    "from tensorflow.keras.optimizers import Adam\n",
+-    "\n",
+-    "# Important Hyperparameters\n",
+-    "X =  x_train\n",
+-    "y =  y_train\n",
+-    "\n",
+-    "inputs = X.shape[1]\n",
+-    "\n",
+-    "def train():\n",
+-    "    \n",
+-    "    wandb.init(project=\"boston\", entity=\"lambda-ds7\") \n",
+-    "    \n",
+-    "    config = wandb.config\n",
+-    "\n",
+-    "    # Create Model\n",
+-    "    model = Sequential()\n",
+-    "    model.add(Dense(64, activation='relu', input_shape=(inputs,)))\n",
+-    "    model.add(Dense(64, activation='relu'))\n",
+-    "    model.add(Dense(64, activation='relu'))\n",
+-    "    model.add(Dense(1))\n",
+-    "\n",
+-    "    # Optimizer \n",
+-    "    adam = Adam(learning_rate=config.learning_rate)\n",
+-    "\n",
+-    "    # Compile Model\n",
+-    "    model.compile(optimizer=adam, loss='mse', metrics=['mse', 'mae'])\n",
+-    "\n",
+-    "    # Fit Model\n",
+-    "    model.fit(X, y, \n",
+-    "              validation_split=0.33, \n",
+-    "              epochs=config.epochs, \n",
+-    "              batch_size=config.batch_size, \n",
+-    "              callbacks=[WandbCallback()]\n",
+-    "             )"
++    "tuner.search_space_summary()"
+    ]
+   },
+   {
+    "cell_type": "code",
+    "execution_count": null,
+    "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "wandb: Agent Starting Run: 2g77kp6k with config:\n",
+-      "\tbatch_size: 308.503347845309\n",
+-      "\tepochs: 704.9395850579006\n",
+-      "\tlearning_rate: 1.480005523005428\n",
+-      "wandb: Agent Started Run: 2g77kp6k\n"
+-     ]
+-    },
+-    {
+-     "data": {
+-      "text/html": [
+-       "\n",
+-       "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
+-       "                Project page: <a href=\"https://app.wandb.ai/lambda-ds7/boston\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston</a><br/>\n",
+-       "                Run page: <a href=\"https://app.wandb.ai/lambda-ds7/boston/runs/t4w9l4ye\" target=\"_blank\">https://app.wandb.ai/lambda-ds7/boston/runs/t4w9l4ye</a><br/>\n",
+-       "            "
+-      ],
+-      "text/plain": [
+-       "<IPython.core.display.HTML object>"
+-      ]
+-     },
+-     "metadata": {},
+-     "output_type": "display_data"
+-    }
+-   ],
++   "outputs": [],
++   "source": [
++    "tuner.search(x, y,\n",
++    "             epochs=5,\n",
++    "             validation_data=(val_x, val_y))"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": null,
++   "metadata": {},
++   "outputs": [],
+    "source": [
+-    "wandb.agent(sweep_id, function=train)"
++    "tuner.results_summary()"
+    ]
+   },
+   {
+@@ -1153,9 +1091,9 @@
+  ],
+  "metadata": {
+   "kernelspec": {
+-   "display_name": "DataSearch",
++   "display_name": "U4-S2-NN (Python3)",
+    "language": "python",
+-   "name": "datasearch"
++   "name": "u4-sprint2"
+   },
+   "language_info": {
+    "codemirror_mode": {

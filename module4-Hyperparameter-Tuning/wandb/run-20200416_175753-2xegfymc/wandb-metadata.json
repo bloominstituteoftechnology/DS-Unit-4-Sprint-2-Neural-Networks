@@ -1,0 +1,28 @@
+{
+    "root": "/home/adriann/Lambda/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/aklefebvere/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "d24c5a89b8e1068190ca3f2118c0d8e1e4fba202"
+    },
+    "email": "aklefebvere@gmail.com",
+    "startedAt": "2020-04-16T17:57:53.403386",
+    "host": "adriann-desktop",
+    "username": "adriann",
+    "executable": "/home/adriann/anaconda3/envs/U4-Sprint2/bin/python",
+    "os": "Linux-5.3.0-42-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.0",
+    "gpu": "GeForce GTX 1070",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "/home/adriann/.local/share/jupyter/runtime/kernel-105cc8cc-0efa-4622-bdc0-00e7d6ccc679.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "cosmic-frost-56",
+    "project": "ds12_inclass",
+    "heartbeatAt": "2020-04-16T17:57:54.822254"
+}
