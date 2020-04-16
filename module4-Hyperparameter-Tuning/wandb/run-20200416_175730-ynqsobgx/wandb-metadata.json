@@ -1,0 +1,25 @@
+{
+    "root": "C:/Users/crlga/Documents/GitHub/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/cedro-gasque/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "e770a324482473fe8fba068c4643d34b1e404e23"
+    },
+    "email": "cedro.gasque@wsu.edu",
+    "startedAt": "2020-04-16T17:57:29.585111",
+    "host": "LAPTOP-6QPGCN5L",
+    "username": "crlga",
+    "executable": "C:\\Users\\crlga\\.conda\\envs\\U4-S1-NLP\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.0",
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\crlga\\AppData\\Roaming\\jupyter\\runtime\\kernel-4d4f9cab-305f-440c-8da6-b34c546c0586.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "project": "ds12-inclass",
+    "heartbeatAt": "2020-04-16T17:57:32.633350"
+}
