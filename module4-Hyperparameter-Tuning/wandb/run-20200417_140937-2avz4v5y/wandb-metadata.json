@@ -1,0 +1,26 @@
+{
+    "root": "/home/ivan/Desktop/Lambda/Unit4/Sprint2/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Skantastico/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "b7d152fb55be9129c56c739f03d392a237138440"
+    },
+    "email": "Skantastico@gmail.com",
+    "startedAt": "2020-04-17T14:05:12.841236",
+    "host": "ivan-LG",
+    "username": "ivan",
+    "executable": "/home/ivan/anaconda3/envs/Unit4Sprint2/bin/python",
+    "os": "Linux-5.3.0-46-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.3",
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "/home/ivan/.local/share/jupyter/runtime/kernel-a2dbc348-f4e9-48f7-b505-72886e5623d1.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "expert-durian-1",
+    "project": "dspt3",
+    "heartbeatAt": "2020-04-17T14:09:42.793391"
+}
