@@ -1,0 +1,27 @@
+{
+    "root": "C:/Users/deepa/Documents/repo/U4-NN/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "git@github.com:Neha-kumari31/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "7b17e428852880850be1d082a024eb898c9962f2"
+    },
+    "email": "Neha-kumari31@user.noreply.github.com",
+    "startedAt": "2020-04-19T04:04:51.108049",
+    "host": "deepa",
+    "username": "deepa",
+    "executable": "C:\\Users\\deepa\\Anaconda3\\envs\\U4-S1-NLP\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.0",
+    "gpu": "GeForce GTX 1050 Ti",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\deepa\\AppData\\Roaming\\jupyter\\runtime\\kernel-a837a51d-8fb9-4bc9-8d62-a60878524beb.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "project": "boston",
+    "heartbeatAt": "2020-04-19T04:04:55.219907"
+}
