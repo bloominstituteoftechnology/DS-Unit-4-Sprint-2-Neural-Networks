@@ -1,0 +1,26 @@
+{
+    "root": "/home/tmbern/workspace/repos/lambda/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/tmbern/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "eb31d4aca557e040ca4c485b962cf23d796b0d68"
+    },
+    "email": "tmbern42@gmail.com",
+    "startedAt": "2020-05-14T17:31:22.315717",
+    "host": "PC14",
+    "username": "tmbern",
+    "executable": "/home/tmbern/workspace/res/miniconda3/envs/Unit4-Sprint2/bin/python",
+    "os": "Linux-4.19.84-microsoft-standard-x86_64-with-debian-buster-sid",
+    "python": "3.7.0",
+    "cpu_count": 12,
+    "args": [
+        "-f",
+        "/home/tmbern/.local/share/jupyter/runtime/kernel-c6a07895-1b2e-4a4f-9053-c3abb9d4854c.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "helpful-dust-40",
+    "project": "ds13_inclass",
+    "heartbeatAt": "2020-05-14T17:31:27.772372"
+}

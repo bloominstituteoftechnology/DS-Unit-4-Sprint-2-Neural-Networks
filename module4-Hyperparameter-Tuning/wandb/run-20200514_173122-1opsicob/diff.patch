@@ -1,0 +1,813 @@
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index 51e98d6..fd0a1fa 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -42,12 +42,41 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 11,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+-    "wandb_group = \"...\"\n",
+-    "wandb_project = \"...\""
++    "wandb_group = \"ds8\"\n",
++    "wandb_project = \"ds13_inclass\""
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 2,
++   "metadata": {},
++   "outputs": [],
++   "source": [
++    "%%capture\n",
++    "\n",
++    "!pip install wandb"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 3,
++   "metadata": {},
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Appending key for api.wandb.ai to your netrc file: /home/tmbern/.netrc\r\n",
++      "\u001b[32mSuccessfully logged in to Weights & Biases!\u001b[0m\r\n"
++     ]
++    }
++   ],
++   "source": [
++    "!wandb login 79680cd73313c44891d9a7ada90cb08599decd6a"
+    ]
+   },
+   {
+@@ -81,7 +110,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 4,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -106,9 +135,46 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 5,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[[-0.27224633 -0.48361547 -0.43576161 -0.25683275 -0.1652266  -0.1764426\n",
++      "   0.81306188  0.1166983  -0.62624905 -0.59517003  1.14850044  0.44807713\n",
++      "   0.8252202 ]\n",
++      " [-0.40342651  2.99178419 -1.33391162 -0.25683275 -1.21518188  1.89434613\n",
++      "  -1.91036058  1.24758524 -0.85646254 -0.34843254 -1.71818909  0.43190599\n",
++      "  -1.32920239]\n",
++      " [ 0.1249402  -0.48361547  1.0283258  -0.25683275  0.62864202 -1.82968811\n",
++      "   1.11048828 -1.18743907  1.67588577  1.5652875   0.78447637  0.22061726\n",
++      "  -1.30850006]\n",
++      " [-0.40149354 -0.48361547 -0.86940196 -0.25683275 -0.3615597  -0.3245576\n",
++      "  -1.23667187  1.10717989 -0.51114231 -1.094663    0.78447637  0.44807713\n",
++      "  -0.65292624]\n",
++      " [-0.0056343  -0.48361547  1.0283258  -0.25683275  1.32861221  0.15364225\n",
++      "   0.69480801 -0.57857203  1.67588577  1.5652875   0.78447637  0.3898823\n",
++      "   0.26349695]\n",
++      " [-0.37502238 -0.48361547 -0.54747912 -0.25683275 -0.54935658 -0.78865126\n",
++      "   0.18954148  0.48371503 -0.51114231 -0.71552978  0.51145832  0.38669063\n",
++      "  -0.13812828]\n",
++      " [ 0.58963463 -0.48361547  1.0283258  -0.25683275  1.21764133 -1.03127774\n",
++      "   1.11048828 -1.06518235  1.67588577  1.5652875   0.78447637  0.44807713\n",
++      "   1.49873604]\n",
++      " [ 0.0381708  -0.48361547  1.24588095 -0.25683275  2.67733525 -1.12719983\n",
++      "   1.11048828 -1.14833073 -0.51114231 -0.01744323 -1.71818909  0.44807713\n",
++      "   1.88793986]\n",
++      " [-0.17228416 -0.48361547  1.24588095 -0.25683275  2.67733525 -0.90150078\n",
++      "   1.11048828 -1.09664657 -0.51114231 -0.01744323 -1.71818909 -1.97365769\n",
++      "   0.53952803]\n",
++      " [-0.22932104 -0.48361547  1.58544339 -0.25683275  0.56888847 -1.76056777\n",
++      "   1.11048828 -1.13471925 -0.62624905  0.18716835  1.23950646  0.44807713\n",
++      "   2.99068404]]\n"
++     ]
++    }
++   ],
+    "source": [
+     "from sklearn.preprocessing import StandardScaler\n",
+     "\n",
+@@ -133,7 +199,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 6,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -143,7 +209,180 @@
+     "id": "GMXVfmzXp1Oo",
+     "outputId": "b05e251e-508f-46e6-865b-f869ae2a5dc4"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Epoch 1/75\n",
++      "41/41 [==============================] - 0s 5ms/step - loss: 535.2932 - mae: 21.1716 - val_loss: 479.6481 - val_mae: 19.8575\n",
++      "Epoch 2/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 334.2502 - mae: 15.7979 - val_loss: 200.4972 - val_mae: 12.0578\n",
++      "Epoch 3/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 108.7122 - mae: 7.8986 - val_loss: 68.8567 - val_mae: 6.3863\n",
++      "Epoch 4/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 45.8006 - mae: 4.8792 - val_loss: 39.8753 - val_mae: 4.9301\n",
++      "Epoch 5/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 29.3793 - mae: 3.8345 - val_loss: 31.0684 - val_mae: 4.4556\n",
++      "Epoch 6/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 23.9873 - mae: 3.4497 - val_loss: 27.2114 - val_mae: 4.1196\n",
++      "Epoch 7/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 20.7134 - mae: 3.1989 - val_loss: 25.6832 - val_mae: 3.9193\n",
++      "Epoch 8/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 18.7904 - mae: 3.0606 - val_loss: 25.3346 - val_mae: 3.7773\n",
++      "Epoch 9/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 17.3223 - mae: 2.9601 - val_loss: 24.1315 - val_mae: 3.6305\n",
++      "Epoch 10/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 15.5115 - mae: 2.7288 - val_loss: 24.3162 - val_mae: 3.6625\n",
++      "Epoch 11/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 14.6406 - mae: 2.7497 - val_loss: 23.1343 - val_mae: 3.4826\n",
++      "Epoch 12/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 13.9219 - mae: 2.5854 - val_loss: 23.8012 - val_mae: 3.4598\n",
++      "Epoch 13/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 12.8935 - mae: 2.5155 - val_loss: 23.6398 - val_mae: 3.4023\n",
++      "Epoch 14/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 12.2744 - mae: 2.4885 - val_loss: 22.9613 - val_mae: 3.3286\n",
++      "Epoch 15/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 11.6789 - mae: 2.4095 - val_loss: 24.1546 - val_mae: 3.3668\n",
++      "Epoch 16/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 11.3071 - mae: 2.3863 - val_loss: 23.4128 - val_mae: 3.2698\n",
++      "Epoch 17/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 11.0508 - mae: 2.3618 - val_loss: 25.3649 - val_mae: 3.3971\n",
++      "Epoch 18/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.8001 - mae: 2.3586 - val_loss: 25.5171 - val_mae: 3.3719\n",
++      "Epoch 19/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.4204 - mae: 2.3020 - val_loss: 24.7805 - val_mae: 3.2816\n",
++      "Epoch 20/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.2350 - mae: 2.3040 - val_loss: 24.4406 - val_mae: 3.2782\n",
++      "Epoch 21/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.0244 - mae: 2.2817 - val_loss: 23.6511 - val_mae: 3.2194\n",
++      "Epoch 22/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.9131 - mae: 2.2411 - val_loss: 23.5573 - val_mae: 3.2041\n",
++      "Epoch 23/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.7839 - mae: 2.2315 - val_loss: 24.1369 - val_mae: 3.2003\n",
++      "Epoch 24/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.3751 - mae: 2.2009 - val_loss: 22.4898 - val_mae: 3.0967\n",
++      "Epoch 25/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.3280 - mae: 2.1946 - val_loss: 24.0806 - val_mae: 3.2098\n",
++      "Epoch 26/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.2654 - mae: 2.1793 - val_loss: 23.9437 - val_mae: 3.1601\n",
++      "Epoch 27/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.1852 - mae: 2.1653 - val_loss: 23.3245 - val_mae: 3.1404\n",
++      "Epoch 28/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.7993 - mae: 2.1734 - val_loss: 21.1612 - val_mae: 2.9857\n",
++      "Epoch 29/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.8497 - mae: 2.1219 - val_loss: 22.8670 - val_mae: 3.0908\n",
++      "Epoch 30/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.6154 - mae: 2.1009 - val_loss: 22.6021 - val_mae: 3.1114\n",
++      "Epoch 31/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.4954 - mae: 2.0711 - val_loss: 22.9047 - val_mae: 3.0971\n",
++      "Epoch 32/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.6448 - mae: 2.1063 - val_loss: 22.3051 - val_mae: 3.0479\n",
++      "Epoch 33/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.2206 - mae: 2.0597 - val_loss: 21.7306 - val_mae: 3.0174\n",
++      "Epoch 34/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.1808 - mae: 2.0592 - val_loss: 22.8374 - val_mae: 3.1237\n",
++      "Epoch 35/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.4930 - mae: 2.0890 - val_loss: 21.9136 - val_mae: 3.0143\n",
++      "Epoch 36/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.9305 - mae: 2.0312 - val_loss: 20.2510 - val_mae: 2.8870\n",
++      "Epoch 37/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.8780 - mae: 1.9849 - val_loss: 20.2927 - val_mae: 2.8750\n",
++      "Epoch 38/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 8.2120 - mae: 2.0773 - val_loss: 21.5426 - val_mae: 2.9278\n",
++      "Epoch 39/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.7761 - mae: 2.0080 - val_loss: 20.7315 - val_mae: 2.8988\n",
++      "Epoch 40/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.6519 - mae: 1.9744 - val_loss: 21.5534 - val_mae: 3.0331\n",
++      "Epoch 41/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.4877 - mae: 1.9760 - val_loss: 20.9933 - val_mae: 2.8674\n",
++      "Epoch 42/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.6832 - mae: 1.9841 - val_loss: 21.6736 - val_mae: 2.9672\n",
++      "Epoch 43/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.3260 - mae: 1.9396 - val_loss: 19.5643 - val_mae: 2.7784\n",
++      "Epoch 44/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.3882 - mae: 1.9554 - val_loss: 21.7225 - val_mae: 2.9647\n",
++      "Epoch 45/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 7.1884 - mae: 1.9328 - val_loss: 19.2017 - val_mae: 2.7987\n",
++      "Epoch 46/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.2726 - mae: 1.9438 - val_loss: 19.6637 - val_mae: 2.7881\n",
++      "Epoch 47/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.9195 - mae: 1.8845 - val_loss: 19.8763 - val_mae: 2.8118\n",
++      "Epoch 48/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.0912 - mae: 1.9362 - val_loss: 20.0836 - val_mae: 2.7694\n",
++      "Epoch 49/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.9784 - mae: 1.8992 - val_loss: 19.0529 - val_mae: 2.7339\n",
++      "Epoch 50/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.7343 - mae: 1.8631 - val_loss: 20.3448 - val_mae: 2.8377\n",
++      "Epoch 51/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.6927 - mae: 1.8507 - val_loss: 19.1034 - val_mae: 2.7843\n",
++      "Epoch 52/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.5782 - mae: 1.8204 - val_loss: 20.0494 - val_mae: 2.8372\n",
++      "Epoch 53/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.5896 - mae: 1.8649 - val_loss: 18.5615 - val_mae: 2.7008\n",
++      "Epoch 54/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.4513 - mae: 1.7918 - val_loss: 20.1559 - val_mae: 2.8145\n",
++      "Epoch 55/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.4545 - mae: 1.8580 - val_loss: 18.7352 - val_mae: 2.6769\n",
++      "Epoch 56/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.5108 - mae: 1.8247 - val_loss: 18.6191 - val_mae: 2.7813\n",
++      "Epoch 57/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.3750 - mae: 1.7868 - val_loss: 17.9449 - val_mae: 2.6887\n",
++      "Epoch 58/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.1181 - mae: 1.7626 - val_loss: 18.0045 - val_mae: 2.6698\n",
++      "Epoch 59/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.2611 - mae: 1.8170 - val_loss: 18.0802 - val_mae: 2.6629\n",
++      "Epoch 60/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.2730 - mae: 1.8018 - val_loss: 19.2754 - val_mae: 2.8477\n",
++      "Epoch 61/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.1786 - mae: 1.7769 - val_loss: 18.0203 - val_mae: 2.7755\n",
++      "Epoch 62/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.0153 - mae: 1.7878 - val_loss: 18.2207 - val_mae: 2.6967\n"
++     ]
++    },
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Epoch 63/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.7557 - mae: 1.7276 - val_loss: 19.6160 - val_mae: 2.7772\n",
++      "Epoch 64/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8391 - mae: 1.7580 - val_loss: 17.2860 - val_mae: 2.6360\n",
++      "Epoch 65/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8465 - mae: 1.7202 - val_loss: 18.4598 - val_mae: 2.6889\n",
++      "Epoch 66/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.7231 - mae: 1.7118 - val_loss: 18.3015 - val_mae: 2.6690\n",
++      "Epoch 67/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.7401 - mae: 1.7187 - val_loss: 18.6613 - val_mae: 2.7771\n",
++      "Epoch 68/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8220 - mae: 1.7221 - val_loss: 18.8042 - val_mae: 2.7661\n",
++      "Epoch 69/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.5102 - mae: 1.6815 - val_loss: 18.2877 - val_mae: 2.7145\n",
++      "Epoch 70/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.6120 - mae: 1.7035 - val_loss: 17.7185 - val_mae: 2.7620\n",
++      "Epoch 71/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8985 - mae: 1.7448 - val_loss: 16.7654 - val_mae: 2.5365\n",
++      "Epoch 72/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.6474 - mae: 1.7234 - val_loss: 17.7321 - val_mae: 2.7021\n",
++      "Epoch 73/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.3161 - mae: 1.6564 - val_loss: 17.6723 - val_mae: 2.6535\n",
++      "Epoch 74/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.3790 - mae: 1.6777 - val_loss: 17.2455 - val_mae: 2.6170\n",
++      "Epoch 75/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.2181 - mae: 1.6267 - val_loss: 17.5072 - val_mae: 2.6966\n"
++     ]
++    },
++    {
++     "data": {
++      "text/plain": [
++       "<tensorflow.python.keras.callbacks.History at 0x7f83e44740b8>"
++      ]
++     },
++     "execution_count": 6,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
+    "source": [
+     "from tensorflow import keras\n",
+     "from tensorflow.keras.models import Sequential\n",
+@@ -162,7 +401,7 @@
+     "model.add(Dense(1))\n",
+     "\n",
+     "# Compile Model\n",
+-    "model.compile(optimizer='adam', loss='mse', metrics=['mse', 'mae'])\n",
++    "model.compile(optimizer='adam', loss='mse', metrics=['mae'])\n",
+     "\n",
+     "# Fit Model\n",
+     "model.fit(x_train, y_train, \n",
+@@ -255,7 +494,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 7,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -265,7 +504,20 @@
+     "id": "2smXfriNAGn7",
+     "outputId": "ae996575-78e2-43fb-9dbe-5d44aaf0b430"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Best: 0.656268572807312 using {'batch_size': 8, 'epochs': 20}\n",
++      "Means: 0.656268572807312, Stdev: 0.02789848407498076 with: {'batch_size': 8, 'epochs': 20}\n",
++      "Means: 0.6263644933700562, Stdev: 0.034835517801393864 with: {'batch_size': 16, 'epochs': 20}\n",
++      "Means: 0.6041846990585327, Stdev: 0.01571390893051874 with: {'batch_size': 32, 'epochs': 20}\n",
++      "Means: 0.6301842093467712, Stdev: 0.0507089659930049 with: {'batch_size': 64, 'epochs': 20}\n",
++      "Means: 0.5533825695514679, Stdev: 0.07720318696104948 with: {'batch_size': 128, 'epochs': 20}\n"
++     ]
++    }
++   ],
+    "source": [
+     "import numpy\n",
+     "import pandas as pd\n",
+@@ -305,7 +557,7 @@
+     "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
+     "\n",
+     "# define the grid search parameters\n",
+-    "param_grid = {'batch_size': [10, 20, 40, 60, 80, 100],\n",
++    "param_grid = {'batch_size': [8, 16, 32, 64, 128],\n",
+     "              'epochs': [20]}\n",
+     "\n",
+     "# Create Grid Search\n",
+@@ -346,15 +598,69 @@
+     "\n",
+     "Once you have narrowed it down, make the window even smaller and try it again. If after running the above specification your model reports that .1 is the best optimizer, then you should probably try things like [.05, .08, .1, .12, .15] to try and narrow it down. \n",
+     "\n",
+-    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. "
++    "It can also be good to tune the number of epochs in combination with the learning rate since the number of iterations that you allow the learning rate to reach the minimum can determine if you have let it run long enough to converge to the minimum. \n",
++    "\n",
++    "<img align=\"left\" src=\"https://miro.medium.com/max/918/0*C5kIkoBwht0fXRgs.jpeg\" width=200>\n",
++    "<br></br>\n",
++    "<br></br>"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 8,
+    "metadata": {},
+-   "outputs": [],
+-   "source": []
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Best: 0.718835425376892 using {'batch_size': 8, 'epochs': 20, 'lr': 0.01}\n",
++      "Means: 0.6328240394592285, Stdev: 0.05292509131988432 with: {'batch_size': 8, 'epochs': 20, 'lr': 0.001}\n",
++      "Means: 0.718835425376892, Stdev: 0.059960844866939145 with: {'batch_size': 8, 'epochs': 20, 'lr': 0.01}\n",
++      "Means: 0.6511586427688598, Stdev: 0.05244526932680711 with: {'batch_size': 8, 'epochs': 20, 'lr': 0.1}\n",
++      "Means: 0.6511586427688598, Stdev: 0.05244526932680711 with: {'batch_size': 8, 'epochs': 20, 'lr': 0.2}\n"
++     ]
++    }
++   ],
++   "source": [
++    "from tensorflow.keras.optimizers import Adam\n",
++    "\n",
++    "# Function to create model, required for KerasClassifier\n",
++    "def create_model(lr=0.01):\n",
++    "    # create model\n",
++    "    opt = Adam(learning_rate=lr)\n",
++    "    model = Sequential()\n",
++    "    model.add(Dense(12, input_dim=8, activation='relu'))\n",
++    "    model.add(Dense(1, activation='sigmoid'))\n",
++    "    # Compile model\n",
++    "    model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['accuracy'])\n",
++    "    return model\n",
++    "\n",
++    "# create model\n",
++    "model = KerasClassifier(build_fn=create_model, verbose=0)\n",
++    "\n",
++    "# define the grid search parameters\n",
++    "# batch_size = [10, 20, 40, 60, 80, 100]\n",
++    "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
++    "\n",
++    "# define the grid search parameters\n",
++    "param_grid = {'batch_size': [8],\n",
++    "              'epochs': [20],\n",
++    "              'lr': [.001, .01, .1, .2]\n",
++    "             }\n",
++    "\n",
++    "# Create Grid Search\n",
++    "grid = GridSearchCV(estimator=model, param_grid=param_grid, n_jobs=1)\n",
++    "grid_result = grid.fit(X, Y)\n",
++    "\n",
++    "# Report Results\n",
++    "print(f\"Best: {grid_result.best_score_} using {grid_result.best_params_}\")\n",
++    "means = grid_result.cv_results_['mean_test_score']\n",
++    "stds = grid_result.cv_results_['std_test_score']\n",
++    "params = grid_result.cv_results_['params']\n",
++    "for mean, stdev, param in zip(means, stds, params):\n",
++    "    print(f\"Means: {mean}, Stdev: {stdev} with: {param}\") "
++   ]
+   },
+   {
+    "cell_type": "markdown",
+@@ -466,17 +772,18 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 13,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+     "import wandb\n",
+-    "from wandb.keras import WandbCallback"
++    "from wandb.keras import WandbCallback\n",
++    "from tensorflow.keras.layers import Dropout"
+    ]
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 12,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -486,9 +793,150 @@
+     "id": "GMXVfmzXp1Oo",
+     "outputId": "b05e251e-508f-46e6-865b-f869ae2a5dc4"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "data": {
++      "text/html": [
++       "\n",
++       "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
++       "                Project page: <a href=\"https://app.wandb.ai/ds8/ds13_inclass\" target=\"_blank\">https://app.wandb.ai/ds8/ds13_inclass</a><br/>\n",
++       "                Run page: <a href=\"https://app.wandb.ai/ds8/ds13_inclass/runs/2f5hnhtv\" target=\"_blank\">https://app.wandb.ai/ds8/ds13_inclass/runs/2f5hnhtv</a><br/>\n",
++       "            "
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Wandb version 0.8.36 is available!  To upgrade, please run:\n",
++      "\u001b[34m\u001b[1mwandb\u001b[0m:  $ pip install wandb --upgrade\n"
++     ]
++    },
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Epoch 1/50\n",
++      "9/9 [==============================] - 0s 16ms/step - loss: 526.3895 - mse: 526.3895 - mae: 21.2134 - val_loss: 584.1267 - val_mse: 584.1267 - val_mae: 22.0330\n",
++      "Epoch 2/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 468.2961 - mse: 468.2961 - mae: 19.7768 - val_loss: 511.8218 - val_mse: 511.8218 - val_mae: 20.2564\n",
++      "Epoch 3/50\n",
++      "9/9 [==============================] - 0s 8ms/step - loss: 389.4769 - mse: 389.4769 - mae: 17.5525 - val_loss: 404.6097 - val_mse: 404.6097 - val_mae: 17.3682\n",
++      "Epoch 4/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 278.5723 - mse: 278.5723 - mae: 14.1660 - val_loss: 270.8217 - val_mse: 270.8217 - val_mae: 13.4384\n",
++      "Epoch 5/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 160.9369 - mse: 160.9369 - mae: 10.1819 - val_loss: 156.6449 - val_mse: 156.6449 - val_mae: 9.5459\n",
++      "Epoch 6/50\n",
++      "9/9 [==============================] - 0s 8ms/step - loss: 90.6565 - mse: 90.6565 - mae: 7.3322 - val_loss: 112.7574 - val_mse: 112.7574 - val_mae: 8.2845\n",
++      "Epoch 7/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 70.7770 - mse: 70.7770 - mae: 6.2092 - val_loss: 89.8906 - val_mse: 89.8906 - val_mae: 7.2155\n",
++      "Epoch 8/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 50.5230 - mse: 50.5230 - mae: 5.1790 - val_loss: 71.1840 - val_mse: 71.1840 - val_mae: 6.1848\n",
++      "Epoch 9/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 37.9807 - mse: 37.9807 - mae: 4.4991 - val_loss: 55.6171 - val_mse: 55.6171 - val_mae: 5.2898\n",
++      "Epoch 10/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 29.1862 - mse: 29.1862 - mae: 3.9740 - val_loss: 43.5164 - val_mse: 43.5164 - val_mae: 4.6237\n",
++      "Epoch 11/50\n",
++      "9/9 [==============================] - 0s 8ms/step - loss: 23.2788 - mse: 23.2788 - mae: 3.5995 - val_loss: 36.0178 - val_mse: 36.0178 - val_mae: 4.1728\n",
++      "Epoch 12/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 19.9957 - mse: 19.9957 - mae: 3.3002 - val_loss: 31.3285 - val_mse: 31.3285 - val_mae: 3.8629\n",
++      "Epoch 13/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 17.4236 - mse: 17.4236 - mae: 3.0411 - val_loss: 28.6899 - val_mse: 28.6899 - val_mae: 3.6723\n",
++      "Epoch 14/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 15.6735 - mse: 15.6735 - mae: 2.8562 - val_loss: 26.9657 - val_mse: 26.9657 - val_mae: 3.5162\n",
++      "Epoch 15/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 14.3534 - mse: 14.3534 - mae: 2.7438 - val_loss: 25.1243 - val_mse: 25.1243 - val_mae: 3.4111\n",
++      "Epoch 16/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 13.4015 - mse: 13.4015 - mae: 2.7161 - val_loss: 22.9819 - val_mse: 22.9819 - val_mae: 3.2896\n",
++      "Epoch 17/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 12.6799 - mse: 12.6799 - mae: 2.6638 - val_loss: 22.1383 - val_mse: 22.1383 - val_mae: 3.1787\n",
++      "Epoch 18/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 11.8920 - mse: 11.8920 - mae: 2.5480 - val_loss: 21.3240 - val_mse: 21.3240 - val_mae: 3.0776\n",
++      "Epoch 19/50\n",
++      "9/9 [==============================] - 0s 12ms/step - loss: 11.4126 - mse: 11.4126 - mae: 2.4791 - val_loss: 21.0128 - val_mse: 21.0128 - val_mae: 3.0428\n",
++      "Epoch 20/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 10.7261 - mse: 10.7261 - mae: 2.4438 - val_loss: 19.8357 - val_mse: 19.8357 - val_mae: 2.9840\n",
++      "Epoch 21/50\n",
++      "9/9 [==============================] - 0s 11ms/step - loss: 10.5012 - mse: 10.5012 - mae: 2.4624 - val_loss: 19.1883 - val_mse: 19.1883 - val_mae: 2.9323\n",
++      "Epoch 22/50\n",
++      "9/9 [==============================] - 0s 7ms/step - loss: 10.0518 - mse: 10.0518 - mae: 2.3695 - val_loss: 19.4826 - val_mse: 19.4826 - val_mae: 2.9378\n",
++      "Epoch 23/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 9.7744 - mse: 9.7744 - mae: 2.3424 - val_loss: 18.6926 - val_mse: 18.6926 - val_mae: 2.8954\n",
++      "Epoch 24/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 9.4775 - mse: 9.4775 - mae: 2.3116 - val_loss: 18.2967 - val_mse: 18.2967 - val_mae: 2.8717\n",
++      "Epoch 25/50\n",
++      "9/9 [==============================] - 0s 8ms/step - loss: 9.2483 - mse: 9.2483 - mae: 2.2704 - val_loss: 17.9189 - val_mse: 17.9189 - val_mae: 2.8264\n",
++      "Epoch 26/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 8.9169 - mse: 8.9169 - mae: 2.2357 - val_loss: 17.8524 - val_mse: 17.8524 - val_mae: 2.8238\n",
++      "Epoch 27/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 8.7884 - mse: 8.7884 - mae: 2.2056 - val_loss: 17.7029 - val_mse: 17.7029 - val_mae: 2.7993\n",
++      "Epoch 28/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 8.6753 - mse: 8.6753 - mae: 2.2035 - val_loss: 17.1542 - val_mse: 17.1542 - val_mae: 2.7892\n",
++      "Epoch 29/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 8.4792 - mse: 8.4792 - mae: 2.1827 - val_loss: 17.2875 - val_mse: 17.2875 - val_mae: 2.7876\n",
++      "Epoch 30/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 8.2976 - mse: 8.2976 - mae: 2.1577 - val_loss: 17.0538 - val_mse: 17.0538 - val_mae: 2.7852\n",
++      "Epoch 31/50\n",
++      "9/9 [==============================] - 0s 10ms/step - loss: 8.1524 - mse: 8.1524 - mae: 2.1618 - val_loss: 16.5714 - val_mse: 16.5714 - val_mae: 2.7623\n",
++      "Epoch 32/50\n",
++      "9/9 [==============================] - 0s 7ms/step - loss: 7.9665 - mse: 7.9665 - mae: 2.1287 - val_loss: 16.6536 - val_mse: 16.6536 - val_mae: 2.7689\n",
++      "Epoch 33/50\n",
++      "9/9 [==============================] - 0s 7ms/step - loss: 7.9154 - mse: 7.9154 - mae: 2.0967 - val_loss: 16.8578 - val_mse: 16.8578 - val_mae: 2.7909\n",
++      "Epoch 34/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 7.7590 - mse: 7.7590 - mae: 2.0887 - val_loss: 16.4861 - val_mse: 16.4861 - val_mae: 2.7483\n",
++      "Epoch 35/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 7.6511 - mse: 7.6511 - mae: 2.0730 - val_loss: 16.3903 - val_mse: 16.3903 - val_mae: 2.7529\n",
++      "Epoch 36/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 7.5698 - mse: 7.5698 - mae: 2.0610 - val_loss: 16.3641 - val_mse: 16.3641 - val_mae: 2.7636\n",
++      "Epoch 37/50\n",
++      "9/9 [==============================] - 0s 7ms/step - loss: 7.4525 - mse: 7.4525 - mae: 2.0354 - val_loss: 16.3960 - val_mse: 16.3960 - val_mae: 2.7599\n",
++      "Epoch 38/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 7.3466 - mse: 7.3466 - mae: 2.0148 - val_loss: 16.2497 - val_mse: 16.2497 - val_mae: 2.7448\n",
++      "Epoch 39/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 7.4392 - mse: 7.4392 - mae: 2.0639 - val_loss: 15.9877 - val_mse: 15.9877 - val_mae: 2.7270\n",
++      "Epoch 40/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 7.2129 - mse: 7.2129 - mae: 2.0079 - val_loss: 16.4998 - val_mse: 16.4998 - val_mae: 2.7718\n",
++      "Epoch 41/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 7.2266 - mse: 7.2266 - mae: 1.9802 - val_loss: 16.1306 - val_mse: 16.1306 - val_mae: 2.7208\n",
++      "Epoch 42/50\n",
++      "9/9 [==============================] - 0s 8ms/step - loss: 7.1024 - mse: 7.1024 - mae: 2.0070 - val_loss: 15.6803 - val_mse: 15.6803 - val_mae: 2.6754\n",
++      "Epoch 43/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.9922 - mse: 6.9922 - mae: 1.9837 - val_loss: 15.9491 - val_mse: 15.9491 - val_mae: 2.7122\n",
++      "Epoch 44/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.9982 - mse: 6.9982 - mae: 1.9498 - val_loss: 16.0627 - val_mse: 16.0627 - val_mae: 2.7149\n",
++      "Epoch 45/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.8553 - mse: 6.8553 - mae: 1.9711 - val_loss: 15.8731 - val_mse: 15.8731 - val_mae: 2.7093\n",
++      "Epoch 46/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.7818 - mse: 6.7818 - mae: 1.9488 - val_loss: 16.0215 - val_mse: 16.0215 - val_mae: 2.7091\n",
++      "Epoch 47/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.7839 - mse: 6.7839 - mae: 1.9352 - val_loss: 16.1721 - val_mse: 16.1721 - val_mae: 2.7381\n",
++      "Epoch 48/50\n",
++      "9/9 [==============================] - 0s 9ms/step - loss: 6.5946 - mse: 6.5946 - mae: 1.9002 - val_loss: 15.5760 - val_mse: 15.5760 - val_mae: 2.6651\n",
++      "Epoch 49/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.6182 - mse: 6.6182 - mae: 1.9394 - val_loss: 15.7116 - val_mse: 15.7116 - val_mae: 2.6812\n",
++      "Epoch 50/50\n",
++      "9/9 [==============================] - 0s 6ms/step - loss: 6.7015 - mse: 6.7015 - mae: 1.9108 - val_loss: 16.0871 - val_mse: 16.0871 - val_mae: 2.7179\n"
++     ]
++    },
++    {
++     "data": {
++      "text/plain": [
++       "<tensorflow.python.keras.callbacks.History at 0x7f846fe59748>"
++      ]
++     },
++     "execution_count": 12,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
+    "source": [
+-    "wandb.init(project=wandb_project, entity=wand_group) #Initializes and Experiment\n",
++    "wandb.init(project=wandb_project, entity=wandb_group) #Initializes and Experiment; this should be in the same cell as the fit statement\n",
+     "\n",
+     "# Important Hyperparameters\n",
+     "X =  x_train\n",
+@@ -496,7 +944,7 @@
+     "\n",
+     "inputs = X.shape[1]\n",
+     "wandb.config.epochs = 50\n",
+-    "wandb.config.batch_size = 10\n",
++    "wandb.config.batch_size = 32\n",
+     "\n",
+     "# Create Model\n",
+     "model = Sequential()\n",
+@@ -527,18 +975,181 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 15,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "data": {
++      "text/html": [
++       "\n",
++       "                Logging results to <a href=\"https://wandb.com\" target=\"_blank\">Weights & Biases</a> <a href=\"https://docs.wandb.com/integrations/jupyter.html\" target=\"_blank\">(Documentation)</a>.<br/>\n",
++       "                Project page: <a href=\"https://app.wandb.ai/ds8/ds13_inclass\" target=\"_blank\">https://app.wandb.ai/ds8/ds13_inclass</a><br/>\n",
++       "                Run page: <a href=\"https://app.wandb.ai/ds8/ds13_inclass/runs/2uevxt9a\" target=\"_blank\">https://app.wandb.ai/ds8/ds13_inclass/runs/2uevxt9a</a><br/>\n",
++       "            "
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "\u001b[34m\u001b[1mwandb\u001b[0m: Wandb version 0.8.36 is available!  To upgrade, please run:\n",
++      "\u001b[34m\u001b[1mwandb\u001b[0m:  $ pip install wandb --upgrade\n"
++     ]
++    },
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Epoch 1/50\n",
++      "34/34 [==============================] - 0s 6ms/step - loss: 487.8224 - mse: 487.8224 - mae: 20.2497 - val_loss: 454.8560 - val_mse: 454.8560 - val_mae: 18.9311\n",
++      "Epoch 2/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 195.7843 - mse: 195.7843 - mae: 11.5642 - val_loss: 91.7714 - val_mse: 91.7714 - val_mae: 7.2115\n",
++      "Epoch 3/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 56.7234 - mse: 56.7234 - mae: 5.4972 - val_loss: 59.7878 - val_mse: 59.7878 - val_mae: 5.1482\n",
++      "Epoch 4/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 35.3611 - mse: 35.3611 - mae: 4.3291 - val_loss: 44.6223 - val_mse: 44.6223 - val_mae: 4.2868\n",
++      "Epoch 5/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 31.6757 - mse: 31.6757 - mae: 4.1686 - val_loss: 38.1302 - val_mse: 38.1302 - val_mae: 3.9610\n",
++      "Epoch 6/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 30.2008 - mse: 30.2008 - mae: 3.9956 - val_loss: 33.1183 - val_mse: 33.1183 - val_mae: 3.6941\n",
++      "Epoch 7/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 24.2546 - mse: 24.2546 - mae: 3.5918 - val_loss: 29.3769 - val_mse: 29.3769 - val_mae: 3.4928\n",
++      "Epoch 8/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 23.8552 - mse: 23.8552 - mae: 3.5651 - val_loss: 28.1147 - val_mse: 28.1147 - val_mae: 3.3896\n",
++      "Epoch 9/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 21.1603 - mse: 21.1603 - mae: 3.3893 - val_loss: 25.7169 - val_mse: 25.7169 - val_mae: 3.2254\n",
++      "Epoch 10/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 24.4748 - mse: 24.4748 - mae: 3.7473 - val_loss: 31.1180 - val_mse: 31.1180 - val_mae: 3.7028\n",
++      "Epoch 11/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 19.6353 - mse: 19.6353 - mae: 3.4333 - val_loss: 23.1376 - val_mse: 23.1376 - val_mae: 2.9882\n",
++      "Epoch 12/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 16.8284 - mse: 16.8284 - mae: 3.0916 - val_loss: 23.2689 - val_mse: 23.2689 - val_mae: 3.0117\n",
++      "Epoch 13/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 18.0614 - mse: 18.0614 - mae: 3.2645 - val_loss: 19.9854 - val_mse: 19.9854 - val_mae: 2.7363\n",
++      "Epoch 14/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 19.2583 - mse: 19.2583 - mae: 3.2833 - val_loss: 21.7727 - val_mse: 21.7727 - val_mae: 2.8935\n",
++      "Epoch 15/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 15.3877 - mse: 15.3877 - mae: 2.9050 - val_loss: 20.0305 - val_mse: 20.0305 - val_mae: 2.8438\n",
++      "Epoch 16/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 20.8829 - mse: 20.8829 - mae: 3.2560 - val_loss: 20.1925 - val_mse: 20.1925 - val_mae: 2.9183\n",
++      "Epoch 17/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 18.4989 - mse: 18.4989 - mae: 3.1845 - val_loss: 20.3829 - val_mse: 20.3829 - val_mae: 2.9671\n",
++      "Epoch 18/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 16.1307 - mse: 16.1307 - mae: 3.0102 - val_loss: 19.0328 - val_mse: 19.0328 - val_mae: 2.8409\n",
++      "Epoch 19/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 15.4064 - mse: 15.4064 - mae: 3.0534 - val_loss: 19.0899 - val_mse: 19.0899 - val_mae: 2.7781\n",
++      "Epoch 20/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 15.6264 - mse: 15.6264 - mae: 3.0177 - val_loss: 19.3803 - val_mse: 19.3803 - val_mae: 2.8730\n",
++      "Epoch 21/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.5959 - mse: 14.5959 - mae: 2.9244 - val_loss: 19.0507 - val_mse: 19.0507 - val_mae: 2.8096\n",
++      "Epoch 22/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 17.3718 - mse: 17.3718 - mae: 3.2303 - val_loss: 18.0627 - val_mse: 18.0627 - val_mae: 2.7194\n",
++      "Epoch 23/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 15.6107 - mse: 15.6107 - mae: 3.0249 - val_loss: 18.0155 - val_mse: 18.0155 - val_mae: 2.7173\n",
++      "Epoch 24/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.1956 - mse: 14.1956 - mae: 2.8335 - val_loss: 18.3750 - val_mse: 18.3750 - val_mae: 2.7963\n",
++      "Epoch 25/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 13.5576 - mse: 13.5576 - mae: 2.8954 - val_loss: 18.5503 - val_mse: 18.5503 - val_mae: 2.8159\n",
++      "Epoch 26/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.7252 - mse: 14.7252 - mae: 2.9988 - val_loss: 18.4731 - val_mse: 18.4731 - val_mae: 2.7657\n",
++      "Epoch 27/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 12.9993 - mse: 12.9993 - mae: 2.8354 - val_loss: 20.9087 - val_mse: 20.9087 - val_mae: 2.9846\n",
++      "Epoch 28/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 16.7920 - mse: 16.7920 - mae: 3.0665 - val_loss: 21.3648 - val_mse: 21.3648 - val_mae: 2.9713\n",
++      "Epoch 29/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 15.7107 - mse: 15.7107 - mae: 2.8947 - val_loss: 16.7341 - val_mse: 16.7341 - val_mae: 2.5706\n",
++      "Epoch 30/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 17.3952 - mse: 17.3952 - mae: 3.1973 - val_loss: 17.3598 - val_mse: 17.3598 - val_mae: 2.6722\n",
++      "Epoch 31/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.9984 - mse: 14.9984 - mae: 2.9022 - val_loss: 17.4840 - val_mse: 17.4840 - val_mae: 2.6997\n",
++      "Epoch 32/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 15.2051 - mse: 15.2051 - mae: 2.9783 - val_loss: 18.1829 - val_mse: 18.1829 - val_mae: 2.7101\n",
++      "Epoch 33/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 15.0666 - mse: 15.0666 - mae: 2.9023 - val_loss: 17.3317 - val_mse: 17.3317 - val_mae: 2.6270\n",
++      "Epoch 34/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 11.0690 - mse: 11.0690 - mae: 2.5350 - val_loss: 16.9446 - val_mse: 16.9446 - val_mae: 2.6576\n",
++      "Epoch 35/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.9046 - mse: 14.9046 - mae: 2.7825 - val_loss: 17.4715 - val_mse: 17.4715 - val_mae: 2.6953\n",
++      "Epoch 36/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 12.4684 - mse: 12.4684 - mae: 2.6594 - val_loss: 20.5146 - val_mse: 20.5146 - val_mae: 3.0108\n",
++      "Epoch 37/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 13.8548 - mse: 13.8548 - mae: 2.7729 - val_loss: 18.4493 - val_mse: 18.4493 - val_mae: 2.8697\n",
++      "Epoch 38/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 13.2579 - mse: 13.2579 - mae: 2.7139 - val_loss: 17.6793 - val_mse: 17.6793 - val_mae: 2.7817\n",
++      "Epoch 39/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.0706 - mse: 14.0706 - mae: 2.8312 - val_loss: 18.3700 - val_mse: 18.3700 - val_mae: 2.7582\n",
++      "Epoch 40/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 13.9550 - mse: 13.9550 - mae: 2.7486 - val_loss: 16.2503 - val_mse: 16.2503 - val_mae: 2.6167\n",
++      "Epoch 41/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 11.9025 - mse: 11.9025 - mae: 2.6133 - val_loss: 17.7319 - val_mse: 17.7319 - val_mae: 2.8707\n",
++      "Epoch 42/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 14.0905 - mse: 14.0905 - mae: 2.8341 - val_loss: 19.1690 - val_mse: 19.1690 - val_mae: 3.0005\n",
++      "Epoch 43/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 11.7308 - mse: 11.7308 - mae: 2.5379 - val_loss: 18.0561 - val_mse: 18.0561 - val_mae: 2.8790\n",
++      "Epoch 44/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 11.7366 - mse: 11.7366 - mae: 2.5849 - val_loss: 18.2077 - val_mse: 18.2077 - val_mae: 2.8410\n",
++      "Epoch 45/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 16.2936 - mse: 16.2936 - mae: 2.8164 - val_loss: 16.5036 - val_mse: 16.5036 - val_mae: 2.6360\n",
++      "Epoch 46/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 11.5178 - mse: 11.5178 - mae: 2.5916 - val_loss: 18.5105 - val_mse: 18.5105 - val_mae: 2.9213\n",
++      "Epoch 47/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 10.4083 - mse: 10.4083 - mae: 2.4390 - val_loss: 17.1986 - val_mse: 17.1986 - val_mae: 2.7442\n",
++      "Epoch 48/50\n",
++      "34/34 [==============================] - 0s 3ms/step - loss: 13.2314 - mse: 13.2314 - mae: 2.6022 - val_loss: 19.5396 - val_mse: 19.5396 - val_mae: 3.0384\n",
++      "Epoch 49/50\n",
++      "34/34 [==============================] - 0s 4ms/step - loss: 11.1418 - mse: 11.1418 - mae: 2.5006 - val_loss: 15.5618 - val_mse: 15.5618 - val_mae: 2.5111\n",
++      "Epoch 50/50\n"
++     ]
++    },
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "34/34 [==============================] - 0s 3ms/step - loss: 14.5385 - mse: 14.5385 - mae: 2.8714 - val_loss: 15.6199 - val_mse: 15.6199 - val_mae: 2.5110\n"
++     ]
++    },
++    {
++     "data": {
++      "text/plain": [
++       "<tensorflow.python.keras.callbacks.History at 0x7f846f5250f0>"
++      ]
++     },
++     "execution_count": 15,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
+    "source": [
+-    "wandb.init(project=wandb_project, entity=wand_group) #Initializes and Experiment\n",
++    "wandb.init(project=wandb_project, entity=wandb_group) #Initializes and Experiment\n",
+     "\n",
+     "wandb.config.epochs = 50\n",
+-    "wandb.config.batch_size = 10\n",
++    "wandb.config.batch_size = 8\n",
++    "\n",
++    "\n",
++    "# Create Model\n",
++    "model = Sequential()\n",
++    "model.add(Dense(64, activation='relu', input_shape=(inputs,)))\n",
++    "model.add(Dropout(0.2))\n",
++    "model.add(Dense(64, activation='relu'))\n",
++    "model.add(Dropout(0.2))\n",
++    "model.add(Dense(64, activation='relu'))\n",
++    "model.add(Dense(1))\n",
++    "# Compile Model\n",
++    "model.compile(optimizer='adam', loss='mse', metrics=['mse', 'mae'])\n",
++    "\n",
+     "\n",
+     "\n",
+     "# Fit Model\n",
+-    "model.fit(\n",
++    "model.fit(X, y, \n",
++    "          validation_split=0.33, \n",
++    "          epochs=wandb.config.epochs, \n",
++    "          batch_size=wandb.config.batch_size, \n",
+     "          callbacks=[WandbCallback()]\n",
+     "         )"
+    ]
+@@ -724,9 +1335,9 @@
+  ],
+  "metadata": {
+   "kernelspec": {
+-   "display_name": "U4-S2-NNF-DS12",
++   "display_name": "unit4-sprint2",
+    "language": "python",
+-   "name": "u4-s2-nnf-ds12"
++   "name": "unit4-sprint2"
+   },
+   "language_info": {
+    "codemirror_mode": {
+@@ -738,7 +1349,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.7.7"
++   "version": "3.7.0"
+   }
+  },
+  "nbformat": 4,
