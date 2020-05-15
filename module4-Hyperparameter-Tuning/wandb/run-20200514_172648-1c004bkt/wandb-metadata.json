@@ -1,0 +1,26 @@
+{
+    "root": "C:/Users/hkang/repos/unit-4/DS-Unit-4-Sprint-2-Neural-Networks",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/HKang42/DS-Unit-4-Sprint-2-Neural-Networks.git",
+        "commit": "5ec4ef383cfb8026efb3d9d9b4a3a7abfa4b5ace"
+    },
+    "email": "h.kang.q@gmail.com",
+    "startedAt": "2020-05-14T17:26:48.186277",
+    "host": "DESKTOP-APTEKK2",
+    "username": "hkang",
+    "executable": "C:\\Users\\hkang\\anaconda3\\envs\\U4-S2-Neural-Networks\\python.exe",
+    "os": "Windows-10-10.0.18362-SP0",
+    "python": "3.7.0",
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\hkang\\AppData\\Roaming\\jupyter\\runtime\\kernel-c401b7d2-d292-4295-8f7d-54ae03840c08.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "lilac-shadow-15",
+    "project": "ds13_inclass",
+    "heartbeatAt": "2020-05-14T17:26:59.238811"
+}

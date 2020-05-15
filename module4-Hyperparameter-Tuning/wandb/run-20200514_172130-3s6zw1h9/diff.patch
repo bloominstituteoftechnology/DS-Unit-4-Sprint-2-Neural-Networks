@@ -1,0 +1,550 @@
+diff --git a/.gitignore b/.gitignore
+index 894a44c..9225091 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,3 +1,5 @@
++/logs
++
+ # Byte-compiled / optimized / DLL files
+ __pycache__/
+ *.py[cod]
+diff --git a/module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb b/module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb
+index e207e9d..a7ebb4d 100644
+--- a/module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb
++++ b/module3-Intro-to-Keras/LS_DS_423_Keras_Assignment.ipynb
+@@ -32,7 +32,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 8,
++   "execution_count": 1,
+    "metadata": {
+     "colab": {},
+     "colab_type": "code",
+@@ -49,7 +49,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 5,
++   "execution_count": 2,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -61,7 +61,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 19,
++   "execution_count": 3,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -72,7 +72,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 20,
++   "execution_count": 4,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -82,7 +82,7 @@
+        "        91.7    ,   3.9769 ,   4.     , 307.     ,  21.     ,  18.72   ])"
+       ]
+      },
+-     "execution_count": 20,
++     "execution_count": 4,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+@@ -93,7 +93,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 21,
++   "execution_count": 5,
+    "metadata": {},
+    "outputs": [
+     {
+@@ -102,7 +102,7 @@
+        "(404, 12)"
+       ]
+      },
+-     "execution_count": 21,
++     "execution_count": 5,
+      "metadata": {},
+      "output_type": "execute_result"
+     }
+diff --git a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+index 51e98d6..15236c7 100644
+--- a/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
++++ b/module4-Hyperparameter-Tuning/LS_DS_424_Hyperparameter_Tuning_Lecture.ipynb
+@@ -42,12 +42,100 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 17,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+-    "wandb_group = \"...\"\n",
+-    "wandb_project = \"...\""
++    "wandb_group = \"ds8\"\n",
++    "wandb_project = \"ds13_inclass\"\n"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 6,
++   "metadata": {
++    "collapsed": true,
++    "jupyter": {
++     "outputs_hidden": true
++    }
++   },
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Collecting wandb\n",
++      "  Downloading wandb-0.8.36-py2.py3-none-any.whl (1.4 MB)\n",
++      "Requirement already satisfied: requests>=2.0.0 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (2.22.0)\n",
++      "Collecting sentry-sdk>=0.4.0\n",
++      "  Downloading sentry_sdk-0.14.4-py2.py3-none-any.whl (104 kB)\n",
++      "Requirement already satisfied: PyYAML>=3.10 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (5.3)\n",
++      "Collecting configparser>=3.8.1\n",
++      "  Using cached configparser-5.0.0-py3-none-any.whl (22 kB)\n",
++      "Processing c:\\users\\hkang\\appdata\\local\\pip\\cache\\wheels\\b6\\9a\\56\\5456fd32264a8fc53eefcb2f74e24e99a7ef4eb40a9af5c905\\gql-0.2.0-py3-none-any.whl\n",
++      "Collecting shortuuid>=0.5.0\n",
++      "  Using cached shortuuid-1.0.1-py3-none-any.whl (7.5 kB)\n",
++      "Processing c:\\users\\hkang\\appdata\\local\\pip\\cache\\wheels\\df\\99\\da\\c34f202dc8fd1dffd35e0ecf1a7d7f8374ca05fbcbaf974b83\\nvidia_ml_py3-7.352.0-py3-none-any.whl\n",
++      "Requirement already satisfied: six>=1.10.0 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (1.14.0)\n",
++      "Collecting docker-pycreds>=0.4.0\n",
++      "  Using cached docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)\n",
++      "Requirement already satisfied: python-dateutil>=2.6.1 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (2.8.1)\n",
++      "Requirement already satisfied: watchdog>=0.8.3 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (0.10.2)\n",
++      "Requirement already satisfied: psutil>=5.0.0 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (5.6.7)\n",
++      "Processing c:\\users\\hkang\\appdata\\local\\pip\\cache\\wheels\\50\\ca\\fa\\8fca8d246e64f19488d07567547ddec8eb084e8c0d7a59226a\\subprocess32-3.5.4-py3-none-any.whl\n",
++      "Requirement already satisfied: Click>=7.0 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from wandb) (7.0)\n",
++      "Collecting GitPython>=1.0.0\n",
++      "  Using cached GitPython-3.1.2-py3-none-any.whl (451 kB)\n",
++      "Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from requests>=2.0.0->wandb) (1.25.8)\n",
++      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from requests>=2.0.0->wandb) (2019.11.28)\n",
++      "Requirement already satisfied: idna<2.9,>=2.5 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from requests>=2.0.0->wandb) (2.8)\n",
++      "Requirement already satisfied: chardet<3.1.0,>=3.0.2 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from requests>=2.0.0->wandb) (3.0.4)\n",
++      "Processing c:\\users\\hkang\\appdata\\local\\pip\\cache\\wheels\\29\\93\\c6\\762e359f8cb6a5b69c72235d798804cae523bbe41c2aa8333d\\promise-2.3-py3-none-any.whl\n",
++      "Processing c:\\users\\hkang\\appdata\\local\\pip\\cache\\wheels\\6b\\fd\\8c\\a20dd591c1a554070cc33fb58042867e6ac1c85395abe2e57a\\graphql_core-1.1-py3-none-any.whl\n",
++      "Requirement already satisfied: pathtools>=0.1.1 in c:\\users\\hkang\\anaconda3\\lib\\site-packages (from watchdog>=0.8.3->wandb) (0.1.2)\n",
++      "Collecting gitdb<5,>=4.0.1\n",
++      "  Using cached gitdb-4.0.5-py3-none-any.whl (63 kB)\n",
++      "Collecting smmap<4,>=3.0.1\n",
++      "  Using cached smmap-3.0.4-py2.py3-none-any.whl (25 kB)\n",
++      "Installing collected packages: sentry-sdk, configparser, promise, graphql-core, gql, shortuuid, nvidia-ml-py3, docker-pycreds, subprocess32, smmap, gitdb, GitPython, wandb\n",
++      "Successfully installed GitPython-3.1.2 configparser-5.0.0 docker-pycreds-0.4.0 gitdb-4.0.5 gql-0.2.0 graphql-core-1.1 nvidia-ml-py3-7.352.0 promise-2.3 sentry-sdk-0.14.4 shortuuid-1.0.1 smmap-3.0.4 subprocess32-3.5.4 wandb-0.8.36\n"
++     ]
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "WARNING: You are using pip version 20.0.2; however, version 20.1 is available.\n",
++      "You should consider upgrading via the 'c:\\users\\hkang\\anaconda3\\python.exe -m pip install --upgrade pip' command.\n"
++     ]
++    }
++   ],
++   "source": [
++    "# !pip install wandb"
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 8,
++   "metadata": {},
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Successfully logged in to Weights & Biases!\n"
++     ]
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "wandb: Appending key for api.wandb.ai to your netrc file: C:\\Users\\hkang/.netrc\n"
++     ]
++    }
++   ],
++   "source": [
++    "! wandb login c89cc6fde6607ee05103a15f1daba325bfd50883"
+    ]
+   },
+   {
+@@ -81,7 +169,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 9,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -106,9 +194,46 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 10,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "[[-0.27224633 -0.48361547 -0.43576161 -0.25683275 -0.1652266  -0.1764426\n",
++      "   0.81306188  0.1166983  -0.62624905 -0.59517003  1.14850044  0.44807713\n",
++      "   0.8252202 ]\n",
++      " [-0.40342651  2.99178419 -1.33391162 -0.25683275 -1.21518188  1.89434613\n",
++      "  -1.91036058  1.24758524 -0.85646254 -0.34843254 -1.71818909  0.43190599\n",
++      "  -1.32920239]\n",
++      " [ 0.1249402  -0.48361547  1.0283258  -0.25683275  0.62864202 -1.82968811\n",
++      "   1.11048828 -1.18743907  1.67588577  1.5652875   0.78447637  0.22061726\n",
++      "  -1.30850006]\n",
++      " [-0.40149354 -0.48361547 -0.86940196 -0.25683275 -0.3615597  -0.3245576\n",
++      "  -1.23667187  1.10717989 -0.51114231 -1.094663    0.78447637  0.44807713\n",
++      "  -0.65292624]\n",
++      " [-0.0056343  -0.48361547  1.0283258  -0.25683275  1.32861221  0.15364225\n",
++      "   0.69480801 -0.57857203  1.67588577  1.5652875   0.78447637  0.3898823\n",
++      "   0.26349695]\n",
++      " [-0.37502238 -0.48361547 -0.54747912 -0.25683275 -0.54935658 -0.78865126\n",
++      "   0.18954148  0.48371503 -0.51114231 -0.71552978  0.51145832  0.38669063\n",
++      "  -0.13812828]\n",
++      " [ 0.58963463 -0.48361547  1.0283258  -0.25683275  1.21764133 -1.03127774\n",
++      "   1.11048828 -1.06518235  1.67588577  1.5652875   0.78447637  0.44807713\n",
++      "   1.49873604]\n",
++      " [ 0.0381708  -0.48361547  1.24588095 -0.25683275  2.67733525 -1.12719983\n",
++      "   1.11048828 -1.14833073 -0.51114231 -0.01744323 -1.71818909  0.44807713\n",
++      "   1.88793986]\n",
++      " [-0.17228416 -0.48361547  1.24588095 -0.25683275  2.67733525 -0.90150078\n",
++      "   1.11048828 -1.09664657 -0.51114231 -0.01744323 -1.71818909 -1.97365769\n",
++      "   0.53952803]\n",
++      " [-0.22932104 -0.48361547  1.58544339 -0.25683275  0.56888847 -1.76056777\n",
++      "   1.11048828 -1.13471925 -0.62624905  0.18716835  1.23950646  0.44807713\n",
++      "   2.99068404]]\n"
++     ]
++    }
++   ],
+    "source": [
+     "from sklearn.preprocessing import StandardScaler\n",
+     "\n",
+@@ -133,7 +258,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 11,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -143,7 +268,174 @@
+     "id": "GMXVfmzXp1Oo",
+     "outputId": "b05e251e-508f-46e6-865b-f869ae2a5dc4"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Epoch 1/75\n",
++      "41/41 [==============================] - 0s 7ms/step - loss: 473.7040 - mse: 473.7040 - mae: 19.8271 - val_loss: 370.5274 - val_mse: 370.5274 - val_mae: 17.1988\n",
++      "Epoch 2/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 218.9933 - mse: 218.9933 - mae: 12.2209 - val_loss: 120.2020 - val_mse: 120.2020 - val_mae: 8.9611\n",
++      "Epoch 3/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 75.8348 - mse: 75.8348 - mae: 6.6269 - val_loss: 58.9606 - val_mse: 58.9606 - val_mae: 6.0607\n",
++      "Epoch 4/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 37.4351 - mse: 37.4351 - mae: 4.5599 - val_loss: 37.0682 - val_mse: 37.0682 - val_mae: 4.8104\n",
++      "Epoch 5/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 26.0413 - mse: 26.0413 - mae: 3.7046 - val_loss: 29.8580 - val_mse: 29.8580 - val_mae: 4.3478\n",
++      "Epoch 6/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 22.2569 - mse: 22.2569 - mae: 3.3225 - val_loss: 27.8733 - val_mse: 27.8733 - val_mae: 4.1532\n",
++      "Epoch 7/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 19.7973 - mse: 19.7973 - mae: 3.1329 - val_loss: 25.0773 - val_mse: 25.0773 - val_mae: 3.8363\n",
++      "Epoch 8/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 18.2668 - mse: 18.2668 - mae: 3.0331 - val_loss: 25.0450 - val_mse: 25.0450 - val_mae: 3.7061\n",
++      "Epoch 9/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 16.8397 - mse: 16.8397 - mae: 2.8821 - val_loss: 24.4529 - val_mse: 24.4529 - val_mae: 3.6707\n",
++      "Epoch 10/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 15.4907 - mse: 15.4907 - mae: 2.7786 - val_loss: 22.7019 - val_mse: 22.7019 - val_mae: 3.5099\n",
++      "Epoch 11/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 14.5501 - mse: 14.5501 - mae: 2.6517 - val_loss: 23.1885 - val_mse: 23.1885 - val_mae: 3.4824\n",
++      "Epoch 12/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 13.7494 - mse: 13.7494 - mae: 2.5960 - val_loss: 23.8931 - val_mse: 23.8931 - val_mae: 3.5172\n",
++      "Epoch 13/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 13.3959 - mse: 13.3959 - mae: 2.5946 - val_loss: 21.9510 - val_mse: 21.9510 - val_mae: 3.3233\n",
++      "Epoch 14/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 12.4131 - mse: 12.4131 - mae: 2.5134 - val_loss: 23.3329 - val_mse: 23.3329 - val_mae: 3.3424\n",
++      "Epoch 15/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 11.9994 - mse: 11.9994 - mae: 2.4618 - val_loss: 22.6189 - val_mse: 22.6189 - val_mae: 3.2713\n",
++      "Epoch 16/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 11.3630 - mse: 11.3630 - mae: 2.3737 - val_loss: 23.0445 - val_mse: 23.0445 - val_mae: 3.2998\n",
++      "Epoch 17/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 11.1456 - mse: 11.1456 - mae: 2.3601 - val_loss: 22.4451 - val_mse: 22.4451 - val_mae: 3.2274\n",
++      "Epoch 18/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 10.8282 - mse: 10.8282 - mae: 2.3372 - val_loss: 22.6533 - val_mse: 22.6533 - val_mae: 3.2028\n",
++      "Epoch 19/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 10.5128 - mse: 10.5128 - mae: 2.2888 - val_loss: 24.1406 - val_mse: 24.1406 - val_mae: 3.2333\n",
++      "Epoch 20/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.2183 - mse: 10.2183 - mae: 2.2596 - val_loss: 22.7212 - val_mse: 22.7212 - val_mae: 3.1393\n",
++      "Epoch 21/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 10.1550 - mse: 10.1550 - mae: 2.2852 - val_loss: 21.7652 - val_mse: 21.7652 - val_mae: 3.1064\n",
++      "Epoch 22/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.9509 - mse: 9.9509 - mae: 2.2160 - val_loss: 22.1521 - val_mse: 22.1521 - val_mae: 3.0777\n",
++      "Epoch 23/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 9.5895 - mse: 9.5895 - mae: 2.1865 - val_loss: 22.1525 - val_mse: 22.1525 - val_mae: 3.0462\n",
++      "Epoch 24/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 9.4708 - mse: 9.4708 - mae: 2.1856 - val_loss: 21.6640 - val_mse: 21.6640 - val_mae: 3.0476\n",
++      "Epoch 25/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 9.4106 - mse: 9.4106 - mae: 2.1644 - val_loss: 21.7976 - val_mse: 21.7976 - val_mae: 2.9929\n",
++      "Epoch 26/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 9.2728 - mse: 9.2728 - mae: 2.1590 - val_loss: 21.7188 - val_mse: 21.7188 - val_mae: 3.0012\n",
++      "Epoch 27/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 9.0184 - mse: 9.0184 - mae: 2.1216 - val_loss: 22.1830 - val_mse: 22.1830 - val_mae: 3.0850\n",
++      "Epoch 28/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 9.0959 - mse: 9.0959 - mae: 2.1363 - val_loss: 22.4786 - val_mse: 22.4786 - val_mae: 3.0233\n",
++      "Epoch 29/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 8.8110 - mse: 8.8110 - mae: 2.1150 - val_loss: 21.4887 - val_mse: 21.4887 - val_mae: 2.9711\n",
++      "Epoch 30/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.7245 - mse: 8.7245 - mae: 2.1127 - val_loss: 21.2224 - val_mse: 21.2224 - val_mae: 2.9318\n",
++      "Epoch 31/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.7508 - mse: 8.7508 - mae: 2.0999 - val_loss: 22.0238 - val_mse: 22.0238 - val_mae: 2.9863\n",
++      "Epoch 32/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.7495 - mse: 8.7495 - mae: 2.1070 - val_loss: 23.2741 - val_mse: 23.2741 - val_mae: 3.0812\n",
++      "Epoch 33/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 8.4718 - mse: 8.4718 - mae: 2.0814 - val_loss: 20.8961 - val_mse: 20.8961 - val_mae: 2.9170\n",
++      "Epoch 34/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.4596 - mse: 8.4596 - mae: 2.0738 - val_loss: 20.4318 - val_mse: 20.4318 - val_mae: 2.8852\n",
++      "Epoch 35/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.1297 - mse: 8.1297 - mae: 2.0263 - val_loss: 21.1989 - val_mse: 21.1989 - val_mae: 2.9452\n",
++      "Epoch 36/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.2409 - mse: 8.2409 - mae: 2.0246 - val_loss: 21.8364 - val_mse: 21.8364 - val_mae: 2.9513\n",
++      "Epoch 37/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 8.1167 - mse: 8.1167 - mae: 2.0468 - val_loss: 21.2305 - val_mse: 21.2305 - val_mae: 2.9148\n",
++      "Epoch 38/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.8906 - mse: 7.8906 - mae: 1.9857 - val_loss: 20.4233 - val_mse: 20.4233 - val_mae: 2.8679\n",
++      "Epoch 39/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 8.2212 - mse: 8.2212 - mae: 2.0640 - val_loss: 20.8262 - val_mse: 20.8262 - val_mae: 2.9808\n",
++      "Epoch 40/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 7.6627 - mse: 7.6627 - mae: 1.9430 - val_loss: 20.7697 - val_mse: 20.7697 - val_mae: 2.9155\n",
++      "Epoch 41/75\n",
++      "41/41 [==============================] - 0s 5ms/step - loss: 7.7675 - mse: 7.7675 - mae: 1.9857 - val_loss: 19.3587 - val_mse: 19.3587 - val_mae: 2.7998\n",
++      "Epoch 42/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.7884 - mse: 7.7884 - mae: 1.9993 - val_loss: 20.5551 - val_mse: 20.5551 - val_mae: 2.9041\n",
++      "Epoch 43/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.4663 - mse: 7.4663 - mae: 1.9244 - val_loss: 20.0553 - val_mse: 20.0553 - val_mae: 2.8249\n",
++      "Epoch 44/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.5322 - mse: 7.5322 - mae: 1.9501 - val_loss: 20.2704 - val_mse: 20.2704 - val_mae: 2.8890\n",
++      "Epoch 45/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.5140 - mse: 7.5140 - mae: 1.9380 - val_loss: 22.3724 - val_mse: 22.3724 - val_mae: 3.0755\n",
++      "Epoch 46/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.3412 - mse: 7.3412 - mae: 1.9078 - val_loss: 19.6411 - val_mse: 19.6411 - val_mae: 2.8573\n",
++      "Epoch 47/75\n",
++      "41/41 [==============================] - 0s 5ms/step - loss: 7.1458 - mse: 7.1458 - mae: 1.9086 - val_loss: 18.5300 - val_mse: 18.5300 - val_mae: 2.8347\n",
++      "Epoch 48/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 7.2324 - mse: 7.2324 - mae: 1.9004 - val_loss: 18.7207 - val_mse: 18.7207 - val_mae: 2.8298\n",
++      "Epoch 49/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.9843 - mse: 6.9843 - mae: 1.8822 - val_loss: 19.5137 - val_mse: 19.5137 - val_mae: 2.8097\n",
++      "Epoch 50/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.8246 - mse: 6.8246 - mae: 1.8778 - val_loss: 18.1907 - val_mse: 18.1907 - val_mae: 2.7490\n",
++      "Epoch 51/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.9673 - mse: 6.9673 - mae: 1.8709 - val_loss: 18.8116 - val_mse: 18.8116 - val_mae: 2.8121\n",
++      "Epoch 52/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.8162 - mse: 6.8162 - mae: 1.8407 - val_loss: 18.0881 - val_mse: 18.0881 - val_mae: 2.7275\n",
++      "Epoch 53/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.5808 - mse: 6.5808 - mae: 1.8293 - val_loss: 20.0118 - val_mse: 20.0118 - val_mae: 2.9749\n",
++      "Epoch 54/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.9457 - mse: 6.9457 - mae: 1.9347 - val_loss: 20.4536 - val_mse: 20.4536 - val_mae: 2.9512\n",
++      "Epoch 55/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.5081 - mse: 6.5081 - mae: 1.8405 - val_loss: 17.8034 - val_mse: 17.8034 - val_mae: 2.7028\n",
++      "Epoch 56/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.4875 - mse: 6.4875 - mae: 1.8048 - val_loss: 17.4836 - val_mse: 17.4836 - val_mae: 2.6791\n",
++      "Epoch 57/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.4320 - mse: 6.4320 - mae: 1.7994 - val_loss: 17.2207 - val_mse: 17.2207 - val_mae: 2.6734\n",
++      "Epoch 58/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.1886 - mse: 6.1886 - mae: 1.7688 - val_loss: 18.3401 - val_mse: 18.3401 - val_mae: 2.7485\n",
++      "Epoch 59/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.1788 - mse: 6.1788 - mae: 1.7396 - val_loss: 16.5648 - val_mse: 16.5648 - val_mae: 2.6320\n",
++      "Epoch 60/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 6.0243 - mse: 6.0243 - mae: 1.7515 - val_loss: 17.7263 - val_mse: 17.7263 - val_mae: 2.7620\n",
++      "Epoch 61/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.0309 - mse: 6.0309 - mae: 1.7460 - val_loss: 15.9253 - val_mse: 15.9253 - val_mae: 2.6070\n",
++      "Epoch 62/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.1429 - mse: 6.1429 - mae: 1.7546 - val_loss: 17.1352 - val_mse: 17.1352 - val_mae: 2.6776\n",
++      "Epoch 63/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 6.1149 - mse: 6.1149 - mae: 1.7488 - val_loss: 17.4956 - val_mse: 17.4956 - val_mae: 2.7187\n",
++      "Epoch 64/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8176 - mse: 5.8176 - mae: 1.7087 - val_loss: 18.0398 - val_mse: 18.0398 - val_mae: 2.7763\n",
++      "Epoch 65/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.8803 - mse: 5.8803 - mae: 1.7176 - val_loss: 17.6793 - val_mse: 17.6793 - val_mae: 2.7847\n",
++      "Epoch 66/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.7964 - mse: 5.7964 - mae: 1.7378 - val_loss: 16.7580 - val_mse: 16.7580 - val_mae: 2.7064\n",
++      "Epoch 67/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.6401 - mse: 5.6401 - mae: 1.6673 - val_loss: 15.8765 - val_mse: 15.8765 - val_mae: 2.5906\n",
++      "Epoch 68/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.4978 - mse: 5.4978 - mae: 1.6522 - val_loss: 15.7602 - val_mse: 15.7602 - val_mae: 2.6123\n",
++      "Epoch 69/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.4346 - mse: 5.4346 - mae: 1.6464 - val_loss: 16.3351 - val_mse: 16.3351 - val_mae: 2.6340\n",
++      "Epoch 70/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.4164 - mse: 5.4164 - mae: 1.6633 - val_loss: 15.5962 - val_mse: 15.5962 - val_mae: 2.6026\n",
++      "Epoch 71/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 5.2871 - mse: 5.2871 - mae: 1.6217 - val_loss: 15.8760 - val_mse: 15.8760 - val_mae: 2.6352\n",
++      "Epoch 72/75\n",
++      "41/41 [==============================] - 0s 3ms/step - loss: 5.1733 - mse: 5.1733 - mae: 1.6000 - val_loss: 15.8016 - val_mse: 15.8016 - val_mae: 2.6469\n",
++      "Epoch 73/75\n",
++      "41/41 [==============================] - 0s 2ms/step - loss: 5.1856 - mse: 5.1856 - mae: 1.6063 - val_loss: 14.7692 - val_mse: 14.7692 - val_mae: 2.5924\n",
++      "Epoch 74/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 5.1948 - mse: 5.1948 - mae: 1.6292 - val_loss: 15.9395 - val_mse: 15.9395 - val_mae: 2.6872\n",
++      "Epoch 75/75\n",
++      "41/41 [==============================] - 0s 4ms/step - loss: 5.0891 - mse: 5.0891 - mae: 1.6132 - val_loss: 14.3026 - val_mse: 14.3026 - val_mae: 2.5196\n"
++     ]
++    },
++    {
++     "data": {
++      "text/plain": [
++       "<tensorflow.python.keras.callbacks.History at 0x25558704e80>"
++      ]
++     },
++     "execution_count": 11,
++     "metadata": {},
++     "output_type": "execute_result"
++    }
++   ],
+    "source": [
+     "from tensorflow import keras\n",
+     "from tensorflow.keras.models import Sequential\n",
+@@ -165,8 +457,11 @@
+     "model.compile(optimizer='adam', loss='mse', metrics=['mse', 'mae'])\n",
+     "\n",
+     "# Fit Model\n",
++    "# We'll just specify the test set as the validation. A different option would \n",
++    "# be to just define a percent of the training data\n",
+     "model.fit(x_train, y_train, \n",
+     "          validation_data=(x_test,y_test), \n",
++    "          #validation_split = 0.2\n",
+     "          epochs=epochs, \n",
+     "          batch_size=batch_size\n",
+     "         )"
+@@ -255,7 +550,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 12,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -265,7 +560,20 @@
+     "id": "2smXfriNAGn7",
+     "outputId": "ae996575-78e2-43fb-9dbe-5d44aaf0b430"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "Best: 0.6484424114227295 using {'batch_size': 8, 'epochs': 20}\n",
++      "Means: 0.6484424114227295, Stdev: 0.03502330921593287 with: {'batch_size': 8, 'epochs': 20}\n",
++      "Means: 0.6380358219146729, Stdev: 0.012303059024725022 with: {'batch_size': 16, 'epochs': 20}\n",
++      "Means: 0.6093031287193298, Stdev: 0.04161140444724694 with: {'batch_size': 32, 'epochs': 20}\n",
++      "Means: 0.5221203744411469, Stdev: 0.03947348474709791 with: {'batch_size': 64, 'epochs': 20}\n",
++      "Means: 0.5431457579135894, Stdev: 0.0767844791656975 with: {'batch_size': 128, 'epochs': 20}\n"
++     ]
++    }
++   ],
+    "source": [
+     "import numpy\n",
+     "import pandas as pd\n",
+@@ -305,7 +613,7 @@
+     "# param_grid = dict(batch_size=batch_size, epochs=epochs)\n",
+     "\n",
+     "# define the grid search parameters\n",
+-    "param_grid = {'batch_size': [10, 20, 40, 60, 80, 100],\n",
++    "param_grid = {'batch_size': [8, 16, 32, 64, 128],\n",
+     "              'epochs': [20]}\n",
+     "\n",
+     "# Create Grid Search\n",
+@@ -466,7 +774,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 13,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -476,7 +784,17 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 19,
++   "metadata": {},
++   "outputs": [],
++   "source": [
++    "wandb_group = \"ds8\"\n",
++    "wandb_project = \"ds13_inclass\""
++   ]
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 20,
+    "metadata": {
+     "colab": {
+      "base_uri": "https://localhost:8080/",
+@@ -486,7 +804,19 @@
+     "id": "GMXVfmzXp1Oo",
+     "outputId": "b05e251e-508f-46e6-865b-f869ae2a5dc4"
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "ename": "NameError",
++     "evalue": "name 'wand_group' is not defined",
++     "output_type": "error",
++     "traceback": [
++      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
++      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
++      "\u001b[1;32m<ipython-input-20-62e922b6638a>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mwandb\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0minit\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mproject\u001b[0m\u001b[1;33m=\u001b[0m\u001b[0mwandb_project\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mentity\u001b[0m\u001b[1;33m=\u001b[0m\u001b[0mwand_group\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;31m#Initializes and Experiment\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      2\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      3\u001b[0m \u001b[1;31m# Important Hyperparameters\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[0mX\u001b[0m \u001b[1;33m=\u001b[0m  \u001b[0mx_train\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      5\u001b[0m \u001b[0my\u001b[0m \u001b[1;33m=\u001b[0m  \u001b[0my_train\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
++      "\u001b[1;31mNameError\u001b[0m: name 'wand_group' is not defined"
++     ]
++    }
++   ],
+    "source": [
+     "wandb.init(project=wandb_project, entity=wand_group) #Initializes and Experiment\n",
+     "\n",
+@@ -724,9 +1054,9 @@
+  ],
+  "metadata": {
+   "kernelspec": {
+-   "display_name": "U4-S2-NNF-DS12",
++   "display_name": "U4-S2-Neural-Networks (Python3)",
+    "language": "python",
+-   "name": "u4-s2-nnf-ds12"
++   "name": "u4-s2-neural-networks"
+   },
+   "language_info": {
+    "codemirror_mode": {
+@@ -738,7 +1068,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.7.7"
++   "version": "3.7.0"
+   }
+  },
+  "nbformat": 4,
