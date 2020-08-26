@@ -1,6 +1,0 @@
-tensorflow>=2.0.0
-ipykernel
-pandas
-scikit-learn
-wandb
-seaborn
