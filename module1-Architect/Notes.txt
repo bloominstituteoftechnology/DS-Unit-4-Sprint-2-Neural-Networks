@@ -1,0 +1,42 @@
+# NOTES
+
+### Look these up and watch them VERY IMPORTANT
+YouTubeYouTube | Khan Academy
+Calculus: Derivatives 1 | Taking derivatives | Differential Calculus | Khan Academy
+YouTubeYouTube | Khan Academy
+Multiplying a matrix by a matrix | Matrices | Precalculus | Khan Academy
+YouTubeYouTube | freeCodeCamp.org
+Python NumPy Tutorial for Beginners
+
+
+## Use ReLu. Its simple.  Linear _ + Linear / = _/ non-linear (neural)
+
+The first part of the Lecture we didnt go over a lot of.  We need to learn all this solid.
+
+R-Square is based on the errors.  This is called Loss/Cost function.
+
+Forward Propagation / Back Propagation. KNOW THESE.  Its very IMPORTANT.
+Know how to calculate Loss function in your head.  Its easy to do.
+Cross-entropy
+Again Loss function is very IMPORTANT to know well.
+
+Be SURE to go over saved links in each module!
+
+Removing .models makes this import work in WSL!
+from tensorflow.keras import Sequential
+
+input_dim is only in the first layer.  After that its without the term but just write the number.  They increase.
+
+Look into SVM if have time.  Watch video.
+
+callbacks = ([tensorboard_callbacks])
+
+PANDARALLEL
+from pandarallel import pandarallel
+pandarallel.initialize(nb_workers=8, progress_bar=True)
+# df.apply(func)
+# df.parallel_apply(func)
+# so that the progress bars will work
+from pandarallel import progress_bars
+# Might need this?
+progress_bars.is_notebook_lab = lambda : True
