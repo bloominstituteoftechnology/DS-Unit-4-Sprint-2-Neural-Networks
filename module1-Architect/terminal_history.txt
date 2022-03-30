@@ -1,0 +1,390 @@
+(env) greg@Opti17:~/github/DS-Unit-4-Sprint-2-Neural-Networks/module1-Architect$ history
+    1  wsl -l -v
+    2  screenfetch -p
+    3  sudo apt install screenfetch
+    4  screenfetch -p
+    5  sudo apt install screenfetch
+    6  screenfetch -p
+    7  sudo apt-get install unzip
+    8  ls
+    9  wget https://github.com/KittyKatt/screenFetch/archive/master.zip
+   10  unzip master.zip
+   11  sudo mv screenFetch-master/screenfetch-dev /usr/bin/screenfetch
+   12  sudo chmod 755 /usr/bin/screenfetch
+   13  screenfetch -h
+   14  screenfetch
+   15  sudo docker run hello-world
+   16  docker
+   17  systemctl
+   18  sudo service docker start
+   19  pwd
+   20  sudo vi /etc/wsl.conf
+   21  ls
+   22  vscode
+   23  code
+   24  sudo apt install code-insiders
+   25  sudo apt install code-insider
+   26  sudo apt install code
+   27  sudo apt install vscode-insider
+   28  ls
+   29  pwd
+   30  screenfetch
+   31  python3 --version
+   32  sudo apt install python3-venv python-dev
+   33  cd ..
+   34  ls
+   35  cd ..
+   36  cd mnt/c/Users/somer/github/
+   37  ls
+   38  git
+   39  sudo apt install python3-venv python-dev
+   40  sudo apt update
+   41  sudo apt upgrade
+   42  ls
+   43  cd tensor_environment/
+   44  ls
+   45  python3 -m venv tensor_env
+   46  sudo apt install python3.8-venv
+   47  python3 -m venv tensor_env
+   48  source tensor_venv/bin/activate
+   49  source tensor_env/bin/activate
+   50  pip install --upgrade pip
+   51  python -c 'import TensorFlow as tf; print(tf.__version__)'
+   52  pip install --upgrade TensorFlow
+   53  python -c 'import TensorFlow as tf; print(tf.__version__)'
+   54  docker -V
+   55  exit
+   56  screenfetch
+   57  snap -V
+   58  snap --version
+   59  ****
+   60  python -V
+   61  python3 -V
+   62  cd github/
+   63  ls
+   64  cd tensor_environment/
+   65  ls
+   66  cd tensor_env/
+   67  ls
+   68  ls bin
+   69  cd bin
+   70  activate
+   71  la
+   72  activate
+   73  source venv activate
+   74  apt install venv
+   75  sudo apt install venv
+   76  python3
+   77  apt-get install python3-pip
+   78  sudo apt-get install python3-pip
+   79  ls
+   80  pip install venv
+   81  sudo pip3 install virtualenv
+   82  source venv activate
+   83  virtualenv .venv
+   84  ls
+   85  source activate
+   86  tensorflow
+   87  cd ..
+   88  import tensorflow as tf
+   89  exit
+   90  source bin/activate
+   91  source bin\activate
+   92  ls
+   93  cd tensor_env/
+   94  source bin/activate
+   95  pip install tensorflow
+   96  import tensorflow as tf
+   97  print(tf.__version__)
+   98  python3 -c 'import tensorflow as tf; print(tf.__version__)'
+   99  sudo rm -rf tensor_environment/
+  100  ls
+  101  cd ..
+  102  ls
+  103  wsl
+  104  rm *.regtrans-ms
+  105  sudo rm *.regtrans-ms
+  106  sudo su
+  107  python3 -?
+  108  python3 -m venv venv
+  109  source venv/bin/activate
+  110  pip install tensorflow-cpu
+  111  pip install tensorflow-cpu --verbose
+  112  pip show tensorflow
+  113  python3
+  114  pip freeze
+  115  import
+  116  pip install python3.6
+  117  sudo update-alternatives  --set python /usr/bin/python3.6
+  118  sudo add-apt-repository ppa:deadsnakes/ppa
+  119  sudo apt-get update
+  120  sudo apt-get install python3.6
+  121  sudo update-alternatives  --set python /usr/bin/python3.6
+  122  where is python
+  123  which python
+  124  python --version
+  125  python3 --version
+  126  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
+  127  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
+  128  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+  129  sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+  130  sudo update-alternatives --config python
+  131  python3 --version
+  132  python2 --version
+  133  python --version
+  134  sudo update-alternatives --config python
+  135  python --version
+  136  pip show tensorflow
+  137  pip install --upgrade
+  138  pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.1-py2-none-any.whl
+  139  sudo update-alternatives  --set python /usr/bin/python3.6
+  140  python --version
+  141  pip remove python3.8
+  142  python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.12.0-py3-none-any.whl
+  143  python --version
+  144  sudo update-alternatives  --set python /usr/bin/python3.6
+  145  sudo update-alternatives --config python
+  146  exit
+  147  python --version
+  148  pip show tensorflow
+  149  tensorflow
+  150  python3 -m pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.7.0-cp38-cp38-manylinux2010_x86_64.whl
+  151  sudo update-alternatives --config python
+  152  exit
+  153  pip show tensorflow
+  154  python --version
+  155  pip install tensorflow-text
+  156  which tensorflow
+  157  pip3 show tensorflow-cpu
+  158  python
+  159  history
+  160  python
+  161  ls
+  162  screenfetch -p
+  163  ls
+  164  cd ..
+  165  ls
+  166  conda -?
+  167  cd ..
+  168  ls
+  169  cd Downloads/
+  170  mkdir -p ~/miniconda3
+  171  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+  172  bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+  173  rm -rf ~/miniconda3/miniconda.sh
+  174  ~/miniconda3/bin/conda init bash
+  175  ~/miniconda3/bin/conda init zsh
+  176  conda
+  177  python -V
+  178  conda create -n DeepDS15
+  179  conda update -n base -c defaults conda
+  180  conda create -n DeepDS15
+  181  conda activate DeepDS15
+  182  git branch
+  183  cd ..
+  184  ls
+  185  pip install --upgrade -r requirements.txt
+  186  sudo apt update
+  187  apt list click
+  188  conda activate DeepDS15
+  189  code-insiders
+  190  conda activate DeepDS15
+  191  conda activate DeepDS15
+  192  conda encs
+  193  conda envs
+  194  conda enc
+  195  conda env
+  196  conda env config
+  197  conda env config --append channels conda-forge
+  198  conda activate base
+  199  conda env remove -n DeepDS15
+  200  ls
+  201  wsl
+  202  cd ~/home
+  203  cd ..
+  204  cd
+  205  ls
+  206  cd git_env/DS-Unit-4-Sprint-1-NLP/
+  207  pip install --upgrade -r requirements.txt
+  208  conda uninstall -n base --all
+  209  deactivate base
+  210  conda deactivate base
+  211  conda deactivate
+  212  conda uninstall -n base --all
+  213  pip freeze
+  214  conda uninstall
+  215  ls
+  216  rm -r ~/miniconda
+  217  ls
+  218  rm -r ~/miniconda3
+  219  edit ~/.bashrc
+  220  cd
+  221  ls
+  222  cd
+  223  ls
+  224  conda
+  225  python3 -m venv NLP
+  226  source NLP/bin/activate
+  227  ls
+  228  cd github/DS-Unit-4-Sprint-1-NLP/
+  229  ls
+  230  pip install --upgrade -r requirements.txt
+  231  pip freeze
+  232  code-insiders .
+  233  sudo pip install virtualenv
+  234  source /home/greg/github/DS-Unit-4-Sprint-1-NLP/.env/bin/activate
+  235  pip install ipywidgets
+  236  cd github/
+  237  ls
+  238  cd
+  239  cd github/DS-Unit-4-Sprint-1-NLP/
+  240  ls
+  241  source .env/bin/activate
+  242  code-insiders
+  243  source .env/bin/activate
+  244  pip install pyLDAvis
+  245  pip install gensim
+  246  pip install --upgrade jupyter notebook
+  247  pip show pandarallel
+  248  pip show pyarrow
+  249  pip install pyarrow
+  250  source /home/greg/github/DS-Unit-4-Sprint-1-NLP/.env/bin/activate
+  251   /usr/bin/env /home/greg/github/DS-Unit-4-Sprint-1-NLP/.env/bin/python /home/greg/.vscode-server-insiders/extensions/ms-python.python-2022.2.1924087327/pythonFiles/lib/python/debugpy/launcher 37765 -- /home/greg/github/DS-Unit-4-Sprint-1-NLP/module4-topic-modeling/DS_414_Topic_Modeling_Assignment.ipynb
+  252   cd /home/greg/github/DS-Unit-4-Sprint-1-NLP ; /usr/bin/env /home/greg/github/DS-Unit-4-Sprint-1-NLP/.env/bin/python /home/greg/.vscode-server-insiders/extensions/ms-python.python-2022.2.1924087327/pythonFiles/lib/python/debugpy/launcher 35195 -- /home/greg/github/DS-Unit-4-Sprint-1-NLP/module4-topic-modeling/DS_414_Topic_Modeling_Assignment.ipynb
+  253  ls
+  254  ls scikit_learn_data/
+  255  code .
+  256  code-insiders
+  257  exit
+  258  source /home/greg/github/DS-Unit-4-Sprint-1-NLP/.env/bin/activate
+  259  git status
+  260  git add .
+  261  git status
+  262  git commit
+  263  cd
+  264  cd github/
+  265  ls
+  266  cd DS-Unit-4-Sprint-1-NLP/
+  267  ls
+  268  git status
+  269  git add .
+  270  git commit
+  271  git branch
+  272  git push
+  273  git push -u origin work1
+  274  C:/Users/somer/miniconda3/Scripts/activate
+  275  conda activate base
+  276  ls
+  277  pwd
+  278  source /.env/bin/activate
+  279  source env/bin/activate
+  280  source ./env/bin/activate
+  281  source ../env/bin/activate
+  282  history
+  283  tensorflow --V
+  284  python3 tensorflow --V
+  285  pip freeze
+  286  code-insiders
+  287  cd github/
+  288  ls
+  289  git clone git@github.com:somersgreg-classwork/DS-Unit-4-Sprint-2-Neural-Networks.git
+  290  ls
+  291  cd DS-Unit-4-Sprint-2
+  292  cd DS-Unit-4-Sprint-2-Neural-Networks/
+  293  git pull origin main
+  294  git branch
+  295  git branch -a
+  296  git fetch --all
+  297  git fetch --all && git reset --hard origin/main
+  298  ls
+  299  git remote add upstream git@github.com:bloominstituteoftechnology/DS-Unit-4-Sprint-2-Neural-Networks.git
+  300  git fetch upstream
+  301  git checkout master
+  302  git checkout main
+  303  git reset --hard upstream/main
+  304  git push origin main
+  305  git push origin main --force
+  306  git remote add upstream git@github.com:somersgreg-classwork/DS-Unit-4-Sprint-2-Neural-Networks.git
+  307  git branch -r
+  308  git branch work1
+  309  git branch
+  310  git checkout branch work1
+  311  git checkout work1
+  312  git branch
+  313  ls
+  314  git checkout main
+  315  git checkout -b work2
+  316  git add
+  317  git add .
+  318  git status
+  319  git commit -m "> init commit branch work2"
+  320  git push -u origin work2
+  321  ls
+  322  python -V
+  323  python3 -m pip install --user --upgrade pip
+  324  python3 -m venv env
+  325  which python
+  326  python3 -m pip install requirements.txt 
+  327  ls 
+  328  python -V
+  329  pip install tensorflow==2.4.0 
+  330  python3 -m pip install requirements.txt
+  331  sudo pip install tensorflow==2.4.0 
+  332  pip install testresources
+  333  pip install launchpadlib=1.10.13
+  334  pip install launchpadlib==1.10.13
+  335  code-insiders
+  336  python -V
+  337  which python
+  338  deactivate
+  339  which python
+  340  which python
+  341  code-insiders
+  342  env list
+  343  env
+  344  source env/bin/activate
+  345  source /env/bin/activate
+  346  source ./env/bin/activate
+  347  source ../env/bin/activate
+  348  env
+  349  PATH=/home/greg/github/DS-Unit-4-Sprint-2-Neural-Networks/env/bin:/home/greg/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/somer/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0/LocalCache/local-packages/Python310/Scripts:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Users/somer/miniconda3:/mnt/c/Users/somer/miniconda3/Library/mingw-w64/bin:/mnt/c/Users/somer/miniconda3/Library/usr/bin:/mnt/c/Users/somer/miniconda3/Library/bin:/mnt/c/Users/somer/miniconda3/Scripts:/mnt/c/Users/somer/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/somer/AppData/Local/Programs/Microsoft VS Code Insiders/bin:/snap/bin
+  350  rm -rf ~/miniconda
+  351  ~/.bash_profile
+  352  rm -rf ~/.condarc ~/.conda ~/.continuum
+  353  which python
+  354  python -V
+  355  source ../env/bin/activate
+  356  ls
+  357  pwd
+  358  cd github/
+  359  ls
+  360  source /env/bin/activate
+  361  source ./env/bin/activate
+  362  source ../env/bin/activate
+  363  cd DS-Unit-4-Sprint-2-Neural-Networks/
+  364  source ../env/bin/activate
+  365  source /env/bin/activate
+  366  source ./env/bin/activate
+  367  cd ..
+  368  ls -a
+  369  cd ..
+  370  ls -a
+  371  code-insiders
+  372  env list
+  373  dd
+  374  ENV
+  375  env list
+  376  source ./env/bin/activate
+  377  pwd
+  378  cd github/DS-Unit-4-Sprint-2
+  379  cd github/DS-Unit-4-Sprint-2-Neural-Networks/
+  380  source ./env/bin/activate
+  381  env
+  382  source /home/greg/github/DS-Unit-4-Sprint-2-Neural-Networks/env/bin/activate
+  383  /home/greg/github/DS-Unit-4-Sprint-2-Neural-Networks/env/bin/python /home/greg/.vscode-server/extensions/ms-python.python-2022.2.1924087327/pythonFiles/shell_exec.py /home/greg/github/DS-Unit-4-Sprint-2-Neural-Networks/env/bin/python -m pip install -U ipykernel /tmp/tmp-172YcRWFn9mBLdr.log
+  384  git status
+  385  history -50
+  386  history 50
+  387  history 51-100
+  388  history 100
+  389  history 110
