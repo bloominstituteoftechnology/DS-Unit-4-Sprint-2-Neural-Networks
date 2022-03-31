@@ -1,5 +1,7 @@
 # NOTES
 
+> I added F10 clears cell output to vscode settings.
+
 TF broke.  No reason.  Spent all night trying to fix.
 --ignore-installed flags might work after pip install tensorflow==2.4.0  <- CONFIRMED WORKS
 Make sure in env
