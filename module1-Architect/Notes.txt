@@ -1,5 +1,10 @@
 # NOTES
 
+> I increased memory from 4098 (or whatever 4Gb is in binary)
+Files: Max Memory For Large Files MB
+Controls the memory available to VS Code after restart when trying to open large files. Same effect as specifying --max-memory=NEWSIZE on the command line.\
+8192
+
 ### Look these up and watch them VERY IMPORTANT
 YouTubeYouTube | Khan Academy
 Calculus: Derivatives 1 | Taking derivatives | Differential Calculus | Khan Academy
