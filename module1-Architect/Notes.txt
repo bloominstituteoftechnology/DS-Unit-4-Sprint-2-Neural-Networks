@@ -1,5 +1,12 @@
 # NOTES
 
+TF broke.  No reason.  Spent all night trying to fix.
+--ignore-installed flags might work after pip install tensorflow==2.4.0  <- CONFIRMED WORKS
+Make sure in env
+Dont know how to uninstall everything and start over.
+Hard to track versions.
+TF 2.8.0 takes longer to install than 2.4
+
 > I increased memory from 4098 (or whatever 4Gb is in binary)
 Files: Max Memory For Large Files MB
 Controls the memory available to VS Code after restart when trying to open large files. Same effect as specifying --max-memory=NEWSIZE on the command line.\
