@@ -1,5 +1,14 @@
 # NOTES
 
+
+###### Mon Apr 11 12:11:13 EDT 2022 > I added formating to bashrc prompt.  It looks great. From stack overflow. " [.venv] ~/github/DS-Unit-4-Sprint-2-Neural-Networks work2*$ "
+# > Added 'Insert Time Stamp' extension by Vlad Zamskoi
+# > I finished Unit 2 sprint Sat night.  Now going to try to redo all assignments.  Tomorrow will prep for 4.3.1 lecture and set up next local repo.
+# > Using Colab was the only way I could do sprint assessment because Fedora laptop couldnt get TF working.
+# > Currently running Ubuntu WSL2 on Win11.  Path is home/user/github/unit/
+# > Increased VScode explorer tree indent to 25px in settings.  No addon needed!
+
+###### Older notes.
 > I added F10 clears cell output to vscode settings.
 
 TF broke.  No reason.  Spent all night trying to fix.
