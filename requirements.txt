@@ -1,3 +1,10 @@
-tensorflow==2.4.0
-keras==2.4.3
-keras-tuner==1.0.2
+jupyter
+tensorflow
+keras
+keras-tuner
+numpy
+pandas
+matplotlib
+scikit-learn
+scikeras
+tensorboard
