@@ -8,3 +8,5 @@ matplotlib
 scikit-learn
 scikeras
 tensorboard
+seaborn
+gradio
